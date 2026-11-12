@@ -1,0 +1,110 @@
+[
+    {
+        "id": "student",
+        "email": "demo.student@entitle.demo",
+        "name": "Ananya R.",
+        "role": "Undergraduate student, Mysuru",
+        "story": "20-year-old B.Sc student from an SC family. Knows about the national scholarship portal but nothing else.",
+        "knownSchemeIds": [
+            "central-sector-scholarship"
+        ],
+        "profile": {
+            "age": 20,
+            "state": "Karnataka",
+            "district": "Mysuru",
+            "area": "URBAN",
+            "occupation": "STUDENT",
+            "education": "UNDERGRADUATE",
+            "incomeRange": "1L_2_5L",
+            "householdCategory": "SC",
+            "gender": "FEMALE",
+            "familySize": 4,
+            "student": true,
+            "farmer": false,
+            "disability": false,
+            "healthcareNeed": false,
+            "rationCard": true,
+            "incomeTaxPayer": false,
+            "hasBankAccount": true,
+            "ownsPuccaHouse": true,
+            "hasLpg": true,
+            "pregnant": false,
+            "hasGirlChildUnder10": false
+        },
+        "knownSchemeNames": [
+            "Central Sector Scholarship (NSP)"
+        ]
+    },
+    {
+        "id": "household",
+        "email": "demo.household@entitle.demo",
+        "name": "Manjunath K.",
+        "role": "Daily-wage worker, Kalaburagi",
+        "story": "38-year-old daily-wage earner supporting a family of five in a kutcha house. Only knows about MGNREGA.",
+        "knownSchemeIds": [
+            "mgnrega"
+        ],
+        "profile": {
+            "age": 38,
+            "state": "Karnataka",
+            "district": "Kalaburagi",
+            "area": "RURAL",
+            "occupation": "DAILY_WAGE",
+            "education": "SECONDARY",
+            "incomeRange": "BELOW_1L",
+            "householdCategory": "OBC",
+            "gender": "MALE",
+            "familySize": 5,
+            "student": false,
+            "farmer": false,
+            "disability": false,
+            "healthcareNeed": true,
+            "rationCard": true,
+            "incomeTaxPayer": false,
+            "hasBankAccount": true,
+            "ownsPuccaHouse": false,
+            "hasLpg": false,
+            "pregnant": false,
+            "hasGirlChildUnder10": true
+        },
+        "knownSchemeNames": [
+            "MGNREGA rural employment"
+        ]
+    },
+    {
+        "id": "healthcare",
+        "email": "demo.healthcare@entitle.demo",
+        "name": "Savitramma H.",
+        "role": "Senior citizen needing treatment, Hassan",
+        "story": "71-year-old widow with a knee condition needing surgery. Receives an old-age pension but doesn't know about health cover.",
+        "knownSchemeIds": [
+            "ignoaps"
+        ],
+        "profile": {
+            "age": 71,
+            "state": "Karnataka",
+            "district": "Hassan",
+            "area": "RURAL",
+            "occupation": "HOMEMAKER",
+            "education": "PRIMARY",
+            "incomeRange": "BELOW_1L",
+            "householdCategory": "GENERAL",
+            "gender": "FEMALE",
+            "familySize": 2,
+            "student": false,
+            "farmer": false,
+            "disability": false,
+            "healthcareNeed": true,
+            "rationCard": true,
+            "incomeTaxPayer": false,
+            "hasBankAccount": true,
+            "ownsPuccaHouse": true,
+            "hasLpg": true,
+            "pregnant": false,
+            "hasGirlChildUnder10": false
+        },
+        "knownSchemeNames": [
+            "Old Age Pension (NSAP)"
+        ]
+    }
+]

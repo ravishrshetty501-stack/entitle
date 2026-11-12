@@ -1,0 +1,3106 @@
+[
+    {
+        "id": "nmmss",
+        "name": "National Means-cum-Merit Scholarship (NMMSS)",
+        "category": "Education",
+        "department": "Department of School Education & Literacy, Ministry of Education",
+        "level": "National",
+        "state": null,
+        "minAge": null,
+        "maxAge": null,
+        "incomeMax": 350000,
+        "status": "Active",
+        "officialUrl": "https://scholarships.gov.in",
+        "sourceUrl": "https://dsel.education.gov.in",
+        "lastVerified": "2026-06-01",
+        "applyChannel": "the National Scholarship Portal after clearing the state NMMS exam",
+        "description": "Scholarship to reduce dropouts at Class 8 by supporting meritorious students from economically weaker sections through Class 9 to 12.",
+        "whoCanApply": "Students in government / aided / local body schools who clear the state-level NMMS selection test, with parental income up to ₹3.5 lakh.",
+        "benefits": "₹12,000 per year from Class 9 to Class 12.",
+        "estimatedBenefit": "₹12,000 per year (Class 9–12)",
+        "educationRequirement": "Class 8–12 in government/aided school",
+        "occupationRequirement": "Student",
+        "deadlineInfo": "State NMMS exam is held once a year; NSP applications follow.",
+        "rules": [
+            {
+                "field": "student",
+                "op": "eq",
+                "value": true,
+                "label": "Currently studying"
+            },
+            {
+                "field": "education",
+                "op": "in",
+                "values": [
+                    "PRIMARY",
+                    "SECONDARY",
+                    "HIGHER_SECONDARY"
+                ],
+                "label": "Studying between Class 8 and Class 12"
+            },
+            {
+                "field": "incomeRange",
+                "op": "income_lte",
+                "value": 350000,
+                "label": "Parental income up to ₹3.5 lakh",
+                "verify": true,
+                "doc": "Income certificate"
+            },
+            {
+                "op": "official",
+                "label": "Cleared the state NMMS selection exam and studies in a government/aided school"
+            }
+        ],
+        "documents": [
+            {
+                "name": "NMMS exam result",
+                "why": "Selection is based on the exam."
+            },
+            {
+                "name": "Income certificate",
+                "why": "Proves income within ₹3.5 lakh."
+            },
+            {
+                "name": "School bonafide certificate",
+                "why": "Confirms enrolment."
+            },
+            {
+                "name": "Aadhaar-seeded bank account details",
+                "why": "Paid by DBT."
+            }
+        ],
+        "process": [
+            "Appear for the NMMS exam conducted by your state.",
+            "If selected, register on NSP.",
+            "Renew each year by meeting marks criteria."
+        ],
+        "faqs": [],
+        "real": true,
+        "provider": "Government"
+    },
+    {
+        "id": "post-matric-minorities",
+        "name": "Post Matric Scholarship for Minority Communities",
+        "category": "Education",
+        "department": "Ministry of Minority Affairs",
+        "level": "National",
+        "state": null,
+        "minAge": null,
+        "maxAge": null,
+        "incomeMax": 200000,
+        "status": "Active",
+        "officialUrl": "https://scholarships.gov.in",
+        "sourceUrl": "https://www.minorityaffairs.gov.in",
+        "lastVerified": "2026-06-01",
+        "applyChannel": "the National Scholarship Portal",
+        "description": "Scholarship for students from notified minority communities studying at Class 11 and above.",
+        "whoCanApply": "Students from Muslim, Christian, Sikh, Buddhist, Jain and Parsi communities with at least 50% marks in the previous exam and family income up to ₹2 lakh.",
+        "benefits": "Admission / tuition fee support and maintenance allowance as per scheme norms.",
+        "estimatedBenefit": "Fee support + maintenance allowance",
+        "educationRequirement": "Class 11 onwards",
+        "occupationRequirement": "Student",
+        "deadlineInfo": "Applications open annually on NSP.",
+        "rules": [
+            {
+                "field": "student",
+                "op": "eq",
+                "value": true,
+                "label": "Currently studying"
+            },
+            {
+                "field": "education",
+                "op": "in",
+                "values": [
+                    "HIGHER_SECONDARY",
+                    "DIPLOMA",
+                    "UNDERGRADUATE",
+                    "POSTGRADUATE"
+                ],
+                "label": "Studying at Class 11 or above"
+            },
+            {
+                "field": "householdCategory",
+                "op": "in",
+                "values": [
+                    "MINORITY"
+                ],
+                "label": "Belongs to a notified minority community",
+                "verify": true,
+                "doc": "Community self-declaration"
+            },
+            {
+                "field": "incomeRange",
+                "op": "income_lte",
+                "value": 200000,
+                "label": "Family income up to ₹2 lakh",
+                "verify": true,
+                "doc": "Income certificate"
+            },
+            {
+                "op": "official",
+                "label": "Scored at least 50% in the previous final exam"
+            }
+        ],
+        "documents": [
+            {
+                "name": "Community self-declaration",
+                "why": "Confirms minority status."
+            },
+            {
+                "name": "Income certificate",
+                "why": "Proves income within ₹2 lakh."
+            },
+            {
+                "name": "Previous year mark sheet",
+                "why": "Shows 50%+ marks."
+            },
+            {
+                "name": "Aadhaar-seeded bank account details",
+                "why": "Paid by DBT."
+            }
+        ],
+        "process": [
+            "Register on NSP.",
+            "Apply and upload documents.",
+            "Institute and state verify."
+        ],
+        "faqs": [],
+        "real": true,
+        "provider": "Government"
+    },
+    {
+        "id": "top-class-sc",
+        "name": "Top Class Education Scheme for SC Students",
+        "category": "Education",
+        "department": "Ministry of Social Justice & Empowerment",
+        "level": "National",
+        "state": null,
+        "minAge": null,
+        "maxAge": null,
+        "incomeMax": 800000,
+        "status": "Active",
+        "officialUrl": "https://scholarships.gov.in",
+        "sourceUrl": "https://socialjustice.gov.in",
+        "lastVerified": "2026-06-01",
+        "applyChannel": "the National Scholarship Portal",
+        "description": "Full financial support for SC students admitted to notified premier institutions such as IITs, IIMs, AIIMS and NITs.",
+        "whoCanApply": "SC students admitted to a notified top-class institution with family income up to ₹8 lakh per year.",
+        "benefits": "Full tuition and non-refundable fees, living expenses, books and a computer as per scheme norms.",
+        "estimatedBenefit": "Full tuition + living expenses",
+        "educationRequirement": "UG/PG in a notified institution",
+        "occupationRequirement": "Student",
+        "deadlineInfo": "Applications open annually on NSP.",
+        "rules": [
+            {
+                "field": "student",
+                "op": "eq",
+                "value": true,
+                "label": "Currently studying"
+            },
+            {
+                "field": "education",
+                "op": "in",
+                "values": [
+                    "UNDERGRADUATE",
+                    "POSTGRADUATE"
+                ],
+                "label": "Pursuing UG or PG"
+            },
+            {
+                "field": "householdCategory",
+                "op": "in",
+                "values": [
+                    "SC"
+                ],
+                "label": "Belongs to a Scheduled Caste",
+                "verify": true,
+                "doc": "Caste certificate"
+            },
+            {
+                "field": "incomeRange",
+                "op": "income_lte",
+                "value": 800000,
+                "label": "Family income up to ₹8 lakh",
+                "verify": true,
+                "doc": "Income certificate"
+            },
+            {
+                "op": "official",
+                "label": "Admitted to an institution notified under the scheme"
+            }
+        ],
+        "documents": [
+            {
+                "name": "Caste certificate",
+                "why": "Proves SC status."
+            },
+            {
+                "name": "Income certificate",
+                "why": "Proves income within ₹8 lakh."
+            },
+            {
+                "name": "Admission letter",
+                "why": "Shows admission to a notified institution."
+            }
+        ],
+        "process": [
+            "Register on NSP.",
+            "Apply under Top Class Education.",
+            "Institute verifies."
+        ],
+        "faqs": [],
+        "real": true,
+        "provider": "Government"
+    },
+    {
+        "id": "aicte-pragati",
+        "name": "AICTE Pragati Scholarship for Girl Students",
+        "category": "Education",
+        "department": "All India Council for Technical Education (AICTE)",
+        "level": "National",
+        "state": null,
+        "minAge": null,
+        "maxAge": null,
+        "incomeMax": 800000,
+        "status": "Active",
+        "officialUrl": "https://scholarships.gov.in",
+        "sourceUrl": "https://www.aicte-india.org",
+        "lastVerified": "2026-06-01",
+        "applyChannel": "the National Scholarship Portal",
+        "description": "Supports girl students admitted to the first year of an AICTE-approved degree or diploma course.",
+        "whoCanApply": "Up to two girls per family, admitted to first year (or second year via lateral entry) of an AICTE-approved technical degree/diploma, with family income up to ₹8 lakh.",
+        "benefits": "₹50,000 per year for the course duration (as per current guidelines).",
+        "estimatedBenefit": "₹50,000 per year",
+        "educationRequirement": "AICTE-approved degree/diploma",
+        "occupationRequirement": "Student",
+        "deadlineInfo": "Applications open annually on NSP.",
+        "rules": [
+            {
+                "field": "gender",
+                "op": "in",
+                "values": [
+                    "FEMALE"
+                ],
+                "label": "Applicant is a girl student"
+            },
+            {
+                "field": "student",
+                "op": "eq",
+                "value": true,
+                "label": "Currently studying"
+            },
+            {
+                "field": "education",
+                "op": "in",
+                "values": [
+                    "DIPLOMA",
+                    "UNDERGRADUATE"
+                ],
+                "label": "In a technical degree or diploma course"
+            },
+            {
+                "field": "incomeRange",
+                "op": "income_lte",
+                "value": 800000,
+                "label": "Family income up to ₹8 lakh",
+                "verify": true,
+                "doc": "Income certificate"
+            },
+            {
+                "op": "official",
+                "label": "Institution and course are AICTE-approved"
+            }
+        ],
+        "documents": [
+            {
+                "name": "Income certificate",
+                "why": "Proves income within ₹8 lakh."
+            },
+            {
+                "name": "Admission letter / fee receipt",
+                "why": "Shows first-year admission."
+            },
+            {
+                "name": "Class 10 & 12 mark sheets",
+                "why": "Merit-based selection."
+            },
+            {
+                "name": "Aadhaar-seeded bank account details",
+                "why": "Paid by DBT."
+            }
+        ],
+        "process": [
+            "Register on NSP.",
+            "Apply under AICTE Pragati.",
+            "Institute verifies."
+        ],
+        "faqs": [],
+        "real": true,
+        "provider": "Government"
+    },
+    {
+        "id": "aicte-saksham",
+        "name": "AICTE Saksham Scholarship for Specially-Abled Students",
+        "category": "Disability Support",
+        "department": "All India Council for Technical Education (AICTE)",
+        "level": "National",
+        "state": null,
+        "minAge": null,
+        "maxAge": null,
+        "incomeMax": 800000,
+        "status": "Active",
+        "officialUrl": "https://scholarships.gov.in",
+        "sourceUrl": "https://www.aicte-india.org",
+        "lastVerified": "2026-06-01",
+        "applyChannel": "the National Scholarship Portal",
+        "description": "Supports specially-abled students pursuing AICTE-approved technical education.",
+        "whoCanApply": "Students with disability of 40% or more admitted to an AICTE-approved degree/diploma, with family income up to ₹8 lakh.",
+        "benefits": "₹50,000 per year for the course duration (as per current guidelines).",
+        "estimatedBenefit": "₹50,000 per year",
+        "educationRequirement": "AICTE-approved degree/diploma",
+        "occupationRequirement": "Student",
+        "deadlineInfo": "Applications open annually on NSP.",
+        "rules": [
+            {
+                "field": "disability",
+                "op": "eq",
+                "value": true,
+                "label": "Has a disability"
+            },
+            {
+                "field": "disabilityLevel",
+                "op": "in",
+                "values": [
+                    "40_79",
+                    "80_PLUS"
+                ],
+                "label": "Certified disability of 40% or more",
+                "verify": true,
+                "doc": "Disability certificate / UDID card"
+            },
+            {
+                "field": "student",
+                "op": "eq",
+                "value": true,
+                "label": "Currently studying"
+            },
+            {
+                "field": "education",
+                "op": "in",
+                "values": [
+                    "DIPLOMA",
+                    "UNDERGRADUATE"
+                ],
+                "label": "In a technical degree or diploma course"
+            },
+            {
+                "field": "incomeRange",
+                "op": "income_lte",
+                "value": 800000,
+                "label": "Family income up to ₹8 lakh",
+                "verify": true,
+                "doc": "Income certificate"
+            }
+        ],
+        "documents": [
+            {
+                "name": "Disability certificate / UDID card",
+                "why": "Proves 40%+ disability."
+            },
+            {
+                "name": "Income certificate",
+                "why": "Proves income within ₹8 lakh."
+            },
+            {
+                "name": "Admission letter",
+                "why": "Shows enrolment."
+            }
+        ],
+        "process": [
+            "Register on NSP.",
+            "Apply under AICTE Saksham.",
+            "Institute verifies."
+        ],
+        "faqs": [],
+        "real": true,
+        "provider": "Government"
+    },
+    {
+        "id": "pmjdy",
+        "name": "Pradhan Mantri Jan Dhan Yojana (PMJDY)",
+        "category": "Financial Assistance",
+        "department": "Department of Financial Services, Ministry of Finance",
+        "level": "National",
+        "state": null,
+        "minAge": 10,
+        "maxAge": null,
+        "incomeMax": null,
+        "status": "Active",
+        "officialUrl": "https://pmjdy.gov.in",
+        "sourceUrl": "https://pmjdy.gov.in",
+        "lastVerified": "2026-06-01",
+        "applyChannel": "any bank branch or Business Correspondent (Bank Mitra)",
+        "description": "Zero-balance basic savings bank account for every unbanked adult — the gateway to DBT, insurance and pension schemes.",
+        "whoCanApply": "Any Indian citizen without a bank account (minors aged 10+ can open with a guardian).",
+        "benefits": "Zero-balance account, RuPay debit card with accident insurance cover, and overdraft facility for eligible account holders.",
+        "estimatedBenefit": "Free bank account + RuPay card",
+        "educationRequirement": "None",
+        "occupationRequirement": "None",
+        "deadlineInfo": "No deadline.",
+        "rules": [
+            {
+                "field": "hasBankAccount",
+                "op": "eq",
+                "value": false,
+                "label": "Does not yet have a savings bank account"
+            }
+        ],
+        "documents": [
+            {
+                "name": "Aadhaar card or other officially valid document",
+                "why": "KYC to open the account."
+            },
+            {
+                "name": "Photograph",
+                "why": "For the account form."
+            }
+        ],
+        "process": [
+            "Visit any bank branch or Bank Mitra.",
+            "Fill the account opening form with KYC.",
+            "Receive passbook and RuPay card."
+        ],
+        "faqs": [],
+        "real": true,
+        "provider": "Government"
+    },
+    {
+        "id": "eshram",
+        "name": "e-Shram Card (National Database of Unorganised Workers)",
+        "category": "Employment",
+        "department": "Ministry of Labour & Employment",
+        "level": "National",
+        "state": null,
+        "minAge": 16,
+        "maxAge": 59,
+        "incomeMax": null,
+        "status": "Active",
+        "officialUrl": "https://eshram.gov.in",
+        "sourceUrl": "https://eshram.gov.in",
+        "lastVerified": "2026-06-01",
+        "applyChannel": "the e-Shram portal or a Common Service Centre",
+        "description": "Registration for unorganised workers that links them to social security and welfare schemes.",
+        "whoCanApply": "Unorganised workers aged 16–59 who are not EPFO/ESIC members and not income-tax payers.",
+        "benefits": "Universal Account Number (UAN) card, access to social security schemes and accident insurance as notified.",
+        "estimatedBenefit": "Worker ID + access to social security",
+        "educationRequirement": "None",
+        "occupationRequirement": "Unorganised sector worker",
+        "deadlineInfo": "No deadline.",
+        "rules": [
+            {
+                "field": "age",
+                "op": "between",
+                "min": 16,
+                "max": 59,
+                "label": "Aged 16–59"
+            },
+            {
+                "field": "occupation",
+                "op": "in",
+                "values": [
+                    "DAILY_WAGE",
+                    "STREET_VENDOR",
+                    "SELF_EMPLOYED",
+                    "FARMER",
+                    "HOMEMAKER",
+                    "OTHER"
+                ],
+                "label": "Works in the unorganised sector"
+            },
+            {
+                "field": "incomeTaxPayer",
+                "op": "eq",
+                "value": false,
+                "label": "Not an income-tax payer"
+            },
+            {
+                "op": "official",
+                "label": "Not a member of EPFO or ESIC"
+            }
+        ],
+        "documents": [
+            {
+                "name": "Aadhaar card",
+                "why": "e-KYC."
+            },
+            {
+                "name": "Aadhaar-linked mobile number",
+                "why": "OTP verification."
+            },
+            {
+                "name": "Bank account details",
+                "why": "For benefit transfers."
+            }
+        ],
+        "process": [
+            "Self-register on eshram.gov.in or visit a CSC.",
+            "Complete Aadhaar e-KYC.",
+            "Download your e-Shram card."
+        ],
+        "faqs": [],
+        "real": true,
+        "provider": "Government"
+    },
+    {
+        "id": "pm-sym",
+        "name": "Pradhan Mantri Shram Yogi Maan-dhan (PM-SYM)",
+        "category": "Financial Assistance",
+        "department": "Ministry of Labour & Employment",
+        "level": "National",
+        "state": null,
+        "minAge": 18,
+        "maxAge": 40,
+        "incomeMax": 180000,
+        "status": "Active",
+        "officialUrl": "https://maandhan.in",
+        "sourceUrl": "https://maandhan.in",
+        "lastVerified": "2026-06-01",
+        "applyChannel": "a Common Service Centre or the Maandhan portal",
+        "description": "Voluntary contributory pension scheme for unorganised workers, with matching government contribution.",
+        "whoCanApply": "Unorganised workers aged 18–40 with monthly income up to ₹15,000, not EPFO/ESIC/NPS members and not income-tax payers.",
+        "benefits": "Assured pension of ₹3,000 per month after age 60.",
+        "estimatedBenefit": "₹3,000 monthly pension after 60",
+        "educationRequirement": "None",
+        "occupationRequirement": "Unorganised sector worker",
+        "deadlineInfo": "Join before turning 40.",
+        "rules": [
+            {
+                "field": "age",
+                "op": "between",
+                "min": 18,
+                "max": 40,
+                "label": "Aged 18–40"
+            },
+            {
+                "field": "occupation",
+                "op": "in",
+                "values": [
+                    "DAILY_WAGE",
+                    "STREET_VENDOR",
+                    "SELF_EMPLOYED",
+                    "FARMER",
+                    "HOMEMAKER",
+                    "OTHER"
+                ],
+                "label": "Works in the unorganised sector"
+            },
+            {
+                "field": "incomeRange",
+                "op": "income_lte",
+                "value": 180000,
+                "label": "Monthly income up to ₹15,000",
+                "verify": true,
+                "doc": "Self-declaration of income"
+            },
+            {
+                "field": "hasBankAccount",
+                "op": "eq",
+                "value": true,
+                "label": "Has a savings bank account"
+            },
+            {
+                "field": "incomeTaxPayer",
+                "op": "eq",
+                "value": false,
+                "label": "Not an income-tax payer"
+            }
+        ],
+        "documents": [
+            {
+                "name": "Aadhaar card",
+                "why": "KYC."
+            },
+            {
+                "name": "Savings bank account / Jan Dhan account",
+                "why": "Monthly contributions are auto-debited."
+            },
+            {
+                "name": "Self-declaration of income",
+                "why": "Confirms income limit."
+            }
+        ],
+        "process": [
+            "Visit a CSC with Aadhaar and bank details.",
+            "Enrol and set up auto-debit.",
+            "Pension starts at 60."
+        ],
+        "faqs": [],
+        "real": true,
+        "provider": "Government"
+    },
+    {
+        "id": "pm-vishwakarma",
+        "name": "PM Vishwakarma",
+        "category": "Employment",
+        "department": "Ministry of Micro, Small & Medium Enterprises",
+        "level": "National",
+        "state": null,
+        "minAge": 18,
+        "maxAge": null,
+        "incomeMax": null,
+        "status": "Active",
+        "officialUrl": "https://pmvishwakarma.gov.in",
+        "sourceUrl": "https://pmvishwakarma.gov.in",
+        "lastVerified": "2026-06-01",
+        "applyChannel": "a Common Service Centre",
+        "description": "End-to-end support for traditional artisans and craftspeople in 18 trades such as carpentry, pottery, tailoring and smithing.",
+        "whoCanApply": "Artisans aged 18+ working with hands and tools in one of the 18 listed family-based trades (one member per family).",
+        "benefits": "Recognition certificate and ID, skill training with stipend, toolkit incentive, collateral-free credit at concessional interest and marketing support.",
+        "estimatedBenefit": "Training, toolkit support and concessional credit",
+        "educationRequirement": "None",
+        "occupationRequirement": "Traditional artisan in a listed trade",
+        "deadlineInfo": "Ongoing — check the portal.",
+        "rules": [
+            {
+                "field": "age",
+                "op": "gte",
+                "value": 18,
+                "label": "Aged 18 or above"
+            },
+            {
+                "field": "occupation",
+                "op": "in",
+                "values": [
+                    "SELF_EMPLOYED",
+                    "DAILY_WAGE",
+                    "OTHER"
+                ],
+                "label": "Self-employed / works with hands and tools",
+                "mandatory": false
+            },
+            {
+                "op": "official",
+                "label": "Practises one of the 18 listed traditional trades (verified by Gram Panchayat / ULB)"
+            }
+        ],
+        "documents": [
+            {
+                "name": "Aadhaar card",
+                "why": "e-KYC."
+            },
+            {
+                "name": "Bank account details",
+                "why": "Incentives and loans."
+            },
+            {
+                "name": "Ration card",
+                "why": "Family identification."
+            }
+        ],
+        "process": [
+            "Register at a CSC.",
+            "Three-step verification by Gram Panchayat/ULB and district committee.",
+            "Receive certificate, training and toolkit."
+        ],
+        "faqs": [],
+        "real": true,
+        "provider": "Government"
+    },
+    {
+        "id": "pm-mudra",
+        "name": "Pradhan Mantri Mudra Yojana (PMMY)",
+        "category": "Employment",
+        "department": "Department of Financial Services, Ministry of Finance",
+        "level": "National",
+        "state": null,
+        "minAge": 18,
+        "maxAge": null,
+        "incomeMax": null,
+        "status": "Active",
+        "officialUrl": "https://www.mudra.org.in",
+        "sourceUrl": "https://www.mudra.org.in",
+        "lastVerified": "2026-06-01",
+        "applyChannel": "banks, NBFCs, MFIs or the Udyamimitra portal",
+        "description": "Collateral-free loans for non-farm micro and small enterprises in manufacturing, trading and services.",
+        "whoCanApply": "Individuals and micro enterprises with a business plan for an income-generating non-farm activity.",
+        "benefits": "Loans under Shishu, Kishore, Tarun and Tarun Plus categories (up to ₹20 lakh as per current limits) without collateral.",
+        "estimatedBenefit": "Collateral-free business loan",
+        "educationRequirement": "None",
+        "occupationRequirement": "Micro entrepreneur / self-employed",
+        "deadlineInfo": "No deadline.",
+        "rules": [
+            {
+                "field": "age",
+                "op": "gte",
+                "value": 18,
+                "label": "Aged 18 or above"
+            },
+            {
+                "field": "occupation",
+                "op": "in",
+                "values": [
+                    "SELF_EMPLOYED",
+                    "STREET_VENDOR",
+                    "UNEMPLOYED",
+                    "HOMEMAKER",
+                    "OTHER"
+                ],
+                "label": "Runs or plans a small non-farm business"
+            },
+            {
+                "op": "official",
+                "label": "Lender appraises your business plan and creditworthiness"
+            }
+        ],
+        "documents": [
+            {
+                "name": "Identity and address proof",
+                "why": "KYC."
+            },
+            {
+                "name": "Business plan / quotation",
+                "why": "Loan appraisal."
+            },
+            {
+                "name": "Bank statements (if any)",
+                "why": "Credit assessment."
+            }
+        ],
+        "process": [
+            "Prepare a business plan.",
+            "Apply at a bank / NBFC / MFI or on Udyamimitra.",
+            "Lender appraises and sanctions."
+        ],
+        "faqs": [],
+        "real": true,
+        "provider": "Government"
+    },
+    {
+        "id": "stand-up-india",
+        "name": "Stand-Up India",
+        "category": "Employment",
+        "department": "Department of Financial Services / SIDBI",
+        "level": "National",
+        "state": null,
+        "minAge": 18,
+        "maxAge": null,
+        "incomeMax": null,
+        "status": "Active",
+        "officialUrl": "https://www.standupmitra.in",
+        "sourceUrl": "https://www.standupmitra.in",
+        "lastVerified": "2026-06-01",
+        "applyChannel": "the Stand-Up Mitra portal or any scheduled commercial bank branch",
+        "description": "Bank loans between ₹10 lakh and ₹1 crore for SC/ST and women entrepreneurs setting up a greenfield enterprise.",
+        "whoCanApply": "SC/ST and/or women entrepreneurs aged 18+ setting up a new (greenfield) enterprise in manufacturing, services, trading or agri-allied activities.",
+        "benefits": "Composite loan of ₹10 lakh to ₹1 crore with handholding support.",
+        "estimatedBenefit": "₹10 lakh – ₹1 crore enterprise loan",
+        "educationRequirement": "None",
+        "occupationRequirement": "New entrepreneur",
+        "deadlineInfo": "No deadline.",
+        "rules": [
+            {
+                "field": "age",
+                "op": "gte",
+                "value": 18,
+                "label": "Aged 18 or above"
+            },
+            {
+                "field": "gender",
+                "op": "in",
+                "values": [
+                    "FEMALE"
+                ],
+                "label": "Woman entrepreneur (or SC/ST — see indicator below)",
+                "mandatory": false
+            },
+            {
+                "field": "householdCategory",
+                "op": "in",
+                "values": [
+                    "SC",
+                    "ST"
+                ],
+                "label": "SC/ST entrepreneur (or woman — see above)",
+                "mandatory": false,
+                "verify": true,
+                "doc": "Caste certificate (if SC/ST)"
+            },
+            {
+                "op": "official",
+                "label": "Setting up a new greenfield enterprise; not a loan defaulter"
+            }
+        ],
+        "documents": [
+            {
+                "name": "Identity and address proof",
+                "why": "KYC."
+            },
+            {
+                "name": "Project report",
+                "why": "Loan appraisal."
+            },
+            {
+                "name": "Caste certificate (if SC/ST)",
+                "why": "Eligibility category."
+            }
+        ],
+        "process": [
+            "Register on Stand-Up Mitra.",
+            "Connect with a lender.",
+            "Bank appraises the project."
+        ],
+        "faqs": [],
+        "real": true,
+        "provider": "Government"
+    },
+    {
+        "id": "pmegp",
+        "name": "Prime Minister's Employment Generation Programme (PMEGP)",
+        "category": "Employment",
+        "department": "KVIC, Ministry of MSME",
+        "level": "National",
+        "state": null,
+        "minAge": 18,
+        "maxAge": null,
+        "incomeMax": null,
+        "status": "Active",
+        "officialUrl": "https://www.kviconline.gov.in/pmegpeportal",
+        "sourceUrl": "https://www.kviconline.gov.in",
+        "lastVerified": "2026-06-01",
+        "applyChannel": "the PMEGP e-portal",
+        "description": "Credit-linked subsidy for setting up new micro enterprises in rural and urban areas.",
+        "whoCanApply": "Individuals aged 18+; Class 8 pass required for larger manufacturing/service projects. Only new projects qualify.",
+        "benefits": "Margin-money subsidy of 15–35% of project cost depending on category and area.",
+        "estimatedBenefit": "15–35% subsidy on project cost",
+        "educationRequirement": "Class 8 for larger projects",
+        "occupationRequirement": "New entrepreneur",
+        "deadlineInfo": "Ongoing.",
+        "rules": [
+            {
+                "field": "age",
+                "op": "gte",
+                "value": 18,
+                "label": "Aged 18 or above"
+            },
+            {
+                "field": "education",
+                "op": "in",
+                "values": [
+                    "PRIMARY",
+                    "SECONDARY",
+                    "HIGHER_SECONDARY",
+                    "DIPLOMA",
+                    "UNDERGRADUATE",
+                    "POSTGRADUATE"
+                ],
+                "label": "Some formal education (Class 8 pass needed for larger projects)",
+                "mandatory": false
+            },
+            {
+                "op": "official",
+                "label": "Proposing a new project; not already availing other government subsidy for it"
+            }
+        ],
+        "documents": [
+            {
+                "name": "Aadhaar card",
+                "why": "Identity."
+            },
+            {
+                "name": "Project report",
+                "why": "Appraisal by bank."
+            },
+            {
+                "name": "Education certificate",
+                "why": "For projects above the threshold."
+            },
+            {
+                "name": "Caste / special category certificate (if applicable)",
+                "why": "Higher subsidy rate."
+            }
+        ],
+        "process": [
+            "Apply on the PMEGP e-portal.",
+            "Task force interview and bank appraisal.",
+            "Subsidy released after loan disbursal."
+        ],
+        "faqs": [],
+        "real": true,
+        "provider": "Government"
+    },
+    {
+        "id": "nats",
+        "name": "National Apprenticeship Training Scheme (NATS)",
+        "category": "Employment",
+        "department": "Ministry of Education",
+        "level": "National",
+        "state": null,
+        "minAge": null,
+        "maxAge": null,
+        "incomeMax": null,
+        "status": "Active",
+        "officialUrl": "https://nats.education.gov.in",
+        "sourceUrl": "https://nats.education.gov.in",
+        "lastVerified": "2026-06-01",
+        "applyChannel": "the NATS portal",
+        "description": "Paid one-year apprenticeships for fresh graduates and diploma holders in industry.",
+        "whoCanApply": "Graduates and diploma holders in engineering, general streams or vocational courses, usually within a few years of passing.",
+        "benefits": "Monthly stipend (partly reimbursed by government) and a Certificate of Proficiency.",
+        "estimatedBenefit": "Paid apprenticeship with stipend",
+        "educationRequirement": "Diploma or degree",
+        "occupationRequirement": "Fresh graduate / diploma holder",
+        "deadlineInfo": "Openings posted throughout the year.",
+        "rules": [
+            {
+                "field": "education",
+                "op": "in",
+                "values": [
+                    "DIPLOMA",
+                    "UNDERGRADUATE",
+                    "POSTGRADUATE"
+                ],
+                "label": "Holds (or is completing) a diploma or degree"
+            },
+            {
+                "field": "occupation",
+                "op": "in",
+                "values": [
+                    "STUDENT",
+                    "UNEMPLOYED"
+                ],
+                "label": "Student or looking for work",
+                "mandatory": false
+            },
+            {
+                "op": "official",
+                "label": "Passed out within the period allowed by NATS"
+            }
+        ],
+        "documents": [
+            {
+                "name": "Degree / diploma certificate",
+                "why": "Eligibility proof."
+            },
+            {
+                "name": "Aadhaar card",
+                "why": "Identity."
+            },
+            {
+                "name": "Bank account details",
+                "why": "Stipend payment."
+            }
+        ],
+        "process": [
+            "Register on the NATS portal.",
+            "Apply to listed establishments.",
+            "Sign the apprenticeship contract."
+        ],
+        "faqs": [],
+        "real": true,
+        "provider": "Government"
+    },
+    {
+        "id": "kcc",
+        "name": "Kisan Credit Card (KCC)",
+        "category": "Agriculture",
+        "department": "Department of Agriculture & Farmers Welfare / NABARD",
+        "level": "National",
+        "state": null,
+        "minAge": 18,
+        "maxAge": null,
+        "incomeMax": null,
+        "status": "Active",
+        "officialUrl": null,
+        "sourceUrl": "https://agriwelfare.gov.in",
+        "lastVerified": "2026-06-01",
+        "applyChannel": "any bank branch (form also available on the PM-KISAN portal)",
+        "description": "Short-term credit for crop cultivation, post-harvest and allied activities at concessional interest.",
+        "whoCanApply": "Farmers — owner cultivators, tenant farmers, sharecroppers, SHGs and joint liability groups; also animal husbandry and fisheries farmers.",
+        "benefits": "Revolving crop loan with interest subvention; prompt repayment incentives reduce the effective rate.",
+        "estimatedBenefit": "Low-interest crop credit",
+        "educationRequirement": "None",
+        "occupationRequirement": "Farmer",
+        "deadlineInfo": "No deadline.",
+        "rules": [
+            {
+                "field": "farmer",
+                "op": "eq",
+                "value": true,
+                "label": "Is a farmer (owner, tenant or sharecropper)"
+            },
+            {
+                "field": "age",
+                "op": "gte",
+                "value": 18,
+                "label": "Aged 18 or above"
+            },
+            {
+                "op": "official",
+                "label": "Bank assesses land / cultivation records"
+            }
+        ],
+        "documents": [
+            {
+                "name": "Land records or tenancy proof",
+                "why": "Shows cultivation."
+            },
+            {
+                "name": "Identity and address proof",
+                "why": "KYC."
+            },
+            {
+                "name": "Photograph",
+                "why": "For the application."
+            }
+        ],
+        "process": [
+            "Fill the KCC form at your bank.",
+            "Bank verifies land and crop details.",
+            "Card issued with sanctioned limit."
+        ],
+        "faqs": [
+            {
+                "q": "Is there an online link?",
+                "a": "KCC is issued by banks. Official application link requires verification for your bank."
+            }
+        ],
+        "real": true,
+        "provider": "Government"
+    },
+    {
+        "id": "pm-kusum",
+        "name": "PM-KUSUM (Solar Pumps for Farmers)",
+        "category": "Agriculture",
+        "department": "Ministry of New & Renewable Energy",
+        "level": "National",
+        "state": null,
+        "minAge": null,
+        "maxAge": null,
+        "incomeMax": null,
+        "status": "Active",
+        "officialUrl": "https://pmkusum.mnre.gov.in",
+        "sourceUrl": "https://pmkusum.mnre.gov.in",
+        "lastVerified": "2026-06-01",
+        "applyChannel": "your state's implementing agency (links on the PM-KUSUM portal)",
+        "description": "Subsidised standalone solar pumps and solarisation of grid-connected pumps for farmers.",
+        "whoCanApply": "Individual farmers, groups of farmers, FPOs and cooperatives, as per state implementation.",
+        "benefits": "Central and state subsidy covering a large share of solar pump cost.",
+        "estimatedBenefit": "Subsidised solar irrigation pump",
+        "educationRequirement": "None",
+        "occupationRequirement": "Farmer",
+        "deadlineInfo": "States open applications in phases.",
+        "rules": [
+            {
+                "field": "farmer",
+                "op": "eq",
+                "value": true,
+                "label": "Is a farmer"
+            },
+            {
+                "field": "ownsLand",
+                "op": "eq",
+                "value": true,
+                "label": "Has cultivable land for the pump",
+                "verify": true,
+                "doc": "Land records"
+            },
+            {
+                "op": "official",
+                "label": "State agency has an open application window"
+            }
+        ],
+        "documents": [
+            {
+                "name": "Land records",
+                "why": "Pump installation site."
+            },
+            {
+                "name": "Aadhaar card",
+                "why": "Identity."
+            },
+            {
+                "name": "Bank account details",
+                "why": "Farmer share / subsidy."
+            }
+        ],
+        "process": [
+            "Find your state agency on the portal.",
+            "Apply during the open window.",
+            "Pay farmer share; pump is installed."
+        ],
+        "faqs": [],
+        "real": true,
+        "provider": "Government"
+    },
+    {
+        "id": "pm-surya-ghar",
+        "name": "PM Surya Ghar: Muft Bijli Yojana",
+        "category": "Housing",
+        "department": "Ministry of New & Renewable Energy",
+        "level": "National",
+        "state": null,
+        "minAge": null,
+        "maxAge": null,
+        "incomeMax": null,
+        "status": "Active",
+        "officialUrl": "https://pmsuryaghar.gov.in",
+        "sourceUrl": "https://pmsuryaghar.gov.in",
+        "lastVerified": "2026-06-01",
+        "applyChannel": "the PM Surya Ghar national portal",
+        "description": "Subsidy for installing rooftop solar on homes, helping households get free electricity up to a monthly limit.",
+        "whoCanApply": "Households that own a house with a suitable roof and a valid electricity connection, and have not availed another solar subsidy.",
+        "benefits": "Central financial assistance for rooftop solar (higher per kW for smaller systems) and concessional loans.",
+        "estimatedBenefit": "Rooftop solar subsidy",
+        "educationRequirement": "None",
+        "occupationRequirement": "None",
+        "deadlineInfo": "Ongoing.",
+        "rules": [
+            {
+                "field": "ownsPuccaHouse",
+                "op": "eq",
+                "value": true,
+                "label": "Owns a house with a roof suitable for solar"
+            },
+            {
+                "op": "official",
+                "label": "Has a valid electricity connection and no previous solar subsidy"
+            }
+        ],
+        "documents": [
+            {
+                "name": "Electricity bill",
+                "why": "Consumer number verification."
+            },
+            {
+                "name": "Proof of house ownership",
+                "why": "Roof rights."
+            },
+            {
+                "name": "Bank account details",
+                "why": "Subsidy credit."
+            }
+        ],
+        "process": [
+            "Register on the portal with your DISCOM consumer number.",
+            "Choose a registered vendor and install.",
+            "Net meter installed; subsidy credited."
+        ],
+        "faqs": [],
+        "real": true,
+        "provider": "Government"
+    },
+    {
+        "id": "jsy",
+        "name": "Janani Suraksha Yojana (JSY)",
+        "category": "Healthcare",
+        "department": "National Health Mission, Ministry of Health & Family Welfare",
+        "level": "National",
+        "state": null,
+        "minAge": null,
+        "maxAge": null,
+        "incomeMax": null,
+        "status": "Active",
+        "officialUrl": null,
+        "sourceUrl": "https://nhm.gov.in",
+        "lastVerified": "2026-06-01",
+        "applyChannel": "your ASHA worker, Anganwadi or government health facility",
+        "description": "Cash assistance to promote institutional deliveries among poor pregnant women.",
+        "whoCanApply": "Pregnant women — all women in low-performing states and BPL/SC/ST women in other states — delivering in a government or accredited facility.",
+        "benefits": "Cash assistance on institutional delivery; amount differs between rural/urban and state categories.",
+        "estimatedBenefit": "Cash support for hospital delivery",
+        "educationRequirement": "None",
+        "occupationRequirement": "None",
+        "deadlineInfo": "Register during pregnancy.",
+        "rules": [
+            {
+                "field": "gender",
+                "op": "in",
+                "values": [
+                    "FEMALE"
+                ],
+                "label": "Applicant is a woman"
+            },
+            {
+                "field": "pregnant",
+                "op": "eq",
+                "value": true,
+                "label": "Currently pregnant"
+            },
+            {
+                "field": "rationCard",
+                "op": "eq",
+                "value": true,
+                "label": "BPL household (required in high-performing states)",
+                "mandatory": false,
+                "verify": true,
+                "doc": "BPL card or caste certificate"
+            }
+        ],
+        "documents": [
+            {
+                "name": "MCP card",
+                "why": "Antenatal registration."
+            },
+            {
+                "name": "BPL card or caste certificate",
+                "why": "Eligibility in some states."
+            },
+            {
+                "name": "Bank account details",
+                "why": "Cash transfer."
+            }
+        ],
+        "process": [
+            "Register pregnancy with ASHA / health centre.",
+            "Deliver at a government or accredited facility.",
+            "Cash is paid after delivery."
+        ],
+        "faqs": [],
+        "real": true,
+        "provider": "Government"
+    },
+    {
+        "id": "ignwps",
+        "name": "Indira Gandhi National Widow Pension Scheme (NSAP)",
+        "category": "Women and Child Welfare",
+        "department": "Ministry of Rural Development (National Social Assistance Programme)",
+        "level": "National",
+        "state": null,
+        "minAge": 40,
+        "maxAge": 79,
+        "incomeMax": null,
+        "status": "Active",
+        "officialUrl": "https://nsap.nic.in",
+        "sourceUrl": "https://nsap.nic.in",
+        "lastVerified": "2026-06-01",
+        "applyChannel": "your Gram Panchayat / Taluk office or state social security portal",
+        "description": "Monthly pension for widows from BPL households.",
+        "whoCanApply": "Widows aged 40–79 belonging to BPL households.",
+        "benefits": "Central assistance of ₹300 per month, with state top-ups.",
+        "estimatedBenefit": "₹300/month central share + state top-up",
+        "educationRequirement": "None",
+        "occupationRequirement": "None",
+        "deadlineInfo": "No deadline.",
+        "rules": [
+            {
+                "field": "gender",
+                "op": "in",
+                "values": [
+                    "FEMALE"
+                ],
+                "label": "Applicant is a woman"
+            },
+            {
+                "field": "age",
+                "op": "between",
+                "min": 40,
+                "max": 79,
+                "label": "Aged 40–79"
+            },
+            {
+                "field": "rationCard",
+                "op": "eq",
+                "value": true,
+                "label": "Belongs to a BPL household",
+                "verify": true,
+                "doc": "BPL ration card"
+            },
+            {
+                "op": "official",
+                "label": "Is a widow (husband's death certificate required)"
+            }
+        ],
+        "documents": [
+            {
+                "name": "Husband's death certificate",
+                "why": "Proves widowhood."
+            },
+            {
+                "name": "BPL ration card",
+                "why": "Proves BPL status."
+            },
+            {
+                "name": "Age proof",
+                "why": "Confirms age range."
+            },
+            {
+                "name": "Bank account details",
+                "why": "Pension DBT."
+            }
+        ],
+        "process": [
+            "Apply at Gram Panchayat / Taluk office.",
+            "Verification by officials.",
+            "Pension credited monthly."
+        ],
+        "faqs": [],
+        "real": true,
+        "provider": "Government"
+    },
+    {
+        "id": "nfbs",
+        "name": "National Family Benefit Scheme (NSAP)",
+        "category": "Financial Assistance",
+        "department": "Ministry of Rural Development (National Social Assistance Programme)",
+        "level": "National",
+        "state": null,
+        "minAge": null,
+        "maxAge": null,
+        "incomeMax": null,
+        "status": "Active",
+        "officialUrl": "https://nsap.nic.in",
+        "sourceUrl": "https://nsap.nic.in",
+        "lastVerified": "2026-06-01",
+        "applyChannel": "your Gram Panchayat / Taluk office",
+        "description": "One-time assistance to a BPL family on the death of its primary breadwinner.",
+        "whoCanApply": "BPL households whose primary breadwinner (aged 18–59) has died.",
+        "benefits": "Lump-sum assistance of ₹20,000.",
+        "estimatedBenefit": "₹20,000 one-time support",
+        "educationRequirement": "None",
+        "occupationRequirement": "None",
+        "deadlineInfo": "Apply soon after the death; check state time limits.",
+        "rules": [
+            {
+                "field": "rationCard",
+                "op": "eq",
+                "value": true,
+                "label": "Belongs to a BPL household",
+                "verify": true,
+                "doc": "BPL ration card"
+            },
+            {
+                "op": "official",
+                "label": "Primary breadwinner aged 18–59 has died"
+            }
+        ],
+        "documents": [
+            {
+                "name": "Death certificate of breadwinner",
+                "why": "Mandatory proof."
+            },
+            {
+                "name": "BPL ration card",
+                "why": "Proves BPL status."
+            },
+            {
+                "name": "Bank account details",
+                "why": "Payment."
+            }
+        ],
+        "process": [
+            "Apply at the Gram Panchayat / Taluk office.",
+            "Officials verify.",
+            "Assistance released."
+        ],
+        "faqs": [],
+        "real": true,
+        "provider": "Government"
+    },
+    {
+        "id": "day-nrlm",
+        "name": "Deendayal Antyodaya Yojana – National Rural Livelihoods Mission (DAY-NRLM)",
+        "category": "Women and Child Welfare",
+        "department": "Ministry of Rural Development",
+        "level": "National",
+        "state": null,
+        "minAge": 18,
+        "maxAge": null,
+        "incomeMax": null,
+        "status": "Active",
+        "officialUrl": "https://aajeevika.gov.in",
+        "sourceUrl": "https://aajeevika.gov.in",
+        "lastVerified": "2026-06-01",
+        "applyChannel": "your village's Self-Help Group or Block Mission office",
+        "description": "Organises rural poor women into Self-Help Groups and supports them with credit, skills and livelihoods.",
+        "whoCanApply": "Rural poor households, with at least one woman member joining a Self-Help Group.",
+        "benefits": "Revolving fund, community investment fund, bank linkage at subsidised interest and livelihood training.",
+        "estimatedBenefit": "SHG credit and livelihood support",
+        "educationRequirement": "None",
+        "occupationRequirement": "None",
+        "deadlineInfo": "Ongoing.",
+        "rules": [
+            {
+                "field": "area",
+                "op": "in",
+                "values": [
+                    "RURAL"
+                ],
+                "label": "Lives in a rural area"
+            },
+            {
+                "field": "gender",
+                "op": "in",
+                "values": [
+                    "FEMALE"
+                ],
+                "label": "Woman member to join a Self-Help Group"
+            },
+            {
+                "field": "incomeRange",
+                "op": "income_lte",
+                "value": 250000,
+                "label": "Low-income household (indicator)",
+                "mandatory": false
+            }
+        ],
+        "documents": [
+            {
+                "name": "Aadhaar card",
+                "why": "Member identification."
+            },
+            {
+                "name": "Bank account details",
+                "why": "SHG linkage."
+            }
+        ],
+        "process": [
+            "Contact your village SHG or Block Mission office.",
+            "Join or form an SHG.",
+            "Access revolving fund and bank credit."
+        ],
+        "faqs": [],
+        "real": true,
+        "provider": "Government"
+    },
+    {
+        "id": "scss",
+        "name": "Senior Citizens Savings Scheme (SCSS)",
+        "category": "Senior Citizen Benefits",
+        "department": "Department of Economic Affairs, Ministry of Finance",
+        "level": "National",
+        "state": null,
+        "minAge": 60,
+        "maxAge": null,
+        "incomeMax": null,
+        "status": "Active",
+        "officialUrl": null,
+        "sourceUrl": "https://www.indiapost.gov.in",
+        "lastVerified": "2026-06-01",
+        "applyChannel": "a post office or authorised bank branch",
+        "description": "Government-backed savings scheme giving senior citizens a regular quarterly interest income.",
+        "whoCanApply": "Individuals aged 60+ (and certain retirees aged 55–60 under conditions).",
+        "benefits": "Government-notified interest rate paid quarterly; deposits up to the notified limit; tax benefits.",
+        "estimatedBenefit": "Regular quarterly interest income",
+        "educationRequirement": "None",
+        "occupationRequirement": "None",
+        "deadlineInfo": "No deadline.",
+        "rules": [
+            {
+                "field": "age",
+                "op": "gte",
+                "value": 60,
+                "label": "Aged 60 or above"
+            },
+            {
+                "field": "hasBankAccount",
+                "op": "eq",
+                "value": true,
+                "label": "Has a bank / post office account",
+                "mandatory": false
+            }
+        ],
+        "documents": [
+            {
+                "name": "Age proof",
+                "why": "Eligibility."
+            },
+            {
+                "name": "PAN and address proof",
+                "why": "KYC."
+            },
+            {
+                "name": "Photographs",
+                "why": "Account form."
+            }
+        ],
+        "process": [
+            "Visit a post office or authorised bank.",
+            "Fill the SCSS form and deposit.",
+            "Interest is credited quarterly."
+        ],
+        "faqs": [],
+        "real": true,
+        "provider": "Government"
+    },
+    {
+        "id": "tn-pudhumai-penn",
+        "name": "Pudhumai Penn (Moovalur Ramamirtham Higher Education Assurance)",
+        "category": "Education",
+        "department": "Social Welfare & Women Empowerment Department, Government of Tamil Nadu",
+        "level": "State",
+        "state": "Tamil Nadu",
+        "minAge": null,
+        "maxAge": null,
+        "incomeMax": null,
+        "status": "Active",
+        "officialUrl": "https://www.pudhumaipenn.tn.gov.in",
+        "sourceUrl": "https://www.pudhumaipenn.tn.gov.in",
+        "lastVerified": "2026-06-01",
+        "applyChannel": "your college nodal officer / the Pudhumai Penn portal",
+        "description": "Monthly assistance for girls who studied Class 6–12 in Tamil Nadu government schools and join higher education.",
+        "whoCanApply": "Girl students who studied Class 6 to 12 in TN government schools and are pursuing higher education (degree, diploma, ITI).",
+        "benefits": "₹1,000 per month until course completion.",
+        "estimatedBenefit": "₹1,000 per month",
+        "educationRequirement": "Higher education after government school",
+        "occupationRequirement": "Student",
+        "deadlineInfo": "Enrol through your college each academic year.",
+        "rules": [
+            {
+                "field": "state",
+                "op": "in",
+                "values": [
+                    "Tamil Nadu"
+                ],
+                "label": "Studies in Tamil Nadu"
+            },
+            {
+                "field": "gender",
+                "op": "in",
+                "values": [
+                    "FEMALE"
+                ],
+                "label": "Girl student"
+            },
+            {
+                "field": "student",
+                "op": "eq",
+                "value": true,
+                "label": "Currently studying"
+            },
+            {
+                "field": "education",
+                "op": "in",
+                "values": [
+                    "DIPLOMA",
+                    "UNDERGRADUATE",
+                    "POSTGRADUATE"
+                ],
+                "label": "Pursuing higher education"
+            },
+            {
+                "op": "official",
+                "label": "Studied Class 6–12 in a Tamil Nadu government school"
+            }
+        ],
+        "documents": [
+            {
+                "name": "School study certificates (Class 6–12)",
+                "why": "Proves government school study."
+            },
+            {
+                "name": "College bonafide certificate",
+                "why": "Current enrolment."
+            },
+            {
+                "name": "Aadhaar-linked bank account",
+                "why": "Monthly DBT."
+            }
+        ],
+        "process": [
+            "Register through your college.",
+            "Upload school records.",
+            "Monthly amount credited."
+        ],
+        "faqs": [],
+        "real": true,
+        "provider": "Government"
+    },
+    {
+        "id": "tn-kmut",
+        "name": "Kalaignar Magalir Urimai Thogai (Tamil Nadu)",
+        "category": "Women and Child Welfare",
+        "department": "Government of Tamil Nadu",
+        "level": "State",
+        "state": "Tamil Nadu",
+        "minAge": 21,
+        "maxAge": null,
+        "incomeMax": 250000,
+        "status": "Active",
+        "officialUrl": "https://kmut.tn.gov.in",
+        "sourceUrl": "https://kmut.tn.gov.in",
+        "lastVerified": "2026-06-01",
+        "applyChannel": "ration shop camps / the KMUT portal",
+        "description": "Monthly entitlement for women heads of eligible Tamil Nadu families.",
+        "whoCanApply": "Women heads of family aged 21+ in Tamil Nadu with family income up to ₹2.5 lakh and within land and electricity-use limits.",
+        "benefits": "₹1,000 per month credited to the woman head of family.",
+        "estimatedBenefit": "₹1,000 per month",
+        "educationRequirement": "None",
+        "occupationRequirement": "None",
+        "deadlineInfo": "Applications via notified camps.",
+        "rules": [
+            {
+                "field": "state",
+                "op": "in",
+                "values": [
+                    "Tamil Nadu"
+                ],
+                "label": "Resident of Tamil Nadu"
+            },
+            {
+                "field": "gender",
+                "op": "in",
+                "values": [
+                    "FEMALE"
+                ],
+                "label": "Woman head of family"
+            },
+            {
+                "field": "age",
+                "op": "gte",
+                "value": 21,
+                "label": "Aged 21 or above"
+            },
+            {
+                "field": "incomeRange",
+                "op": "income_lte",
+                "value": 250000,
+                "label": "Family income up to ₹2.5 lakh",
+                "verify": true,
+                "doc": "Ration card"
+            },
+            {
+                "field": "incomeTaxPayer",
+                "op": "eq",
+                "value": false,
+                "label": "No income-tax payer in the family"
+            }
+        ],
+        "documents": [
+            {
+                "name": "Ration card",
+                "why": "Family and head identification."
+            },
+            {
+                "name": "Aadhaar card",
+                "why": "Identity."
+            },
+            {
+                "name": "Bank account details",
+                "why": "Monthly DBT."
+            }
+        ],
+        "process": [
+            "Apply at the notified camp or portal.",
+            "Verification by officials.",
+            "Monthly credit begins."
+        ],
+        "faqs": [],
+        "real": true,
+        "provider": "Government"
+    },
+    {
+        "id": "tn-cmchis",
+        "name": "Chief Minister's Comprehensive Health Insurance Scheme (Tamil Nadu)",
+        "category": "Healthcare",
+        "department": "Health & Family Welfare Department, Government of Tamil Nadu",
+        "level": "State",
+        "state": "Tamil Nadu",
+        "minAge": null,
+        "maxAge": null,
+        "incomeMax": 120000,
+        "status": "Active",
+        "officialUrl": "https://www.cmchistn.com",
+        "sourceUrl": "https://www.cmchistn.com",
+        "lastVerified": "2026-06-01",
+        "applyChannel": "district enrolment kiosks",
+        "description": "Cashless treatment at empanelled hospitals for low-income Tamil Nadu families, integrated with PM-JAY.",
+        "whoCanApply": "Tamil Nadu families with annual income up to ₹1.2 lakh (and certain notified categories).",
+        "benefits": "Cashless hospitalisation cover of up to ₹5 lakh per family per year at empanelled hospitals.",
+        "estimatedBenefit": "Up to ₹5 lakh health cover",
+        "educationRequirement": "None",
+        "occupationRequirement": "None",
+        "deadlineInfo": "Enrolment open throughout the year.",
+        "rules": [
+            {
+                "field": "state",
+                "op": "in",
+                "values": [
+                    "Tamil Nadu"
+                ],
+                "label": "Resident of Tamil Nadu"
+            },
+            {
+                "field": "incomeRange",
+                "op": "income_lte",
+                "value": 120000,
+                "label": "Family income up to ₹1.2 lakh",
+                "verify": true,
+                "doc": "Income certificate (VAO)"
+            }
+        ],
+        "documents": [
+            {
+                "name": "Ration card",
+                "why": "Family identification."
+            },
+            {
+                "name": "Income certificate (VAO)",
+                "why": "Income eligibility."
+            },
+            {
+                "name": "Aadhaar card",
+                "why": "Identity."
+            }
+        ],
+        "process": [
+            "Visit the district kiosk with documents.",
+            "Biometric enrolment.",
+            "Receive the health insurance card."
+        ],
+        "faqs": [],
+        "real": true,
+        "provider": "Government"
+    },
+    {
+        "id": "mh-mjpjay",
+        "name": "Mahatma Jyotirao Phule Jan Arogya Yojana (Maharashtra)",
+        "category": "Healthcare",
+        "department": "Public Health Department, Government of Maharashtra",
+        "level": "State",
+        "state": "Maharashtra",
+        "minAge": null,
+        "maxAge": null,
+        "incomeMax": null,
+        "status": "Active",
+        "officialUrl": "https://www.jeevandayee.gov.in",
+        "sourceUrl": "https://www.jeevandayee.gov.in",
+        "lastVerified": "2026-06-01",
+        "applyChannel": "an empanelled hospital's Arogyamitra desk",
+        "description": "Cashless health insurance for Maharashtra families, integrated with PM-JAY.",
+        "whoCanApply": "Maharashtra families holding a valid ration card or domicile proof as per current scheme expansion.",
+        "benefits": "Cashless treatment for listed procedures at empanelled hospitals up to the notified family cover.",
+        "estimatedBenefit": "Cashless hospital treatment",
+        "educationRequirement": "None",
+        "occupationRequirement": "None",
+        "deadlineInfo": "No deadline.",
+        "rules": [
+            {
+                "field": "state",
+                "op": "in",
+                "values": [
+                    "Maharashtra"
+                ],
+                "label": "Resident of Maharashtra"
+            },
+            {
+                "field": "rationCard",
+                "op": "eq",
+                "value": true,
+                "label": "Holds a ration card (indicator)",
+                "mandatory": false,
+                "verify": true,
+                "doc": "Ration card"
+            }
+        ],
+        "documents": [
+            {
+                "name": "Ration card",
+                "why": "Family identification."
+            },
+            {
+                "name": "Aadhaar card",
+                "why": "Identity."
+            }
+        ],
+        "process": [
+            "Visit an empanelled hospital.",
+            "Arogyamitra verifies eligibility.",
+            "Treatment is cashless after pre-authorisation."
+        ],
+        "faqs": [],
+        "real": true,
+        "provider": "Government"
+    },
+    {
+        "id": "mh-ladki-bahin",
+        "name": "Mukhyamantri Majhi Ladki Bahin Yojana (Maharashtra)",
+        "category": "Women and Child Welfare",
+        "department": "Women & Child Development Department, Government of Maharashtra",
+        "level": "State",
+        "state": "Maharashtra",
+        "minAge": 21,
+        "maxAge": 65,
+        "incomeMax": 250000,
+        "status": "Active",
+        "officialUrl": "https://ladakibahin.maharashtra.gov.in",
+        "sourceUrl": "https://ladakibahin.maharashtra.gov.in",
+        "lastVerified": "2026-06-01",
+        "applyChannel": "the Ladki Bahin portal / Anganwadi / Setu centres",
+        "description": "Monthly financial assistance for women in Maharashtra.",
+        "whoCanApply": "Women aged 21–65 residing in Maharashtra (married, widowed, divorced, abandoned or one unmarried woman per family) with family income up to ₹2.5 lakh.",
+        "benefits": "₹1,500 per month by DBT.",
+        "estimatedBenefit": "₹1,500 per month",
+        "educationRequirement": "None",
+        "occupationRequirement": "None",
+        "deadlineInfo": "Check the portal for current registration status.",
+        "rules": [
+            {
+                "field": "state",
+                "op": "in",
+                "values": [
+                    "Maharashtra"
+                ],
+                "label": "Resident of Maharashtra"
+            },
+            {
+                "field": "gender",
+                "op": "in",
+                "values": [
+                    "FEMALE"
+                ],
+                "label": "Applicant is a woman"
+            },
+            {
+                "field": "age",
+                "op": "between",
+                "min": 21,
+                "max": 65,
+                "label": "Aged 21–65"
+            },
+            {
+                "field": "incomeRange",
+                "op": "income_lte",
+                "value": 250000,
+                "label": "Family income up to ₹2.5 lakh",
+                "verify": true,
+                "doc": "Income certificate or yellow/orange ration card"
+            },
+            {
+                "field": "incomeTaxPayer",
+                "op": "eq",
+                "value": false,
+                "label": "No income-tax payer in the family"
+            }
+        ],
+        "documents": [
+            {
+                "name": "Income certificate or yellow/orange ration card",
+                "why": "Income eligibility."
+            },
+            {
+                "name": "Domicile proof",
+                "why": "Maharashtra residence."
+            },
+            {
+                "name": "Aadhaar-linked bank account",
+                "why": "Monthly DBT."
+            }
+        ],
+        "process": [
+            "Apply on the portal or at an Anganwadi.",
+            "Verification.",
+            "Monthly DBT."
+        ],
+        "faqs": [],
+        "real": true,
+        "provider": "Government"
+    },
+    {
+        "id": "mh-mahadbt",
+        "name": "MahaDBT Scholarships (Maharashtra)",
+        "category": "Education",
+        "department": "Government of Maharashtra (multiple departments)",
+        "level": "State",
+        "state": "Maharashtra",
+        "minAge": null,
+        "maxAge": null,
+        "incomeMax": 800000,
+        "status": "Active",
+        "officialUrl": "https://mahadbt.maharashtra.gov.in",
+        "sourceUrl": "https://mahadbt.maharashtra.gov.in",
+        "lastVerified": "2026-06-01",
+        "applyChannel": "the MahaDBT portal",
+        "description": "Single portal for Maharashtra's post-matric scholarships, fee reimbursement and freeships across departments.",
+        "whoCanApply": "Maharashtra domicile students in post-matric courses; category and income limits differ by scheme (up to ₹8 lakh for some).",
+        "benefits": "Tuition/exam fee reimbursement and maintenance allowance, depending on scheme.",
+        "estimatedBenefit": "Fee reimbursement + allowance (varies)",
+        "educationRequirement": "Post-matric",
+        "occupationRequirement": "Student",
+        "deadlineInfo": "Opens once per academic year.",
+        "rules": [
+            {
+                "field": "state",
+                "op": "in",
+                "values": [
+                    "Maharashtra"
+                ],
+                "label": "Maharashtra domicile"
+            },
+            {
+                "field": "student",
+                "op": "eq",
+                "value": true,
+                "label": "Currently studying"
+            },
+            {
+                "field": "education",
+                "op": "in",
+                "values": [
+                    "HIGHER_SECONDARY",
+                    "DIPLOMA",
+                    "UNDERGRADUATE",
+                    "POSTGRADUATE"
+                ],
+                "label": "Post-matric course"
+            },
+            {
+                "field": "incomeRange",
+                "op": "income_lte",
+                "value": 800000,
+                "label": "Family income within the scheme limit (varies)",
+                "verify": true,
+                "doc": "Income certificate"
+            }
+        ],
+        "documents": [
+            {
+                "name": "Income certificate",
+                "why": "Scheme income limit."
+            },
+            {
+                "name": "Domicile certificate",
+                "why": "Maharashtra residence."
+            },
+            {
+                "name": "Caste certificate (if applicable)",
+                "why": "Category-based schemes.",
+                "condition": {
+                    "field": "householdCategory",
+                    "values": [
+                        "SC",
+                        "ST",
+                        "OBC"
+                    ]
+                }
+            },
+            {
+                "name": "Admission / fee receipt",
+                "why": "Enrolment proof."
+            }
+        ],
+        "process": [
+            "Register on MahaDBT.",
+            "The portal shows schemes you qualify for.",
+            "Apply and get college verification."
+        ],
+        "faqs": [],
+        "real": true,
+        "provider": "Government"
+    },
+    {
+        "id": "up-scholarship",
+        "name": "UP Scholarship & Fee Reimbursement (Uttar Pradesh)",
+        "category": "Education",
+        "department": "Social Welfare Department, Government of Uttar Pradesh",
+        "level": "State",
+        "state": "Uttar Pradesh",
+        "minAge": null,
+        "maxAge": null,
+        "incomeMax": 250000,
+        "status": "Active",
+        "officialUrl": "https://scholarship.up.gov.in",
+        "sourceUrl": "https://scholarship.up.gov.in",
+        "lastVerified": "2026-06-01",
+        "applyChannel": "the UP Scholarship portal",
+        "description": "Pre-matric and post-matric scholarships and fee reimbursement for UP students across categories.",
+        "whoCanApply": "Uttar Pradesh students; income limits depend on category (commonly ₹2–2.5 lakh).",
+        "benefits": "Scholarship and fee reimbursement as per category and course.",
+        "estimatedBenefit": "Scholarship + fee reimbursement",
+        "educationRequirement": "Class 9 onwards",
+        "occupationRequirement": "Student",
+        "deadlineInfo": "Annual timeline published on the portal.",
+        "rules": [
+            {
+                "field": "state",
+                "op": "in",
+                "values": [
+                    "Uttar Pradesh"
+                ],
+                "label": "Studies in / domiciled in Uttar Pradesh"
+            },
+            {
+                "field": "student",
+                "op": "eq",
+                "value": true,
+                "label": "Currently studying"
+            },
+            {
+                "field": "incomeRange",
+                "op": "income_lte",
+                "value": 250000,
+                "label": "Family income within the category limit",
+                "verify": true,
+                "doc": "Income certificate"
+            }
+        ],
+        "documents": [
+            {
+                "name": "Income certificate",
+                "why": "Income limit."
+            },
+            {
+                "name": "Caste certificate (if applicable)",
+                "why": "Category eligibility.",
+                "condition": {
+                    "field": "householdCategory",
+                    "values": [
+                        "SC",
+                        "ST",
+                        "OBC"
+                    ]
+                }
+            },
+            {
+                "name": "Previous mark sheet",
+                "why": "Academic eligibility."
+            },
+            {
+                "name": "Aadhaar-seeded bank account",
+                "why": "DBT."
+            }
+        ],
+        "process": [
+            "Register on the portal.",
+            "Submit application and print form.",
+            "Submit to institution for verification."
+        ],
+        "faqs": [],
+        "real": true,
+        "provider": "Government"
+    },
+    {
+        "id": "up-kanya-sumangala",
+        "name": "Mukhyamantri Kanya Sumangala Yojana (Uttar Pradesh)",
+        "category": "Women and Child Welfare",
+        "department": "Women Welfare Department, Government of Uttar Pradesh",
+        "level": "State",
+        "state": "Uttar Pradesh",
+        "minAge": null,
+        "maxAge": null,
+        "incomeMax": 300000,
+        "status": "Active",
+        "officialUrl": "https://mksy.up.gov.in",
+        "sourceUrl": "https://mksy.up.gov.in",
+        "lastVerified": "2026-06-01",
+        "applyChannel": "the MKSY portal",
+        "description": "Staged financial support for girls from birth through graduation in Uttar Pradesh.",
+        "whoCanApply": "UP resident families with annual income up to ₹3 lakh, for up to two daughters.",
+        "benefits": "Instalments at birth, immunisation and school/college milestones (total as notified by the state).",
+        "estimatedBenefit": "Staged support for daughters",
+        "educationRequirement": "None",
+        "occupationRequirement": "None",
+        "deadlineInfo": "Apply at each eligible milestone.",
+        "rules": [
+            {
+                "field": "state",
+                "op": "in",
+                "values": [
+                    "Uttar Pradesh"
+                ],
+                "label": "Resident of Uttar Pradesh"
+            },
+            {
+                "field": "hasGirlChildUnder10",
+                "op": "eq",
+                "value": true,
+                "label": "Has a daughter (milestones start at birth)",
+                "mandatory": false
+            },
+            {
+                "field": "incomeRange",
+                "op": "income_lte",
+                "value": 300000,
+                "label": "Family income up to ₹3 lakh",
+                "verify": true,
+                "doc": "Income certificate"
+            }
+        ],
+        "documents": [
+            {
+                "name": "Daughter's birth certificate",
+                "why": "Milestone eligibility."
+            },
+            {
+                "name": "Income certificate",
+                "why": "Income limit."
+            },
+            {
+                "name": "Bank account details",
+                "why": "DBT."
+            }
+        ],
+        "process": [
+            "Apply on the MKSY portal.",
+            "Verification by officials.",
+            "Instalments at each milestone."
+        ],
+        "faqs": [],
+        "real": true,
+        "provider": "Government"
+    },
+    {
+        "id": "wb-kanyashree",
+        "name": "Kanyashree Prakalpa (West Bengal)",
+        "category": "Women and Child Welfare",
+        "department": "Department of Women & Child Development, Government of West Bengal",
+        "level": "State",
+        "state": "West Bengal",
+        "minAge": 13,
+        "maxAge": 19,
+        "incomeMax": 120000,
+        "status": "Active",
+        "officialUrl": "https://wbkanyashree.gov.in",
+        "sourceUrl": "https://wbkanyashree.gov.in",
+        "lastVerified": "2026-06-01",
+        "applyChannel": "your school / college Kanyashree nodal officer",
+        "description": "Conditional cash transfer to keep adolescent girls in education and delay marriage.",
+        "whoCanApply": "Unmarried girls aged 13–19 studying in Class 8 or above in West Bengal, with family income up to ₹1.2 lakh (condition relaxed for some categories).",
+        "benefits": "Annual scholarship (K1) and a one-time grant at 18 (K2) if still studying and unmarried.",
+        "estimatedBenefit": "Annual scholarship + one-time grant",
+        "educationRequirement": "Class 8 or above",
+        "occupationRequirement": "Student",
+        "deadlineInfo": "Apply through your institution each year.",
+        "rules": [
+            {
+                "field": "state",
+                "op": "in",
+                "values": [
+                    "West Bengal"
+                ],
+                "label": "Studies in West Bengal"
+            },
+            {
+                "field": "gender",
+                "op": "in",
+                "values": [
+                    "FEMALE"
+                ],
+                "label": "Girl student"
+            },
+            {
+                "field": "age",
+                "op": "between",
+                "min": 13,
+                "max": 19,
+                "label": "Aged 13–19"
+            },
+            {
+                "field": "student",
+                "op": "eq",
+                "value": true,
+                "label": "Currently studying"
+            },
+            {
+                "field": "incomeRange",
+                "op": "income_lte",
+                "value": 120000,
+                "label": "Family income up to ₹1.2 lakh",
+                "mandatory": false,
+                "verify": true,
+                "doc": "Income certificate"
+            },
+            {
+                "op": "official",
+                "label": "Unmarried at the time of application"
+            }
+        ],
+        "documents": [
+            {
+                "name": "Birth certificate",
+                "why": "Age proof."
+            },
+            {
+                "name": "Income certificate",
+                "why": "Income limit."
+            },
+            {
+                "name": "Bank account in the girl's name",
+                "why": "DBT."
+            }
+        ],
+        "process": [
+            "Collect the form at school.",
+            "Submit with documents.",
+            "Amount credited after approval."
+        ],
+        "faqs": [],
+        "real": true,
+        "provider": "Government"
+    },
+    {
+        "id": "wb-swasthya-sathi",
+        "name": "Swasthya Sathi (West Bengal)",
+        "category": "Healthcare",
+        "department": "Department of Health & Family Welfare, Government of West Bengal",
+        "level": "State",
+        "state": "West Bengal",
+        "minAge": null,
+        "maxAge": null,
+        "incomeMax": null,
+        "status": "Active",
+        "officialUrl": "https://swasthyasathi.gov.in",
+        "sourceUrl": "https://swasthyasathi.gov.in",
+        "lastVerified": "2026-06-01",
+        "applyChannel": "Duare Sarkar camps",
+        "description": "Family health cover for West Bengal residents, with the card issued in the name of the senior woman of the family.",
+        "whoCanApply": "West Bengal families not covered by other government health schemes.",
+        "benefits": "Cashless secondary and tertiary care up to ₹5 lakh per family per year.",
+        "estimatedBenefit": "Up to ₹5 lakh health cover",
+        "educationRequirement": "None",
+        "occupationRequirement": "None",
+        "deadlineInfo": "Enrolment via Duare Sarkar camps.",
+        "rules": [
+            {
+                "field": "state",
+                "op": "in",
+                "values": [
+                    "West Bengal"
+                ],
+                "label": "Resident of West Bengal"
+            },
+            {
+                "op": "official",
+                "label": "Not covered by another government health insurance scheme"
+            }
+        ],
+        "documents": [
+            {
+                "name": "Aadhaar card",
+                "why": "Identity."
+            },
+            {
+                "name": "Ration card / residence proof",
+                "why": "Family details."
+            }
+        ],
+        "process": [
+            "Apply at a Duare Sarkar camp.",
+            "Verification.",
+            "Smart card issued."
+        ],
+        "faqs": [],
+        "real": true,
+        "provider": "Government"
+    },
+    {
+        "id": "wb-lakshmir-bhandar",
+        "name": "Lakshmir Bhandar (West Bengal)",
+        "category": "Women and Child Welfare",
+        "department": "Department of Women & Child Development, Government of West Bengal",
+        "level": "State",
+        "state": "West Bengal",
+        "minAge": 25,
+        "maxAge": 60,
+        "incomeMax": null,
+        "status": "Active",
+        "officialUrl": "https://socialsecurity.wb.gov.in",
+        "sourceUrl": "https://socialsecurity.wb.gov.in",
+        "lastVerified": "2026-06-01",
+        "applyChannel": "Duare Sarkar camps",
+        "description": "Monthly basic income support for women heads of West Bengal households.",
+        "whoCanApply": "Women aged 25–60 residing in West Bengal with a Swasthya Sathi card, who are not permanent government employees or pensioners.",
+        "benefits": "Monthly assistance by DBT, with a higher amount for SC/ST women (as notified).",
+        "estimatedBenefit": "Monthly income support",
+        "educationRequirement": "None",
+        "occupationRequirement": "Not a permanent government employee",
+        "deadlineInfo": "Via Duare Sarkar camps.",
+        "rules": [
+            {
+                "field": "state",
+                "op": "in",
+                "values": [
+                    "West Bengal"
+                ],
+                "label": "Resident of West Bengal"
+            },
+            {
+                "field": "gender",
+                "op": "in",
+                "values": [
+                    "FEMALE"
+                ],
+                "label": "Applicant is a woman"
+            },
+            {
+                "field": "age",
+                "op": "between",
+                "min": 25,
+                "max": 60,
+                "label": "Aged 25–60"
+            },
+            {
+                "field": "occupation",
+                "op": "in",
+                "values": [
+                    "STUDENT",
+                    "FARMER",
+                    "SELF_EMPLOYED",
+                    "STREET_VENDOR",
+                    "DAILY_WAGE",
+                    "HOMEMAKER",
+                    "UNEMPLOYED",
+                    "OTHER"
+                ],
+                "label": "Not a permanent government employee or pensioner",
+                "mandatory": false
+            }
+        ],
+        "documents": [
+            {
+                "name": "Swasthya Sathi card",
+                "why": "Mandatory linkage."
+            },
+            {
+                "name": "Aadhaar card",
+                "why": "Identity."
+            },
+            {
+                "name": "Bank account details",
+                "why": "DBT."
+            }
+        ],
+        "process": [
+            "Apply at a Duare Sarkar camp.",
+            "Verification.",
+            "Monthly DBT."
+        ],
+        "faqs": [],
+        "real": true,
+        "provider": "Government"
+    },
+    {
+        "id": "mp-ladli-behna",
+        "name": "Mukhyamantri Ladli Behna Yojana (Madhya Pradesh)",
+        "category": "Women and Child Welfare",
+        "department": "Women & Child Development Department, Government of Madhya Pradesh",
+        "level": "State",
+        "state": "Madhya Pradesh",
+        "minAge": 21,
+        "maxAge": 60,
+        "incomeMax": 250000,
+        "status": "Active",
+        "officialUrl": "https://cmladlibahna.mp.gov.in",
+        "sourceUrl": "https://cmladlibahna.mp.gov.in",
+        "lastVerified": "2026-06-01",
+        "applyChannel": "camps organised by Gram Panchayat / ward offices",
+        "description": "Monthly financial assistance for women in Madhya Pradesh.",
+        "whoCanApply": "Married women (including widowed, divorced, abandoned) aged 21–60, MP residents, with family income up to ₹2.5 lakh and no income-tax payer in the family.",
+        "benefits": "Monthly DBT as notified by the state.",
+        "estimatedBenefit": "Monthly DBT to women",
+        "educationRequirement": "None",
+        "occupationRequirement": "None",
+        "deadlineInfo": "Registration in notified phases.",
+        "rules": [
+            {
+                "field": "state",
+                "op": "in",
+                "values": [
+                    "Madhya Pradesh"
+                ],
+                "label": "Resident of Madhya Pradesh"
+            },
+            {
+                "field": "gender",
+                "op": "in",
+                "values": [
+                    "FEMALE"
+                ],
+                "label": "Applicant is a woman"
+            },
+            {
+                "field": "age",
+                "op": "between",
+                "min": 21,
+                "max": 60,
+                "label": "Aged 21–60"
+            },
+            {
+                "field": "incomeRange",
+                "op": "income_lte",
+                "value": 250000,
+                "label": "Family income up to ₹2.5 lakh",
+                "verify": true,
+                "doc": "Samagra ID / income proof"
+            },
+            {
+                "field": "incomeTaxPayer",
+                "op": "eq",
+                "value": false,
+                "label": "No income-tax payer in the family"
+            }
+        ],
+        "documents": [
+            {
+                "name": "Samagra ID / income proof",
+                "why": "Family verification."
+            },
+            {
+                "name": "Aadhaar-linked bank account",
+                "why": "DBT."
+            }
+        ],
+        "process": [
+            "Apply at the camp.",
+            "e-KYC.",
+            "Monthly DBT."
+        ],
+        "faqs": [],
+        "real": true,
+        "provider": "Government"
+    },
+    {
+        "id": "kl-kasp",
+        "name": "Karunya Arogya Suraksha Padhathi – KASP (Kerala)",
+        "category": "Healthcare",
+        "department": "State Health Agency, Government of Kerala",
+        "level": "State",
+        "state": "Kerala",
+        "minAge": null,
+        "maxAge": null,
+        "incomeMax": null,
+        "status": "Active",
+        "officialUrl": "https://sha.kerala.gov.in",
+        "sourceUrl": "https://sha.kerala.gov.in",
+        "lastVerified": "2026-06-01",
+        "applyChannel": "empanelled hospitals / Akshaya centres",
+        "description": "Kerala's health assurance scheme, integrated with PM-JAY, for eligible families.",
+        "whoCanApply": "Families listed under PM-JAY / RSBY and those notified by the state (e.g., priority ration card holders).",
+        "benefits": "Cashless treatment up to ₹5 lakh per family per year at empanelled hospitals.",
+        "estimatedBenefit": "Up to ₹5 lakh health cover",
+        "educationRequirement": "None",
+        "occupationRequirement": "None",
+        "deadlineInfo": "No deadline.",
+        "rules": [
+            {
+                "field": "state",
+                "op": "in",
+                "values": [
+                    "Kerala"
+                ],
+                "label": "Resident of Kerala"
+            },
+            {
+                "field": "rationCard",
+                "op": "eq",
+                "value": true,
+                "label": "Priority ration card holder (indicator)",
+                "mandatory": false,
+                "verify": true,
+                "doc": "Ration card"
+            },
+            {
+                "op": "official",
+                "label": "Family listed in the KASP beneficiary database"
+            }
+        ],
+        "documents": [
+            {
+                "name": "Ration card",
+                "why": "Family identification."
+            },
+            {
+                "name": "Aadhaar card",
+                "why": "e-KYC."
+            }
+        ],
+        "process": [
+            "Check eligibility at an empanelled hospital or Akshaya centre.",
+            "e-KYC and card generation.",
+            "Cashless treatment."
+        ],
+        "faqs": [],
+        "real": true,
+        "provider": "Government"
+    },
+    {
+        "id": "ts-aarogyasri",
+        "name": "Rajiv Aarogyasri (Telangana)",
+        "category": "Healthcare",
+        "department": "Aarogyasri Health Care Trust, Government of Telangana",
+        "level": "State",
+        "state": "Telangana",
+        "minAge": null,
+        "maxAge": null,
+        "incomeMax": null,
+        "status": "Active",
+        "officialUrl": "https://www.aarogyasri.telangana.gov.in",
+        "sourceUrl": "https://www.aarogyasri.telangana.gov.in",
+        "lastVerified": "2026-06-01",
+        "applyChannel": "Aarogyamithra desks at network hospitals",
+        "description": "Cashless treatment for listed procedures for eligible Telangana families.",
+        "whoCanApply": "Telangana families holding a white ration card / food security card.",
+        "benefits": "Cashless treatment for listed therapies at network hospitals up to the notified family limit.",
+        "estimatedBenefit": "Cashless treatment (state limit)",
+        "educationRequirement": "None",
+        "occupationRequirement": "None",
+        "deadlineInfo": "No deadline.",
+        "rules": [
+            {
+                "field": "state",
+                "op": "in",
+                "values": [
+                    "Telangana"
+                ],
+                "label": "Resident of Telangana"
+            },
+            {
+                "field": "rationCard",
+                "op": "eq",
+                "value": true,
+                "label": "Holds a white ration card / food security card",
+                "verify": true,
+                "doc": "Food security card"
+            }
+        ],
+        "documents": [
+            {
+                "name": "Food security card",
+                "why": "Eligibility."
+            },
+            {
+                "name": "Aadhaar card",
+                "why": "Identity."
+            }
+        ],
+        "process": [
+            "Visit a network hospital's Aarogyamithra desk.",
+            "Eligibility check.",
+            "Cashless treatment after pre-authorisation."
+        ],
+        "faqs": [],
+        "real": true,
+        "provider": "Government"
+    },
+    {
+        "id": "ts-epass",
+        "name": "Telangana ePASS Scholarships",
+        "category": "Education",
+        "department": "Government of Telangana (Welfare Departments)",
+        "level": "State",
+        "state": "Telangana",
+        "minAge": null,
+        "maxAge": null,
+        "incomeMax": 200000,
+        "status": "Active",
+        "officialUrl": "https://telanganaepass.cgg.gov.in",
+        "sourceUrl": "https://telanganaepass.cgg.gov.in",
+        "lastVerified": "2026-06-01",
+        "applyChannel": "the Telangana ePASS portal",
+        "description": "Post-matric scholarships and fee reimbursement for SC, ST, BC, EBC, minority and disabled students in Telangana.",
+        "whoCanApply": "Telangana students in post-matric courses; income limits are typically ₹2 lakh (urban) / ₹1.5 lakh (rural) for BC/EBC/minority and higher for SC/ST.",
+        "benefits": "Tuition fee reimbursement and maintenance allowance.",
+        "estimatedBenefit": "Fee reimbursement + allowance",
+        "educationRequirement": "Post-matric",
+        "occupationRequirement": "Student",
+        "deadlineInfo": "Annual window on ePASS.",
+        "rules": [
+            {
+                "field": "state",
+                "op": "in",
+                "values": [
+                    "Telangana"
+                ],
+                "label": "Studies in Telangana"
+            },
+            {
+                "field": "student",
+                "op": "eq",
+                "value": true,
+                "label": "Currently studying"
+            },
+            {
+                "field": "education",
+                "op": "in",
+                "values": [
+                    "HIGHER_SECONDARY",
+                    "DIPLOMA",
+                    "UNDERGRADUATE",
+                    "POSTGRADUATE"
+                ],
+                "label": "Post-matric course"
+            },
+            {
+                "field": "incomeRange",
+                "op": "income_lte",
+                "value": 200000,
+                "label": "Family income within the category limit",
+                "verify": true,
+                "doc": "Income certificate"
+            }
+        ],
+        "documents": [
+            {
+                "name": "Income certificate",
+                "why": "Income limit."
+            },
+            {
+                "name": "Caste certificate (if applicable)",
+                "why": "Category.",
+                "condition": {
+                    "field": "householdCategory",
+                    "values": [
+                        "SC",
+                        "ST",
+                        "OBC",
+                        "MINORITY"
+                    ]
+                }
+            },
+            {
+                "name": "Bank account details",
+                "why": "DBT."
+            }
+        ],
+        "process": [
+            "Register on ePASS.",
+            "Apply and submit documents to your college.",
+            "Verification and payment."
+        ],
+        "faqs": [],
+        "real": true,
+        "provider": "Government"
+    },
+    {
+        "id": "ap-jnanabhumi",
+        "name": "Jnanabhumi Scholarships (Andhra Pradesh)",
+        "category": "Education",
+        "department": "Government of Andhra Pradesh (Welfare Departments)",
+        "level": "State",
+        "state": "Andhra Pradesh",
+        "minAge": null,
+        "maxAge": null,
+        "incomeMax": 250000,
+        "status": "Active",
+        "officialUrl": "https://jnanabhumi.ap.gov.in",
+        "sourceUrl": "https://jnanabhumi.ap.gov.in",
+        "lastVerified": "2026-06-01",
+        "applyChannel": "the Jnanabhumi portal",
+        "description": "Andhra Pradesh's portal for post-matric scholarships and fee reimbursement.",
+        "whoCanApply": "AP students in post-matric courses from eligible categories, with family income up to ₹2.5 lakh.",
+        "benefits": "Fee reimbursement and maintenance support as per current state schemes.",
+        "estimatedBenefit": "Fee reimbursement + support",
+        "educationRequirement": "Post-matric",
+        "occupationRequirement": "Student",
+        "deadlineInfo": "Annual window.",
+        "rules": [
+            {
+                "field": "state",
+                "op": "in",
+                "values": [
+                    "Andhra Pradesh"
+                ],
+                "label": "Studies in Andhra Pradesh"
+            },
+            {
+                "field": "student",
+                "op": "eq",
+                "value": true,
+                "label": "Currently studying"
+            },
+            {
+                "field": "education",
+                "op": "in",
+                "values": [
+                    "HIGHER_SECONDARY",
+                    "DIPLOMA",
+                    "UNDERGRADUATE",
+                    "POSTGRADUATE"
+                ],
+                "label": "Post-matric course"
+            },
+            {
+                "field": "incomeRange",
+                "op": "income_lte",
+                "value": 250000,
+                "label": "Family income up to ₹2.5 lakh",
+                "verify": true,
+                "doc": "Income certificate"
+            }
+        ],
+        "documents": [
+            {
+                "name": "Income certificate",
+                "why": "Income limit."
+            },
+            {
+                "name": "Caste certificate (if applicable)",
+                "why": "Category.",
+                "condition": {
+                    "field": "householdCategory",
+                    "values": [
+                        "SC",
+                        "ST",
+                        "OBC",
+                        "MINORITY"
+                    ]
+                }
+            },
+            {
+                "name": "Bank account details",
+                "why": "DBT."
+            }
+        ],
+        "process": [
+            "Register on Jnanabhumi.",
+            "Apply.",
+            "College and department verify."
+        ],
+        "faqs": [],
+        "real": true,
+        "provider": "Government"
+    },
+    {
+        "id": "gj-digital-gujarat",
+        "name": "Digital Gujarat Scholarships",
+        "category": "Education",
+        "department": "Government of Gujarat (Welfare Departments)",
+        "level": "State",
+        "state": "Gujarat",
+        "minAge": null,
+        "maxAge": null,
+        "incomeMax": 250000,
+        "status": "Active",
+        "officialUrl": "https://www.digitalgujarat.gov.in",
+        "sourceUrl": "https://www.digitalgujarat.gov.in",
+        "lastVerified": "2026-06-01",
+        "applyChannel": "the Digital Gujarat portal",
+        "description": "Gujarat's single portal for SC, ST, OBC and other category scholarships.",
+        "whoCanApply": "Gujarat students from eligible categories; income limits vary by scheme (commonly ₹2.5 lakh).",
+        "benefits": "Scholarship and fee support as per scheme.",
+        "estimatedBenefit": "Scholarship (varies)",
+        "educationRequirement": "Varies",
+        "occupationRequirement": "Student",
+        "deadlineInfo": "Annual window.",
+        "rules": [
+            {
+                "field": "state",
+                "op": "in",
+                "values": [
+                    "Gujarat"
+                ],
+                "label": "Studies in Gujarat"
+            },
+            {
+                "field": "student",
+                "op": "eq",
+                "value": true,
+                "label": "Currently studying"
+            },
+            {
+                "field": "incomeRange",
+                "op": "income_lte",
+                "value": 250000,
+                "label": "Family income within the scheme limit",
+                "verify": true,
+                "doc": "Income certificate"
+            }
+        ],
+        "documents": [
+            {
+                "name": "Income certificate",
+                "why": "Income limit."
+            },
+            {
+                "name": "Caste certificate (if applicable)",
+                "why": "Category.",
+                "condition": {
+                    "field": "householdCategory",
+                    "values": [
+                        "SC",
+                        "ST",
+                        "OBC"
+                    ]
+                }
+            },
+            {
+                "name": "Bank account details",
+                "why": "DBT."
+            }
+        ],
+        "process": [
+            "Register on Digital Gujarat.",
+            "Choose your scheme and apply.",
+            "Verification."
+        ],
+        "faqs": [],
+        "real": true,
+        "provider": "Government"
+    },
+    {
+        "id": "br-student-credit-card",
+        "name": "Bihar Student Credit Card Scheme",
+        "category": "Education",
+        "department": "Education Department, Government of Bihar",
+        "level": "State",
+        "state": "Bihar",
+        "minAge": null,
+        "maxAge": null,
+        "incomeMax": null,
+        "status": "Active",
+        "officialUrl": "https://www.7nishchay-yuvaupmission.bihar.gov.in",
+        "sourceUrl": "https://www.7nishchay-yuvaupmission.bihar.gov.in",
+        "lastVerified": "2026-06-01",
+        "applyChannel": "the 7 Nishchay portal and your District Registration & Counselling Centre (DRCC)",
+        "description": "Low-interest education loans for Bihar students who have passed Class 12 to pursue higher education.",
+        "whoCanApply": "Bihar residents who passed Class 12 and are pursuing higher education, within the scheme's age limits.",
+        "benefits": "Education loan up to ₹4 lakh at concessional interest (lower for women, disabled and transgender students).",
+        "estimatedBenefit": "Up to ₹4 lakh education loan",
+        "educationRequirement": "Class 12 passed",
+        "occupationRequirement": "Student",
+        "deadlineInfo": "Ongoing.",
+        "rules": [
+            {
+                "field": "state",
+                "op": "in",
+                "values": [
+                    "Bihar"
+                ],
+                "label": "Resident of Bihar"
+            },
+            {
+                "field": "education",
+                "op": "in",
+                "values": [
+                    "HIGHER_SECONDARY",
+                    "DIPLOMA",
+                    "UNDERGRADUATE",
+                    "POSTGRADUATE"
+                ],
+                "label": "Passed Class 12 / in higher education"
+            },
+            {
+                "field": "student",
+                "op": "eq",
+                "value": true,
+                "label": "Currently studying"
+            }
+        ],
+        "documents": [
+            {
+                "name": "Class 10 & 12 mark sheets",
+                "why": "Eligibility."
+            },
+            {
+                "name": "Residence certificate",
+                "why": "Bihar domicile."
+            },
+            {
+                "name": "Admission letter / fee structure",
+                "why": "Loan amount."
+            }
+        ],
+        "process": [
+            "Register online.",
+            "Visit DRCC with documents.",
+            "Loan sanctioned via Bihar State Education Finance Corporation."
+        ],
+        "faqs": [],
+        "real": true,
+        "provider": "Government"
+    },
+    {
+        "id": "lic-golden-jubilee",
+        "name": "LIC Golden Jubilee Scholarship",
+        "category": "Education",
+        "department": "LIC Golden Jubilee Foundation (Life Insurance Corporation of India)",
+        "level": "Private",
+        "state": null,
+        "minAge": null,
+        "maxAge": null,
+        "incomeMax": 250000,
+        "status": "Active",
+        "officialUrl": "https://licindia.in",
+        "sourceUrl": "https://licindia.in",
+        "lastVerified": "2026-06-01",
+        "applyChannel": "the LIC website during the announced window",
+        "description": "Scholarship from LIC's Golden Jubilee Foundation for meritorious students from economically weaker families.",
+        "whoCanApply": "Students who passed Class 10/12 or diploma with at least 60% marks, pursuing higher studies, with family income up to ₹2.5 lakh.",
+        "benefits": "Annual scholarship for the course duration, with a special scholarship for girl students.",
+        "estimatedBenefit": "Annual scholarship",
+        "educationRequirement": "60% in last exam",
+        "occupationRequirement": "Student",
+        "deadlineInfo": "Usually announced once a year.",
+        "rules": [
+            {
+                "field": "student",
+                "op": "eq",
+                "value": true,
+                "label": "Currently studying"
+            },
+            {
+                "field": "education",
+                "op": "in",
+                "values": [
+                    "HIGHER_SECONDARY",
+                    "DIPLOMA",
+                    "UNDERGRADUATE"
+                ],
+                "label": "Pursuing higher studies after Class 10/12"
+            },
+            {
+                "field": "incomeRange",
+                "op": "income_lte",
+                "value": 250000,
+                "label": "Family income up to ₹2.5 lakh",
+                "verify": true,
+                "doc": "Income certificate"
+            },
+            {
+                "op": "official",
+                "label": "Scored at least 60% in the qualifying exam"
+            }
+        ],
+        "documents": [
+            {
+                "name": "Income certificate",
+                "why": "Income limit."
+            },
+            {
+                "name": "Mark sheet",
+                "why": "60% requirement."
+            },
+            {
+                "name": "Admission proof",
+                "why": "Enrolment."
+            }
+        ],
+        "process": [
+            "Watch the LIC website for the announcement.",
+            "Apply online.",
+            "Selection by LIC divisional office."
+        ],
+        "faqs": [],
+        "real": true,
+        "provider": "Public sector (non-government scheme)"
+    },
+    {
+        "id": "reliance-ug-scholarship",
+        "name": "Reliance Foundation Undergraduate Scholarships",
+        "category": "Education",
+        "department": "Reliance Foundation",
+        "level": "Private",
+        "state": null,
+        "minAge": null,
+        "maxAge": null,
+        "incomeMax": 1500000,
+        "status": "Active",
+        "officialUrl": "https://www.scholarships.reliancefoundation.org",
+        "sourceUrl": "https://www.scholarships.reliancefoundation.org",
+        "lastVerified": "2026-06-01",
+        "applyChannel": "the Reliance Foundation Scholarships portal",
+        "description": "Merit-cum-means scholarships for first-year undergraduate students across streams, with mentoring support.",
+        "whoCanApply": "Indian students in the first year of a full-time UG degree, with household income below ₹15 lakh (preference for below ₹2.5 lakh), who clear the aptitude test.",
+        "benefits": "Grant of up to ₹2 lakh over the degree duration plus alumni network access.",
+        "estimatedBenefit": "Up to ₹2 lakh over the degree",
+        "educationRequirement": "First-year UG",
+        "occupationRequirement": "Student",
+        "deadlineInfo": "Applications usually open once a year.",
+        "rules": [
+            {
+                "field": "student",
+                "op": "eq",
+                "value": true,
+                "label": "Currently studying"
+            },
+            {
+                "field": "education",
+                "op": "in",
+                "values": [
+                    "UNDERGRADUATE"
+                ],
+                "label": "In the first year of a full-time undergraduate degree"
+            },
+            {
+                "field": "incomeRange",
+                "op": "income_lte",
+                "value": 1500000,
+                "label": "Household income below ₹15 lakh",
+                "verify": true,
+                "doc": "Income proof"
+            },
+            {
+                "op": "official",
+                "label": "Clears the foundation's aptitude test"
+            }
+        ],
+        "documents": [
+            {
+                "name": "Income proof",
+                "why": "Means criteria."
+            },
+            {
+                "name": "Class 12 mark sheet",
+                "why": "Merit."
+            },
+            {
+                "name": "College admission proof",
+                "why": "First-year enrolment."
+            }
+        ],
+        "process": [
+            "Apply on the portal.",
+            "Take the online aptitude test.",
+            "Selected students are notified."
+        ],
+        "faqs": [],
+        "real": true,
+        "provider": "Private foundation (CSR)"
+    },
+    {
+        "id": "vidyasaarathi",
+        "name": "Vidyasaarathi Corporate Scholarships Portal",
+        "category": "Education",
+        "department": "Protean eGov Technologies (formerly NSDL e-Gov) with corporate partners",
+        "level": "Private",
+        "state": null,
+        "minAge": null,
+        "maxAge": null,
+        "incomeMax": null,
+        "status": "Active",
+        "officialUrl": "https://www.vidyasaarathi.co.in",
+        "sourceUrl": "https://www.vidyasaarathi.co.in",
+        "lastVerified": "2026-06-01",
+        "applyChannel": "the Vidyasaarathi portal",
+        "description": "Single portal listing CSR scholarships from many companies, with eligibility varying by scheme.",
+        "whoCanApply": "Students in school, diploma, UG or PG courses; each corporate scholarship sets its own income and merit criteria.",
+        "benefits": "Multiple corporate scholarships from one registration.",
+        "estimatedBenefit": "Access to many CSR scholarships",
+        "educationRequirement": "Varies",
+        "occupationRequirement": "Student",
+        "deadlineInfo": "Each scholarship has its own deadline.",
+        "rules": [
+            {
+                "field": "student",
+                "op": "eq",
+                "value": true,
+                "label": "Currently studying"
+            },
+            {
+                "op": "official",
+                "label": "Meets the criteria of the specific corporate scholarship you apply to"
+            }
+        ],
+        "documents": [
+            {
+                "name": "Mark sheets",
+                "why": "Merit criteria."
+            },
+            {
+                "name": "Income proof",
+                "why": "Means criteria."
+            },
+            {
+                "name": "Bank account details",
+                "why": "Payment."
+            }
+        ],
+        "process": [
+            "Register once on Vidyasaarathi.",
+            "Browse scholarships you match.",
+            "Apply to each."
+        ],
+        "faqs": [],
+        "real": true,
+        "provider": "Private (CSR aggregator)"
+    }
+]

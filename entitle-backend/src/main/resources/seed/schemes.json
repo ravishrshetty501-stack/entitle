@@ -1,0 +1,1503 @@
+[
+    {
+        "id": "pm-jay",
+        "name": "Ayushman Bharat – Pradhan Mantri Jan Arogya Yojana (PM-JAY)",
+        "category": "Healthcare",
+        "department": "National Health Authority, Ministry of Health & Family Welfare",
+        "level": "National",
+        "state": null,
+        "minAge": null,
+        "maxAge": null,
+        "incomeMax": null,
+        "status": "Active",
+        "officialUrl": "https://beneficiary.nha.gov.in",
+        "sourceUrl": "https://pmjay.gov.in",
+        "lastVerified": "2026-06-01",
+        "applyChannel": "the Beneficiary portal, Ayushman app, or an empanelled hospital / Common Service Centre",
+        "description": "Health assurance scheme providing cashless secondary and tertiary hospital care to eligible poor and vulnerable families at empanelled public and private hospitals.",
+        "whoCanApply": "Families identified as deprived under SECC 2011 criteria (rural) or listed occupational categories (urban), and families added by state governments. Eligibility is checked against the official beneficiary database.",
+        "benefits": "Cashless hospitalisation cover of up to ₹5 lakh per family per year, including pre- and post-hospitalisation expenses, at empanelled hospitals across India.",
+        "estimatedBenefit": "Up to ₹5 lakh health cover per family per year",
+        "educationRequirement": "None",
+        "occupationRequirement": "Urban: specified occupational categories; Rural: SECC deprivation criteria",
+        "deadlineInfo": "No deadline — enrolment is open throughout the year.",
+        "rules": [
+            {
+                "field": "rationCard",
+                "op": "eq",
+                "value": true,
+                "label": "Holds a BPL / priority household ration card (indicator)",
+                "mandatory": false,
+                "verify": true,
+                "doc": "Ration card"
+            },
+            {
+                "field": "incomeTaxPayer",
+                "op": "eq",
+                "value": false,
+                "label": "No income-tax-paying member in the family (indicator)",
+                "mandatory": false
+            },
+            {
+                "op": "official",
+                "label": "Family listed in SECC 2011 / state-notified PM-JAY beneficiary database"
+            }
+        ],
+        "documents": [
+            {
+                "name": "Aadhaar or other identity proof",
+                "why": "Identity is verified (e-KYC) before the Ayushman card is generated."
+            },
+            {
+                "name": "Ration card",
+                "why": "Used to locate and verify your family in the beneficiary list."
+            },
+            {
+                "name": "Mobile number linked to identity",
+                "why": "Needed for OTP-based verification."
+            }
+        ],
+        "process": [
+            "Check whether your family is listed on the official Beneficiary portal or Ayushman app.",
+            "Complete e-KYC with identity proof.",
+            "Download your Ayushman card or collect it at a CSC / empanelled hospital.",
+            "Show the card at an empanelled hospital for cashless treatment."
+        ],
+        "faqs": [
+            {
+                "q": "Is there an income limit?",
+                "a": "PM-JAY eligibility is based on SECC 2011 deprivation and occupational criteria, not a single income limit. Check the official portal."
+            },
+            {
+                "q": "Do I pay anything at the hospital?",
+                "a": "Covered treatments at empanelled hospitals are cashless up to the family cover limit."
+            }
+        ],
+        "real": true
+    },
+    {
+        "id": "ayushman-vay-vandana",
+        "name": "Ayushman Vay Vandana (PM-JAY for citizens aged 70+)",
+        "category": "Senior Citizen Benefits",
+        "department": "National Health Authority, Ministry of Health & Family Welfare",
+        "level": "National",
+        "state": null,
+        "minAge": 70,
+        "maxAge": null,
+        "incomeMax": null,
+        "status": "Active",
+        "officialUrl": "https://beneficiary.nha.gov.in",
+        "sourceUrl": "https://pmjay.gov.in",
+        "lastVerified": "2026-06-01",
+        "applyChannel": "the Beneficiary portal or Ayushman app",
+        "description": "Extension of PM-JAY to all senior citizens aged 70 years and above, irrespective of income.",
+        "whoCanApply": "Any Indian citizen aged 70 years or above, regardless of socio-economic status.",
+        "benefits": "Health cover of up to ₹5 lakh per year on a family basis for senior citizens aged 70+, with an additional top-up for those already in PM-JAY families.",
+        "estimatedBenefit": "Up to ₹5 lakh health cover per year",
+        "educationRequirement": "None",
+        "occupationRequirement": "None",
+        "deadlineInfo": "No deadline — enrolment is open throughout the year.",
+        "rules": [
+            {
+                "field": "age",
+                "op": "gte",
+                "value": 70,
+                "label": "Aged 70 years or above",
+                "verify": true,
+                "doc": "Aadhaar (age is taken from Aadhaar)"
+            }
+        ],
+        "documents": [
+            {
+                "name": "Aadhaar card",
+                "why": "Age eligibility is verified from Aadhaar during e-KYC."
+            },
+            {
+                "name": "Mobile number",
+                "why": "Needed for OTP verification during enrolment."
+            }
+        ],
+        "process": [
+            "Open the Ayushman app or Beneficiary portal.",
+            "Choose the 70+ enrolment option and complete Aadhaar e-KYC.",
+            "Download the Ayushman Vay Vandana card."
+        ],
+        "faqs": [
+            {
+                "q": "Is income checked?",
+                "a": "No. All citizens aged 70+ are covered irrespective of income."
+            }
+        ],
+        "real": true
+    },
+    {
+        "id": "nsp-post-matric-sc",
+        "name": "Post Matric Scholarship for Scheduled Caste Students",
+        "category": "Education",
+        "department": "Ministry of Social Justice & Empowerment",
+        "level": "National",
+        "state": null,
+        "minAge": null,
+        "maxAge": null,
+        "incomeMax": 250000,
+        "status": "Active",
+        "officialUrl": "https://scholarships.gov.in",
+        "sourceUrl": "https://socialjustice.gov.in",
+        "lastVerified": "2026-06-01",
+        "applyChannel": "the National Scholarship Portal or your state scholarship portal",
+        "description": "Centrally sponsored scholarship supporting SC students studying at post-matriculation (Class 11 onwards) level, covering fees and an academic allowance.",
+        "whoCanApply": "SC students studying in Class 11 or above (including diploma, UG, PG) whose parents' annual income does not exceed ₹2.5 lakh.",
+        "benefits": "Compulsory non-refundable fees paid to the institution and an annual academic allowance credited to the student.",
+        "estimatedBenefit": "Full eligible fees + annual academic allowance",
+        "educationRequirement": "Class 11 or above",
+        "occupationRequirement": "Student",
+        "deadlineInfo": "Applications usually open once a year (often mid-year to autumn). Check the portal for this year's dates.",
+        "rules": [
+            {
+                "field": "student",
+                "op": "eq",
+                "value": true,
+                "label": "Currently studying"
+            },
+            {
+                "field": "education",
+                "op": "in",
+                "values": [
+                    "HIGHER_SECONDARY",
+                    "DIPLOMA",
+                    "UNDERGRADUATE",
+                    "POSTGRADUATE"
+                ],
+                "label": "Studying at post-matric level (Class 11 onwards)"
+            },
+            {
+                "field": "householdCategory",
+                "op": "in",
+                "values": [
+                    "SC"
+                ],
+                "label": "Belongs to a Scheduled Caste",
+                "verify": true,
+                "doc": "Caste certificate"
+            },
+            {
+                "field": "incomeRange",
+                "op": "income_lte",
+                "value": 250000,
+                "label": "Parents' annual income up to ₹2.5 lakh",
+                "verify": true,
+                "doc": "Income certificate"
+            }
+        ],
+        "documents": [
+            {
+                "name": "Caste certificate",
+                "why": "Proves SC status, a mandatory condition."
+            },
+            {
+                "name": "Income certificate",
+                "why": "Shows parental income is within ₹2.5 lakh."
+            },
+            {
+                "name": "Previous year mark sheet",
+                "why": "Confirms academic progression."
+            },
+            {
+                "name": "Fee receipt / bonafide certificate",
+                "why": "Confirms current enrolment and fees payable."
+            },
+            {
+                "name": "Aadhaar-seeded bank account details",
+                "why": "Scholarship is paid by Direct Benefit Transfer."
+            },
+            {
+                "name": "Passport-size photograph",
+                "why": "Required on the application form."
+            }
+        ],
+        "process": [
+            "Register on the official scholarship portal.",
+            "Fill the application and upload documents.",
+            "Your institution verifies the application.",
+            "District / state authorities verify and sanction.",
+            "Amount is credited to your bank account."
+        ],
+        "faqs": [
+            {
+                "q": "Can I get this with another scholarship?",
+                "a": "Generally, a student cannot hold two scholarships for the same course. Check official guidelines."
+            }
+        ],
+        "real": true
+    },
+    {
+        "id": "central-sector-scholarship",
+        "name": "Central Sector Scheme of Scholarship for College and University Students",
+        "category": "Education",
+        "department": "Department of Higher Education, Ministry of Education",
+        "level": "National",
+        "state": null,
+        "minAge": null,
+        "maxAge": null,
+        "incomeMax": 450000,
+        "status": "Active",
+        "officialUrl": "https://scholarships.gov.in",
+        "sourceUrl": "https://education.gov.in",
+        "lastVerified": "2026-06-01",
+        "applyChannel": "the National Scholarship Portal",
+        "description": "Merit-cum-means scholarship for students who scored above the 80th percentile in their Class 12 board and are pursuing regular higher education.",
+        "whoCanApply": "Students above the 80th percentile of successful candidates in their Class 12 board, pursuing a regular degree course, with family income up to ₹4.5 lakh per year.",
+        "benefits": "₹12,000 per year at graduation level for the first three years and ₹20,000 per year at post-graduation level (as per scheme guidelines).",
+        "estimatedBenefit": "₹12,000–₹20,000 per year",
+        "educationRequirement": "Undergraduate or postgraduate (regular course)",
+        "occupationRequirement": "Student",
+        "deadlineInfo": "Applications open annually on NSP. Check the portal for this year's window.",
+        "rules": [
+            {
+                "field": "student",
+                "op": "eq",
+                "value": true,
+                "label": "Currently studying"
+            },
+            {
+                "field": "education",
+                "op": "in",
+                "values": [
+                    "UNDERGRADUATE",
+                    "POSTGRADUATE"
+                ],
+                "label": "Pursuing a regular undergraduate or postgraduate course"
+            },
+            {
+                "field": "incomeRange",
+                "op": "income_lte",
+                "value": 450000,
+                "label": "Family income up to ₹4.5 lakh per year",
+                "verify": true,
+                "doc": "Income certificate"
+            },
+            {
+                "op": "official",
+                "label": "Scored above the 80th percentile in Class 12 board results"
+            }
+        ],
+        "documents": [
+            {
+                "name": "Class 12 mark sheet",
+                "why": "Merit (80th percentile) is checked against board results."
+            },
+            {
+                "name": "Income certificate",
+                "why": "Proves family income is within ₹4.5 lakh."
+            },
+            {
+                "name": "Bonafide / admission certificate",
+                "why": "Confirms enrolment in a regular course."
+            },
+            {
+                "name": "Aadhaar-seeded bank account details",
+                "why": "Scholarship is paid by Direct Benefit Transfer."
+            }
+        ],
+        "process": [
+            "Register on the National Scholarship Portal.",
+            "Apply under the Central Sector Scheme and upload documents.",
+            "Institution and state board verify the application.",
+            "Selected students receive payment by DBT."
+        ],
+        "faqs": [
+            {
+                "q": "Do I need to renew every year?",
+                "a": "Yes, renewal depends on maintaining required attendance and marks as per guidelines."
+            }
+        ],
+        "real": true
+    },
+    {
+        "id": "karnataka-ssp-post-matric",
+        "name": "Karnataka State Scholarship Portal – Post-Matric Scholarships",
+        "category": "Education",
+        "department": "Government of Karnataka (Social Welfare, Backward Classes, Tribal & Minority Welfare Departments)",
+        "level": "State",
+        "state": "Karnataka",
+        "minAge": null,
+        "maxAge": null,
+        "incomeMax": 350000,
+        "status": "Active",
+        "officialUrl": "https://ssp.karnataka.gov.in",
+        "sourceUrl": "https://ssp.karnataka.gov.in",
+        "lastVerified": "2026-06-01",
+        "applyChannel": "the Karnataka State Scholarship Portal (SSP)",
+        "description": "Single-window portal for Karnataka's post-matric scholarships and fee reimbursement for SC, ST, OBC and minority students studying in the state.",
+        "whoCanApply": "Karnataka students from SC/ST/OBC/minority categories studying at post-matric level. Income limits differ by department and category (roughly ₹1 lakh to ₹3.5 lakh).",
+        "benefits": "Fee reimbursement and/or maintenance allowance, depending on department and course.",
+        "estimatedBenefit": "Fee reimbursement + maintenance allowance (varies)",
+        "educationRequirement": "Post-matric (Class 11 onwards)",
+        "occupationRequirement": "Student",
+        "deadlineInfo": "Typically opens once a year. Check SSP for this academic year's window.",
+        "rules": [
+            {
+                "field": "state",
+                "op": "in",
+                "values": [
+                    "Karnataka"
+                ],
+                "label": "Studying / domiciled in Karnataka"
+            },
+            {
+                "field": "student",
+                "op": "eq",
+                "value": true,
+                "label": "Currently studying"
+            },
+            {
+                "field": "education",
+                "op": "in",
+                "values": [
+                    "HIGHER_SECONDARY",
+                    "DIPLOMA",
+                    "UNDERGRADUATE",
+                    "POSTGRADUATE"
+                ],
+                "label": "Studying at post-matric level"
+            },
+            {
+                "field": "householdCategory",
+                "op": "in",
+                "values": [
+                    "SC",
+                    "ST",
+                    "OBC",
+                    "MINORITY"
+                ],
+                "label": "Belongs to SC, ST, OBC or minority category",
+                "verify": true,
+                "doc": "Caste & income certificate (RD number)"
+            },
+            {
+                "field": "incomeRange",
+                "op": "income_lte",
+                "value": 350000,
+                "label": "Family income within the department limit (varies by category)",
+                "verify": true,
+                "doc": "Caste & income certificate (RD number)"
+            }
+        ],
+        "documents": [
+            {
+                "name": "Caste & income certificate (RD number)",
+                "why": "SSP fetches caste and income details using the certificate's RD number."
+            },
+            {
+                "name": "SATS / student ID",
+                "why": "Links your application with school/college records."
+            },
+            {
+                "name": "Aadhaar-seeded bank account details",
+                "why": "Scholarship is paid by Direct Benefit Transfer."
+            },
+            {
+                "name": "Fee receipt",
+                "why": "Needed for fee reimbursement claims."
+            }
+        ],
+        "process": [
+            "Create a student account on SSP.",
+            "Enter your RD number and academic details.",
+            "Submit the post-matric application.",
+            "Your college verifies; the department sanctions and pays via DBT."
+        ],
+        "faqs": [
+            {
+                "q": "Why does SSP ask for an RD number?",
+                "a": "It is the number on your Karnataka caste/income certificate, used to verify eligibility automatically."
+            }
+        ],
+        "real": true
+    },
+    {
+        "id": "pm-kisan",
+        "name": "Pradhan Mantri Kisan Samman Nidhi (PM-KISAN)",
+        "category": "Agriculture",
+        "department": "Department of Agriculture & Farmers Welfare",
+        "level": "National",
+        "state": null,
+        "minAge": null,
+        "maxAge": null,
+        "incomeMax": null,
+        "status": "Active",
+        "officialUrl": "https://pmkisan.gov.in",
+        "sourceUrl": "https://pmkisan.gov.in",
+        "lastVerified": "2026-06-01",
+        "applyChannel": "the PM-KISAN portal, a Common Service Centre or your state agriculture office",
+        "description": "Income support to landholding farmer families, paid directly to bank accounts.",
+        "whoCanApply": "Landholding farmer families with cultivable land in their name, excluding higher-income categories such as income-tax payers, government employees and certain professionals.",
+        "benefits": "₹6,000 per year paid in three equal instalments of ₹2,000 via Direct Benefit Transfer.",
+        "estimatedBenefit": "₹6,000 per year",
+        "educationRequirement": "None",
+        "occupationRequirement": "Farmer (landholding)",
+        "deadlineInfo": "No deadline — registration is open throughout the year.",
+        "rules": [
+            {
+                "field": "farmer",
+                "op": "eq",
+                "value": true,
+                "label": "Is a farmer"
+            },
+            {
+                "field": "ownsLand",
+                "op": "eq",
+                "value": true,
+                "label": "Family owns cultivable land",
+                "verify": true,
+                "doc": "Land ownership records"
+            },
+            {
+                "field": "incomeTaxPayer",
+                "op": "eq",
+                "value": false,
+                "label": "No family member paid income tax in the last assessment year"
+            },
+            {
+                "op": "official",
+                "label": "Not in excluded categories (serving/retired government officers, pensioners ≥ ₹10,000/month, registered professionals)"
+            }
+        ],
+        "documents": [
+            {
+                "name": "Land ownership records",
+                "why": "Landholding is the core eligibility condition."
+            },
+            {
+                "name": "Aadhaar card",
+                "why": "Mandatory for e-KYC and payment."
+            },
+            {
+                "name": "Aadhaar-seeded bank account details",
+                "why": "Instalments are paid by DBT."
+            }
+        ],
+        "process": [
+            "Register on the PM-KISAN portal (New Farmer Registration) or at a CSC.",
+            "State officials verify land records.",
+            "Complete e-KYC.",
+            "Instalments are credited after approval."
+        ],
+        "faqs": [
+            {
+                "q": "Can tenant farmers apply?",
+                "a": "The scheme is for landholding families. Tenant farmers may be covered by other state schemes."
+            }
+        ],
+        "real": true
+    },
+    {
+        "id": "pmfby",
+        "name": "Pradhan Mantri Fasal Bima Yojana (PMFBY)",
+        "category": "Agriculture",
+        "department": "Department of Agriculture & Farmers Welfare",
+        "level": "National",
+        "state": null,
+        "minAge": null,
+        "maxAge": null,
+        "incomeMax": null,
+        "status": "Active",
+        "officialUrl": "https://pmfby.gov.in",
+        "sourceUrl": "https://pmfby.gov.in",
+        "lastVerified": "2026-06-01",
+        "applyChannel": "the PMFBY portal, your bank, CSC or insurance company",
+        "description": "Crop insurance protecting farmers against yield losses from natural calamities, pests and diseases.",
+        "whoCanApply": "Farmers, including sharecroppers and tenant farmers, growing notified crops in notified areas.",
+        "benefits": "Insurance cover for crop loss with low farmer premiums: 2% for Kharif, 1.5% for Rabi and 5% for commercial/horticultural crops.",
+        "estimatedBenefit": "Crop loss compensation at low premium",
+        "educationRequirement": "None",
+        "occupationRequirement": "Farmer (owner, tenant or sharecropper)",
+        "deadlineInfo": "Enrolment closes on season-specific cut-off dates notified by each state.",
+        "rules": [
+            {
+                "field": "farmer",
+                "op": "eq",
+                "value": true,
+                "label": "Is a farmer (owner, tenant or sharecropper)"
+            },
+            {
+                "op": "official",
+                "label": "Growing a notified crop in a notified area this season"
+            }
+        ],
+        "documents": [
+            {
+                "name": "Land record or tenancy agreement",
+                "why": "Shows you cultivate the insured land."
+            },
+            {
+                "name": "Sowing certificate",
+                "why": "Confirms the crop sown this season."
+            },
+            {
+                "name": "Aadhaar card",
+                "why": "Identity verification."
+            },
+            {
+                "name": "Bank account details",
+                "why": "Claims are paid to your account."
+            }
+        ],
+        "process": [
+            "Check your state's notified crops and cut-off dates.",
+            "Enrol through your bank, CSC or the PMFBY portal.",
+            "Pay the farmer share of premium.",
+            "Report crop loss promptly if it occurs."
+        ],
+        "faqs": [
+            {
+                "q": "Is it compulsory for loanee farmers?",
+                "a": "Enrolment became voluntary for all farmers; loanee farmers may opt out as per guidelines."
+            }
+        ],
+        "real": true
+    },
+    {
+        "id": "pmay-urban",
+        "name": "Pradhan Mantri Awas Yojana – Urban 2.0",
+        "category": "Housing",
+        "department": "Ministry of Housing & Urban Affairs",
+        "level": "National",
+        "state": null,
+        "minAge": null,
+        "maxAge": null,
+        "incomeMax": 900000,
+        "status": "Active",
+        "officialUrl": "https://pmay-urban.gov.in",
+        "sourceUrl": "https://pmay-urban.gov.in",
+        "lastVerified": "2026-06-01",
+        "applyChannel": "the PMAY-U portal or your Urban Local Body",
+        "description": "Assistance for urban EWS, LIG and MIG families to construct, buy or rent a pucca house.",
+        "whoCanApply": "Urban families from EWS (up to ₹3 lakh), LIG (₹3–6 lakh) or MIG (₹6–9 lakh) income groups who do not own a pucca house anywhere in India.",
+        "benefits": "Central assistance through beneficiary-led construction, affordable housing partnership, rental housing or interest subsidy, depending on the vertical.",
+        "estimatedBenefit": "Housing assistance / interest subsidy (varies by vertical)",
+        "educationRequirement": "None",
+        "occupationRequirement": "None",
+        "deadlineInfo": "Ongoing during the mission period. Check the portal for current status.",
+        "rules": [
+            {
+                "field": "area",
+                "op": "in",
+                "values": [
+                    "URBAN"
+                ],
+                "label": "Lives in an urban area"
+            },
+            {
+                "field": "incomeRange",
+                "op": "income_lte",
+                "value": 900000,
+                "label": "Annual household income up to ₹9 lakh",
+                "verify": true,
+                "doc": "Income certificate"
+            },
+            {
+                "field": "ownsPuccaHouse",
+                "op": "eq",
+                "value": false,
+                "label": "Family does not own a pucca house anywhere in India",
+                "verify": true,
+                "doc": "Self-declaration of not owning a pucca house"
+            }
+        ],
+        "documents": [
+            {
+                "name": "Aadhaar card",
+                "why": "Identity verification for all family members."
+            },
+            {
+                "name": "Income certificate",
+                "why": "Places you in the EWS/LIG/MIG category."
+            },
+            {
+                "name": "Self-declaration of not owning a pucca house",
+                "why": "Mandatory eligibility declaration."
+            },
+            {
+                "name": "Bank account details",
+                "why": "Assistance is released to your account."
+            }
+        ],
+        "process": [
+            "Apply on the PMAY-U 2.0 portal or at your ULB.",
+            "Choose the relevant vertical.",
+            "ULB verifies eligibility.",
+            "Assistance is released in stages."
+        ],
+        "faqs": [],
+        "real": true
+    },
+    {
+        "id": "pmay-gramin",
+        "name": "Pradhan Mantri Awas Yojana – Gramin",
+        "category": "Housing",
+        "department": "Ministry of Rural Development",
+        "level": "National",
+        "state": null,
+        "minAge": null,
+        "maxAge": null,
+        "incomeMax": null,
+        "status": "Active",
+        "officialUrl": "https://pmayg.nic.in",
+        "sourceUrl": "https://pmayg.nic.in",
+        "lastVerified": "2026-06-01",
+        "applyChannel": "your Gram Panchayat / Block office",
+        "description": "Financial assistance for houseless rural households and those living in kutcha or dilapidated houses to build a pucca house.",
+        "whoCanApply": "Rural households that are houseless or live in kutcha houses, identified through SECC 2011 / Awaas+ surveys and verified by the Gram Sabha.",
+        "benefits": "₹1.20 lakh in plain areas and ₹1.30 lakh in hilly/difficult areas, plus support for toilet construction and MGNREGA labour days.",
+        "estimatedBenefit": "₹1.2–1.3 lakh for house construction",
+        "educationRequirement": "None",
+        "occupationRequirement": "None",
+        "deadlineInfo": "Based on the permanent wait list; no individual application deadline.",
+        "rules": [
+            {
+                "field": "area",
+                "op": "in",
+                "values": [
+                    "RURAL"
+                ],
+                "label": "Lives in a rural area"
+            },
+            {
+                "field": "ownsPuccaHouse",
+                "op": "eq",
+                "value": false,
+                "label": "Family does not own a pucca house"
+            },
+            {
+                "op": "official",
+                "label": "Listed in the Awaas+ / SECC 2011 permanent wait list and approved by the Gram Sabha"
+            }
+        ],
+        "documents": [
+            {
+                "name": "Aadhaar card",
+                "why": "Identity verification."
+            },
+            {
+                "name": "Job card (MGNREGA)",
+                "why": "Used to link labour support."
+            },
+            {
+                "name": "Bank account details",
+                "why": "Instalments are released by DBT."
+            }
+        ],
+        "process": [
+            "Check the permanent wait list at your Gram Panchayat.",
+            "Gram Sabha verifies.",
+            "House is sanctioned and instalments released as construction progresses."
+        ],
+        "faqs": [],
+        "real": true
+    },
+    {
+        "id": "pmuy",
+        "name": "Pradhan Mantri Ujjwala Yojana (PMUY)",
+        "category": "Women and Child Welfare",
+        "department": "Ministry of Petroleum & Natural Gas",
+        "level": "National",
+        "state": null,
+        "minAge": 18,
+        "maxAge": null,
+        "incomeMax": null,
+        "status": "Active",
+        "officialUrl": "https://www.pmuy.gov.in",
+        "sourceUrl": "https://www.pmuy.gov.in",
+        "lastVerified": "2026-06-01",
+        "applyChannel": "the PMUY portal or your nearest LPG distributor",
+        "description": "Deposit-free LPG connections to adult women from poor households to promote clean cooking fuel.",
+        "whoCanApply": "Adult women from poor households with no existing LPG connection in the household, belonging to listed categories (e.g., SC/ST, PMAY-G, AAY, forest dwellers) or declaring poverty under the 14-point declaration.",
+        "benefits": "Deposit-free LPG connection with first refill and stove as per current scheme guidelines.",
+        "estimatedBenefit": "Free LPG connection",
+        "educationRequirement": "None",
+        "occupationRequirement": "None",
+        "deadlineInfo": "Open — subject to availability under the current phase.",
+        "rules": [
+            {
+                "field": "gender",
+                "op": "in",
+                "values": [
+                    "FEMALE"
+                ],
+                "label": "Applicant is a woman"
+            },
+            {
+                "field": "age",
+                "op": "gte",
+                "value": 18,
+                "label": "Aged 18 or above"
+            },
+            {
+                "field": "hasLpg",
+                "op": "eq",
+                "value": false,
+                "label": "No LPG connection in the household"
+            },
+            {
+                "field": "rationCard",
+                "op": "eq",
+                "value": true,
+                "label": "Holds a ration card (indicator of poor household)",
+                "mandatory": false,
+                "verify": true,
+                "doc": "Ration card"
+            },
+            {
+                "op": "official",
+                "label": "Belongs to an eligible poor-household category or submits the 14-point declaration"
+            }
+        ],
+        "documents": [
+            {
+                "name": "Aadhaar card",
+                "why": "Identity and address verification (e-KYC)."
+            },
+            {
+                "name": "Ration card",
+                "why": "Proves household composition."
+            },
+            {
+                "name": "Bank account details",
+                "why": "For any subsidy transfer."
+            },
+            {
+                "name": "Passport-size photograph",
+                "why": "Required on the KYC form."
+            }
+        ],
+        "process": [
+            "Apply online on the PMUY portal or at an LPG distributor.",
+            "Complete KYC.",
+            "Connection is released after verification."
+        ],
+        "faqs": [],
+        "real": true
+    },
+    {
+        "id": "apy",
+        "name": "Atal Pension Yojana (APY)",
+        "category": "Financial Assistance",
+        "department": "Pension Fund Regulatory and Development Authority (PFRDA), Ministry of Finance",
+        "level": "National",
+        "state": null,
+        "minAge": 18,
+        "maxAge": 40,
+        "incomeMax": null,
+        "status": "Active",
+        "officialUrl": "https://www.jansuraksha.gov.in",
+        "sourceUrl": "https://www.pfrda.org.in",
+        "lastVerified": "2026-06-01",
+        "applyChannel": "your bank branch, net banking, or the Jan Suraksha portal",
+        "description": "Voluntary pension scheme that gives a guaranteed minimum monthly pension after age 60 based on your contributions.",
+        "whoCanApply": "Indian citizens aged 18–40 with a savings bank account who are not (and have not been) income-tax payers.",
+        "benefits": "Guaranteed monthly pension of ₹1,000 to ₹5,000 from age 60, depending on contribution; pension continues to spouse, then corpus to nominee.",
+        "estimatedBenefit": "₹1,000–₹5,000 monthly pension after 60",
+        "educationRequirement": "None",
+        "occupationRequirement": "None",
+        "deadlineInfo": "No deadline — must join before turning 40.",
+        "rules": [
+            {
+                "field": "age",
+                "op": "between",
+                "min": 18,
+                "max": 40,
+                "label": "Aged between 18 and 40"
+            },
+            {
+                "field": "hasBankAccount",
+                "op": "eq",
+                "value": true,
+                "label": "Has a savings bank / post office account"
+            },
+            {
+                "field": "incomeTaxPayer",
+                "op": "eq",
+                "value": false,
+                "label": "Not an income-tax payer"
+            }
+        ],
+        "documents": [
+            {
+                "name": "Savings bank account",
+                "why": "Contributions are auto-debited."
+            },
+            {
+                "name": "Aadhaar card",
+                "why": "KYC and identity verification."
+            },
+            {
+                "name": "Mobile number",
+                "why": "Account alerts."
+            }
+        ],
+        "process": [
+            "Visit your bank or use net banking.",
+            "Fill the APY registration form and choose pension amount.",
+            "Contributions are auto-debited until age 60."
+        ],
+        "faqs": [],
+        "real": true
+    },
+    {
+        "id": "pmjjby",
+        "name": "Pradhan Mantri Jeevan Jyoti Bima Yojana (PMJJBY)",
+        "category": "Financial Assistance",
+        "department": "Department of Financial Services, Ministry of Finance",
+        "level": "National",
+        "state": null,
+        "minAge": 18,
+        "maxAge": 50,
+        "incomeMax": null,
+        "status": "Active",
+        "officialUrl": "https://www.jansuraksha.gov.in",
+        "sourceUrl": "https://www.jansuraksha.gov.in",
+        "lastVerified": "2026-06-01",
+        "applyChannel": "your bank branch or the Jan Suraksha portal",
+        "description": "Low-cost one-year renewable life insurance for bank account holders.",
+        "whoCanApply": "Savings bank / post office account holders aged 18–50 who give consent for auto-debit.",
+        "benefits": "Life cover of ₹2 lakh for death due to any reason, for an annual premium of ₹436.",
+        "estimatedBenefit": "₹2 lakh life cover for ₹436/year",
+        "educationRequirement": "None",
+        "occupationRequirement": "None",
+        "deadlineInfo": "Cover period runs June to May; can enrol any time (pro-rata premium).",
+        "rules": [
+            {
+                "field": "age",
+                "op": "between",
+                "min": 18,
+                "max": 50,
+                "label": "Aged between 18 and 50"
+            },
+            {
+                "field": "hasBankAccount",
+                "op": "eq",
+                "value": true,
+                "label": "Has a savings bank / post office account"
+            }
+        ],
+        "documents": [
+            {
+                "name": "Savings bank account",
+                "why": "Premium is auto-debited."
+            },
+            {
+                "name": "Aadhaar card",
+                "why": "KYC."
+            },
+            {
+                "name": "Nominee details",
+                "why": "Claim is paid to the nominee."
+            }
+        ],
+        "process": [
+            "Enrol via your bank, net banking or Jan Suraksha portal.",
+            "Give auto-debit consent.",
+            "Renew automatically each year."
+        ],
+        "faqs": [],
+        "real": true
+    },
+    {
+        "id": "pmsby",
+        "name": "Pradhan Mantri Suraksha Bima Yojana (PMSBY)",
+        "category": "Financial Assistance",
+        "department": "Department of Financial Services, Ministry of Finance",
+        "level": "National",
+        "state": null,
+        "minAge": 18,
+        "maxAge": 70,
+        "incomeMax": null,
+        "status": "Active",
+        "officialUrl": "https://www.jansuraksha.gov.in",
+        "sourceUrl": "https://www.jansuraksha.gov.in",
+        "lastVerified": "2026-06-01",
+        "applyChannel": "your bank branch or the Jan Suraksha portal",
+        "description": "Low-cost accident insurance for bank account holders.",
+        "whoCanApply": "Savings bank / post office account holders aged 18–70.",
+        "benefits": "₹2 lakh for accidental death or total disability and ₹1 lakh for partial disability, for an annual premium of ₹20.",
+        "estimatedBenefit": "₹2 lakh accident cover for ₹20/year",
+        "educationRequirement": "None",
+        "occupationRequirement": "None",
+        "deadlineInfo": "Cover period runs June to May; enrol any time.",
+        "rules": [
+            {
+                "field": "age",
+                "op": "between",
+                "min": 18,
+                "max": 70,
+                "label": "Aged between 18 and 70"
+            },
+            {
+                "field": "hasBankAccount",
+                "op": "eq",
+                "value": true,
+                "label": "Has a savings bank / post office account"
+            }
+        ],
+        "documents": [
+            {
+                "name": "Savings bank account",
+                "why": "Premium is auto-debited."
+            },
+            {
+                "name": "Aadhaar card",
+                "why": "KYC."
+            },
+            {
+                "name": "Nominee details",
+                "why": "Claim is paid to the nominee."
+            }
+        ],
+        "process": [
+            "Enrol via your bank, net banking or Jan Suraksha portal.",
+            "Give auto-debit consent."
+        ],
+        "faqs": [],
+        "real": true
+    },
+    {
+        "id": "ignoaps",
+        "name": "Indira Gandhi National Old Age Pension Scheme (NSAP)",
+        "category": "Senior Citizen Benefits",
+        "department": "Ministry of Rural Development (National Social Assistance Programme)",
+        "level": "National",
+        "state": null,
+        "minAge": 60,
+        "maxAge": null,
+        "incomeMax": null,
+        "status": "Active",
+        "officialUrl": "https://nsap.nic.in",
+        "sourceUrl": "https://nsap.nic.in",
+        "lastVerified": "2026-06-01",
+        "applyChannel": "your Gram Panchayat / Taluk office or state social security portal",
+        "description": "Monthly pension for elderly persons from Below Poverty Line households.",
+        "whoCanApply": "Persons aged 60 and above belonging to BPL households.",
+        "benefits": "Central assistance of ₹200 per month (age 60–79) and ₹500 per month (age 80+); most states add a top-up.",
+        "estimatedBenefit": "₹200–₹500/month central share + state top-up",
+        "educationRequirement": "None",
+        "occupationRequirement": "None",
+        "deadlineInfo": "No deadline.",
+        "rules": [
+            {
+                "field": "age",
+                "op": "gte",
+                "value": 60,
+                "label": "Aged 60 or above",
+                "verify": true,
+                "doc": "Age proof"
+            },
+            {
+                "field": "rationCard",
+                "op": "eq",
+                "value": true,
+                "label": "Belongs to a BPL household",
+                "verify": true,
+                "doc": "BPL ration card"
+            }
+        ],
+        "documents": [
+            {
+                "name": "Age proof",
+                "why": "Confirms age 60+."
+            },
+            {
+                "name": "BPL ration card",
+                "why": "Proves BPL status."
+            },
+            {
+                "name": "Bank / post office account details",
+                "why": "Pension is paid by DBT."
+            },
+            {
+                "name": "Passport-size photograph",
+                "why": "For the application form."
+            }
+        ],
+        "process": [
+            "Apply at your Gram Panchayat, Taluk office or state portal.",
+            "Officials verify age and BPL status.",
+            "Pension is sanctioned and credited monthly."
+        ],
+        "faqs": [],
+        "real": true
+    },
+    {
+        "id": "igndps",
+        "name": "Indira Gandhi National Disability Pension Scheme (NSAP)",
+        "category": "Disability Support",
+        "department": "Ministry of Rural Development (National Social Assistance Programme)",
+        "level": "National",
+        "state": null,
+        "minAge": 18,
+        "maxAge": 79,
+        "incomeMax": null,
+        "status": "Active",
+        "officialUrl": "https://nsap.nic.in",
+        "sourceUrl": "https://nsap.nic.in",
+        "lastVerified": "2026-06-01",
+        "applyChannel": "your Gram Panchayat / Taluk office or state social security portal",
+        "description": "Monthly pension for persons with severe or multiple disabilities from BPL households.",
+        "whoCanApply": "Persons aged 18–79 with severe or multiple disabilities (80% or more) belonging to BPL households.",
+        "benefits": "Central assistance of ₹300 per month, with state top-ups.",
+        "estimatedBenefit": "₹300/month central share + state top-up",
+        "educationRequirement": "None",
+        "occupationRequirement": "None",
+        "deadlineInfo": "No deadline.",
+        "rules": [
+            {
+                "field": "age",
+                "op": "between",
+                "min": 18,
+                "max": 79,
+                "label": "Aged between 18 and 79"
+            },
+            {
+                "field": "disability",
+                "op": "eq",
+                "value": true,
+                "label": "Has a disability"
+            },
+            {
+                "field": "disabilityLevel",
+                "op": "in",
+                "values": [
+                    "80_PLUS"
+                ],
+                "label": "Certified disability of 80% or more",
+                "verify": true,
+                "doc": "Disability certificate / UDID card"
+            },
+            {
+                "field": "rationCard",
+                "op": "eq",
+                "value": true,
+                "label": "Belongs to a BPL household",
+                "verify": true,
+                "doc": "BPL ration card"
+            }
+        ],
+        "documents": [
+            {
+                "name": "Disability certificate / UDID card",
+                "why": "Proves 80%+ disability."
+            },
+            {
+                "name": "BPL ration card",
+                "why": "Proves BPL status."
+            },
+            {
+                "name": "Age proof",
+                "why": "Confirms age range."
+            },
+            {
+                "name": "Bank account details",
+                "why": "Pension is paid by DBT."
+            }
+        ],
+        "process": [
+            "Apply at your Gram Panchayat, Taluk office or state portal.",
+            "Officials verify disability and BPL status.",
+            "Pension is credited monthly."
+        ],
+        "faqs": [],
+        "real": true
+    },
+    {
+        "id": "udid",
+        "name": "Unique Disability ID (UDID) Card",
+        "category": "Disability Support",
+        "department": "Department of Empowerment of Persons with Disabilities",
+        "level": "National",
+        "state": null,
+        "minAge": null,
+        "maxAge": null,
+        "incomeMax": null,
+        "status": "Active",
+        "officialUrl": "https://www.swavlambancard.gov.in",
+        "sourceUrl": "https://www.swavlambancard.gov.in",
+        "lastVerified": "2026-06-01",
+        "applyChannel": "the Swavlamban Card portal",
+        "description": "A single national disability certificate and ID card used to access disability-related benefits across India.",
+        "whoCanApply": "Any person with a disability seeking a disability certificate and UDID card.",
+        "benefits": "Nationally valid disability certificate and ID card; simplifies access to pensions, aids, concessions and reservations.",
+        "estimatedBenefit": "Gateway to disability benefits",
+        "educationRequirement": "None",
+        "occupationRequirement": "None",
+        "deadlineInfo": "No deadline.",
+        "rules": [
+            {
+                "field": "disability",
+                "op": "eq",
+                "value": true,
+                "label": "Has a disability"
+            }
+        ],
+        "documents": [
+            {
+                "name": "Photograph and signature",
+                "why": "Printed on the UDID card."
+            },
+            {
+                "name": "Address and identity proof",
+                "why": "Determines the issuing medical authority."
+            },
+            {
+                "name": "Existing disability certificate (if any)",
+                "why": "Speeds up the process.",
+                "condition": {
+                    "field": "disabilityLevel",
+                    "values": [
+                        "40_79",
+                        "80_PLUS"
+                    ]
+                }
+            }
+        ],
+        "process": [
+            "Apply online on the Swavlamban Card portal.",
+            "Attend the medical assessment.",
+            "Download your e-certificate and receive the card."
+        ],
+        "faqs": [],
+        "real": true
+    },
+    {
+        "id": "pm-svanidhi",
+        "name": "PM Street Vendor's AtmaNirbhar Nidhi (PM SVANidhi)",
+        "category": "Employment",
+        "department": "Ministry of Housing & Urban Affairs",
+        "level": "National",
+        "state": null,
+        "minAge": null,
+        "maxAge": null,
+        "incomeMax": null,
+        "status": "Active",
+        "officialUrl": "https://pmsvanidhi.mohua.gov.in",
+        "sourceUrl": "https://pmsvanidhi.mohua.gov.in",
+        "lastVerified": "2026-06-01",
+        "applyChannel": "the PM SVANidhi portal, a CSC or your bank",
+        "description": "Collateral-free working capital loans for urban street vendors, with interest subsidy and digital transaction incentives.",
+        "whoCanApply": "Street vendors in urban areas holding a Certificate of Vending / ID from the Urban Local Body, or a Letter of Recommendation.",
+        "benefits": "Collateral-free working capital loans in increasing tranches on timely repayment, interest subsidy, and cashback for digital transactions.",
+        "estimatedBenefit": "Collateral-free working capital loans",
+        "educationRequirement": "None",
+        "occupationRequirement": "Street vendor",
+        "deadlineInfo": "Check the portal for the current scheme period.",
+        "rules": [
+            {
+                "field": "occupation",
+                "op": "in",
+                "values": [
+                    "STREET_VENDOR"
+                ],
+                "label": "Works as a street vendor"
+            },
+            {
+                "field": "area",
+                "op": "in",
+                "values": [
+                    "URBAN"
+                ],
+                "label": "Vends in an urban area",
+                "mandatory": false
+            },
+            {
+                "op": "official",
+                "label": "Holds a Certificate of Vending / ULB ID or Letter of Recommendation"
+            }
+        ],
+        "documents": [
+            {
+                "name": "Certificate of Vending or Letter of Recommendation",
+                "why": "Proves you are a recognised street vendor."
+            },
+            {
+                "name": "Aadhaar card",
+                "why": "e-KYC."
+            },
+            {
+                "name": "Bank account details",
+                "why": "Loan disbursement."
+            }
+        ],
+        "process": [
+            "Apply on the PM SVANidhi portal or via a CSC.",
+            "ULB verifies vendor status.",
+            "Lender sanctions and disburses the loan."
+        ],
+        "faqs": [],
+        "real": true
+    },
+    {
+        "id": "mgnrega",
+        "name": "Mahatma Gandhi National Rural Employment Guarantee Act (MGNREGA)",
+        "category": "Employment",
+        "department": "Ministry of Rural Development",
+        "level": "National",
+        "state": null,
+        "minAge": 18,
+        "maxAge": null,
+        "incomeMax": null,
+        "status": "Active",
+        "officialUrl": "https://nrega.nic.in",
+        "sourceUrl": "https://nrega.nic.in",
+        "lastVerified": "2026-06-01",
+        "applyChannel": "your Gram Panchayat",
+        "description": "Legal guarantee of wage employment for rural households whose adult members volunteer to do unskilled manual work.",
+        "whoCanApply": "Adult members of any rural household willing to do unskilled manual work.",
+        "benefits": "Up to 100 days of guaranteed wage employment per household per financial year at notified state wage rates.",
+        "estimatedBenefit": "Up to 100 days of paid work per year",
+        "educationRequirement": "None",
+        "occupationRequirement": "Willing to do unskilled manual work",
+        "deadlineInfo": "Apply for a job card any time; demand work when needed.",
+        "rules": [
+            {
+                "field": "area",
+                "op": "in",
+                "values": [
+                    "RURAL"
+                ],
+                "label": "Lives in a rural area"
+            },
+            {
+                "field": "age",
+                "op": "gte",
+                "value": 18,
+                "label": "Aged 18 or above"
+            }
+        ],
+        "documents": [
+            {
+                "name": "Aadhaar card",
+                "why": "Identity verification."
+            },
+            {
+                "name": "Passport-size photographs",
+                "why": "For the job card."
+            },
+            {
+                "name": "Bank / post office account details",
+                "why": "Wages are paid by DBT."
+            }
+        ],
+        "process": [
+            "Apply for a job card at your Gram Panchayat.",
+            "Submit a written demand for work.",
+            "Work must be provided within 15 days."
+        ],
+        "faqs": [],
+        "real": true
+    },
+    {
+        "id": "pmmvy",
+        "name": "Pradhan Mantri Matru Vandana Yojana (PMMVY)",
+        "category": "Women and Child Welfare",
+        "department": "Ministry of Women & Child Development",
+        "level": "National",
+        "state": null,
+        "minAge": null,
+        "maxAge": null,
+        "incomeMax": 800000,
+        "status": "Active",
+        "officialUrl": "https://pmmvy.wcd.gov.in",
+        "sourceUrl": "https://wcd.gov.in",
+        "lastVerified": "2026-06-01",
+        "applyChannel": "your Anganwadi centre or the PMMVY portal",
+        "description": "Maternity benefit providing cash incentives to pregnant women and lactating mothers for the first child, and for a second child if it is a girl.",
+        "whoCanApply": "Pregnant women and lactating mothers meeting PMMVY 2.0 criteria (e.g., SC/ST, BPL ration card, e-Shram registration, family income below ₹8 lakh, among others).",
+        "benefits": "₹5,000 for the first child (in instalments) and ₹6,000 for a second child if it is a girl, as per PMMVY 2.0.",
+        "estimatedBenefit": "₹5,000–₹6,000 maternity benefit",
+        "educationRequirement": "None",
+        "occupationRequirement": "None",
+        "deadlineInfo": "Register during pregnancy; claims are linked to pregnancy milestones.",
+        "rules": [
+            {
+                "field": "gender",
+                "op": "in",
+                "values": [
+                    "FEMALE"
+                ],
+                "label": "Applicant is a woman"
+            },
+            {
+                "field": "pregnant",
+                "op": "eq",
+                "value": true,
+                "label": "Pregnant or a lactating mother"
+            },
+            {
+                "field": "incomeRange",
+                "op": "income_lte",
+                "value": 800000,
+                "label": "Family income below ₹8 lakh (one of several qualifying criteria)",
+                "mandatory": false,
+                "verify": true,
+                "doc": "Proof of eligibility category"
+            }
+        ],
+        "documents": [
+            {
+                "name": "MCP card (Mother & Child Protection)",
+                "why": "Records registration and check-ups."
+            },
+            {
+                "name": "Aadhaar card",
+                "why": "Identity verification."
+            },
+            {
+                "name": "Proof of eligibility category",
+                "why": "E.g., ration card, e-Shram card or income certificate."
+            },
+            {
+                "name": "Aadhaar-seeded bank account details",
+                "why": "Benefit is paid by DBT."
+            }
+        ],
+        "process": [
+            "Register at your Anganwadi centre or on the PMMVY portal.",
+            "Submit documents.",
+            "Instalments are paid after required check-ups."
+        ],
+        "faqs": [],
+        "real": true
+    },
+    {
+        "id": "sukanya-samriddhi",
+        "name": "Sukanya Samriddhi Yojana (SSY)",
+        "category": "Women and Child Welfare",
+        "department": "Department of Economic Affairs, Ministry of Finance",
+        "level": "National",
+        "state": null,
+        "minAge": null,
+        "maxAge": null,
+        "incomeMax": null,
+        "status": "Active",
+        "officialUrl": null,
+        "sourceUrl": "https://www.nsiindia.gov.in",
+        "lastVerified": "2026-06-01",
+        "applyChannel": "a post office or authorised bank branch",
+        "description": "Government-backed small savings scheme for the education and marriage expenses of a girl child.",
+        "whoCanApply": "Parents or legal guardians of a girl child below 10 years of age (up to two girls per family, with exceptions for twins).",
+        "benefits": "Government-notified interest rate (revised quarterly) and tax benefits; deposits between ₹250 and ₹1.5 lakh per year.",
+        "estimatedBenefit": "High-interest savings for your daughter",
+        "educationRequirement": "None",
+        "occupationRequirement": "None",
+        "deadlineInfo": "Account must be opened before the girl turns 10.",
+        "rules": [
+            {
+                "field": "hasGirlChildUnder10",
+                "op": "eq",
+                "value": true,
+                "label": "Parent/guardian of a girl child below 10 years"
+            }
+        ],
+        "documents": [
+            {
+                "name": "Girl child's birth certificate",
+                "why": "Proves age below 10."
+            },
+            {
+                "name": "Parent/guardian identity and address proof",
+                "why": "KYC for the depositor."
+            },
+            {
+                "name": "Photographs",
+                "why": "For the account form."
+            }
+        ],
+        "process": [
+            "Visit a post office or authorised bank.",
+            "Fill the SSY account opening form.",
+            "Make the initial deposit."
+        ],
+        "faqs": [
+            {
+                "q": "Is there an online application link?",
+                "a": "Accounts are opened at post offices and authorised banks. Official application link requires verification."
+            }
+        ],
+        "real": true
+    },
+    {
+        "id": "karnataka-gruha-lakshmi",
+        "name": "Gruha Lakshmi (Karnataka)",
+        "category": "Women and Child Welfare",
+        "department": "Department of Women & Child Development, Government of Karnataka",
+        "level": "State",
+        "state": "Karnataka",
+        "minAge": 18,
+        "maxAge": null,
+        "incomeMax": null,
+        "status": "Active",
+        "officialUrl": "https://sevasindhu.karnataka.gov.in",
+        "sourceUrl": "https://sevasindhu.karnataka.gov.in",
+        "lastVerified": "2026-06-01",
+        "applyChannel": "Seva Sindhu, Karnataka One / Grama One centres",
+        "description": "Karnataka guarantee scheme providing monthly financial assistance to the woman head of the family.",
+        "whoCanApply": "The woman recorded as head of the family on a Karnataka ration card (AAY/BPL/APL), where neither she nor her husband pays income tax or files GST returns.",
+        "benefits": "₹2,000 per month credited directly to the woman head of the family.",
+        "estimatedBenefit": "₹2,000 per month",
+        "educationRequirement": "None",
+        "occupationRequirement": "None",
+        "deadlineInfo": "Ongoing — check Seva Sindhu for current registration status.",
+        "rules": [
+            {
+                "field": "state",
+                "op": "in",
+                "values": [
+                    "Karnataka"
+                ],
+                "label": "Resident of Karnataka"
+            },
+            {
+                "field": "gender",
+                "op": "in",
+                "values": [
+                    "FEMALE"
+                ],
+                "label": "Applicant is a woman"
+            },
+            {
+                "field": "rationCard",
+                "op": "eq",
+                "value": true,
+                "label": "Named as head of the family on a Karnataka ration card",
+                "verify": true,
+                "doc": "Ration card"
+            },
+            {
+                "field": "incomeTaxPayer",
+                "op": "eq",
+                "value": false,
+                "label": "Neither she nor her husband pays income tax / files GST returns"
+            }
+        ],
+        "documents": [
+            {
+                "name": "Ration card",
+                "why": "Must list you as head of the family."
+            },
+            {
+                "name": "Aadhaar card",
+                "why": "Identity verification."
+            },
+            {
+                "name": "Aadhaar-linked bank account",
+                "why": "Monthly amount is paid by DBT."
+            }
+        ],
+        "process": [
+            "Register on Seva Sindhu or visit a Karnataka One / Grama One centre.",
+            "Submit ration card and Aadhaar details.",
+            "Monthly assistance starts after approval."
+        ],
+        "faqs": [],
+        "real": true
+    }
+]

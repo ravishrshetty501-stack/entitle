@@ -1,0 +1,109 @@
+{
+    "summary": "First full E2E run of ENTITLE (Spring Boot + H2 behind FastAPI gateway; React frontend). Backend: 24/24 pytest pass (health, 21 schemes + filters, 404, demo auth cookie, /me, 401s, profile validation, assessment/results/preview, saved schemes, applications CRUD + history + invalid status 400, checklists, notifications read/read-all/dismiss/preferences, guide chat (source=ai, real Claude reply), impact, account delete + demo re-login recreates profile). Frontend: landing, login personas -> dashboard, wizard validation/back/conditional questions/review edit/submit -> results, result cards, schemes search+filters, scheme detail (save, add to tracker, checklist, official link new tab, guide drawer), checklist tick persists + print, applications update/history/delete, notifications, simulator full 8-step flow, Kannada/Hindi switching + notice, impact charts, privacy, profile delete (healthcare) all work. Found several logic/UX bugs below, none blocking.",
+    "backend_issues": {
+        "critical": [],
+        "minor": [
+            {
+                "endpoint": "POST /api/guide/chat (GuideService.java ~L110)",
+                "issue": "LLM history = findTop10ByUserIdOrderByCreatedAtDesc(userId) across ALL schemes (and shared demo users). Asking about PMJJBY, the AI replied 'Correction: My earlier answers named the wrong schemes (the scholarship and Ayushman Bharat)...' — cross-scheme context bleed. Filter history by schemeId (or reset per drawer session)."
+            },
+            {
+                "endpoint": "GET /api/guide/history",
+                "issue": "findTop40ByUserIdOrderByCreatedAtAsc returns the OLDEST 40 messages, so after 40 messages the newest are never shown. Use Desc + reverse."
+            },
+            {
+                "endpoint": "NotificationService.sync / GET /api/notifications",
+                "issue": "Dedupe key 'docs-<scheme>-<remaining>' creates a new notification each time the remaining count changes; old ones ('3 remaining', '2 remaining') stay listed simultaneously. Notifications also persist after the application is deleted. Remove/dismiss superseded keys and orphaned app notifications."
+            },
+            {
+                "endpoint": "PUT /api/applications/{id}",
+                "issue": "Not a partial update: applicationDate/deadline/referenceNumber are overwritten with null when omitted (verified: PUT {status} wiped referenceNumber+deadline). UI sends full object so UI is fine, but API contract is lossy."
+            },
+            {
+                "endpoint": "POST /api/applications",
+                "issue": "applicationDate and referenceNumber in request body are ignored on create (only status/notes/deadline saved)."
+            }
+        ]
+    },
+    "frontend_issues": {
+        "ui_bugs": [
+            {
+                "component": "Simulator track() (Simulator.js L57)",
+                "issue": "'Add to application tracker' always calls loginDemo(persona.id), silently replacing the current session — a signed-in Google user running the simulator gets logged out of their own account and into a shared demo persona; it also overwrites that persona's checklist. Warn/confirm or skip re-login when user already signed in.",
+                "selector": "[data-testid='sim-add-tracker']",
+                "priority": "MEDIUM"
+            },
+            {
+                "component": "AppShell notification bell",
+                "issue": "Unread count only refreshes on route change; after 'Mark read' / 'Mark all read' on /notifications the bell badge stays stale (2 -> still 2; after mark-all still showed 1).",
+                "selector": "[data-testid='notification-count']",
+                "priority": "LOW"
+            }
+        ],
+        "integration_issues": [],
+        "design_issues": [
+            {
+                "screen": "All headings (Plus Jakarta Sans, letter-spacing -0.02em)",
+                "issues": [
+                    "Word spaces visually collapse in headings/FAQ triggers/card titles: 'Youreligibility results', 'IsENTITLEa government website?', 'AtalPension Yojana'. Reduce negative tracking or add word-spacing."
+                ]
+            },
+            {
+                "screen": "Kannada/Hindi eyebrow labels",
+                "issues": [
+                    "uppercase + tracking-[0.2em] applied to Indic text breaks conjuncts (e.g. 'पात्र ता मूल्यां कन'). Disable letter-spacing for kn/hi."
+                ]
+            },
+            {
+                "screen": "Mobile header (390px)",
+                "issues": [
+                    "'Sign in' wraps to two lines, close icon touches edge, scrollWidth 392 > 390 (slight horizontal overflow)."
+                ]
+            },
+            {
+                "screen": "Applications / Schemes filters",
+                "issues": [
+                    "Native date inputs (browser default picker) instead of shadcn Calendar; native <select> filters; delete uses window.confirm instead of AlertDialog (Profile already uses AlertDialog)."
+                ]
+            },
+            {
+                "screen": "Results",
+                "issues": [
+                    "'Needs Verification' cards show '100% profile match' which can read as certainty; consider clarifying label."
+                ]
+            }
+        ]
+    },
+    "test_report_links": [
+        "/app/backend/tests/test_entitle_api.py",
+        "/app/backend/tests/restore_personas.py",
+        "/app/test_reports/pytest/pytest_results.xml"
+    ],
+    "action_items": [
+        "Filter guide LLM history by schemeId (GuideService) and fix history ordering (Top40 Desc)",
+        "Notification sync: drop superseded 'docs-<scheme>-<n>' notifications and ones for deleted applications",
+        "Simulator: don't silently switch a signed-in user's session to a demo persona",
+        "Refresh bell unread count after mark-read/mark-all/dismiss (shared context or event)",
+        "Make PUT /api/applications partial (only set provided fields) and honor applicationDate/referenceNumber on POST",
+        "Fix heading word-spacing (tracking) and Indic letter-spacing; tidy mobile header"
+    ],
+    "critical_code_review_comments": [
+        "GuideService chat context mixes schemes (see above) — causes confusing AI 'Correction' replies",
+        "server.py docstring says Java port 8080 but JAVA_PORT=8095 (cosmetic)",
+        "/tmp/entitle-java.log shows NoClassDefFoundError in shutdown hook after jar rebuild while running (benign, from rebuild-in-place)",
+        "Demo accounts are shared; any visitor's wizard edits mutate the persona profile permanently (ensurePersonas doesn't reset). Consider resetting persona profile on demo login."
+    ],
+    "updated_files": [
+        "/app/backend/tests/test_entitle_api.py",
+        "/app/backend/tests/restore_personas.py"
+    ],
+    "success_rate": {
+        "backend": "100% (24/24) - 5 minor logic issues",
+        "frontend": "~92% - all flows functional, 2 UI bugs + design issues"
+    },
+    "test_credentials": "Demo personas per /app/memory/test_credentials.md (student/household/healthcare); no passwords",
+    "seed_data_creation": "No seed scripts run. Test-created applications/saved/checklist items were removed; student & household persona profiles restored to personas.json values via restore_personas.py. Healthcare persona account was deleted (by request) and recreated by re-login. Leftover: some notifications/chat messages on demo users.",
+    "retest_needed": true,
+    "should_main_agent_self_test": true,
+    "context_for_next_testing_agent": "Run: cd /app/backend && REACT_APP_BACKEND_URL=<url> pytest tests/test_entitle_api.py. After UI tests that edit wizard/simulator, run tests/restore_personas.py. Server clock is Nov 2026. Retest: guide history bleed, notification duplicates, simulator session switch, bell refresh, applications partial update."
+}

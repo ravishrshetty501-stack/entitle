@@ -1,0 +1,251 @@
+{
+    "project_identity": {
+        "name": "ENTITLE",
+        "tagline": "Benefits You Deserve. Access You Can Trust.",
+        "context": "AI-Powered Welfare & Healthcare Benefits Access Platform for Indian Citizens",
+        "app_type": "hybrid_fullstack",
+        "tone": "Trustworthy, Empowering, Transparent, Accessible, Civic SaaS"
+    },
+    "user_preferences": {
+        "color_palette": {
+            "nav_primary": "#0A192F",
+            "navy_accent": "#1E293B",
+            "teal_positive": "#0D9488",
+            "emerald_positive": "#10B981",
+            "amber_pending": "#F59E0B",
+            "red_warning": "#EF4444",
+            "background_light": "#FAFAFA",
+            "surface_gray": "#F3F4F6",
+            "card_bg": "#FFFFFF",
+            "text_heading": "#0F172A",
+            "text_body": "#334155"
+        },
+        "typography": {
+            "font_family": "Inter, system-ui, -apple-system, sans-serif",
+            "heading_font": "Plus Jakarta Sans, Inter, sans-serif",
+            "style": "Clean, highly legible, accessible for non-technical users"
+        },
+        "card_style": "Rounded cards with restrained shadows (rounded-xl, border border-slate-200/80, shadow-sm hover:shadow-md transition-shadow)",
+        "motion": "Smooth and subtle animations with Framer Motion, no excessive gradients or distracting flashes",
+        "icons": "Lucide React icons",
+        "charts": "Recharts for Impact Analytics"
+    },
+    "typography_hierarchy": {
+        "h1_hero": "text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 leading-tight",
+        "h2_section": "text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-slate-900",
+        "h3_subsection": "text-xl sm:text-2xl font-semibold text-slate-800",
+        "h4_card_title": "text-lg font-semibold text-slate-900",
+        "body_text": "text-base text-slate-600 leading-relaxed",
+        "caption_label": "text-xs font-medium uppercase tracking-wider text-slate-500"
+    },
+    "color_system": {
+        "primary_navy": "bg-[#0A192F] text-white",
+        "primary_navy_hover": "hover:bg-[#112240]",
+        "teal_badge": "bg-teal-50 text-teal-700 border-teal-200",
+        "amber_badge": "bg-amber-50 text-amber-700 border-amber-200",
+        "red_badge": "bg-red-50 text-red-700 border-red-200",
+        "emerald_badge": "bg-emerald-50 text-emerald-700 border-emerald-200",
+        "slate_neutral_bg": "bg-[#FAFAFA]"
+    },
+    "personas": [
+        {
+            "id": "student_rahul",
+            "name": "Rahul Verma",
+            "role": "University Student",
+            "age": 20,
+            "state": "Karnataka",
+            "income_bracket": "Below ₹2.5 Lakhs/yr",
+            "known_schemes": [
+                "Post-Matric Scholarship"
+            ],
+            "undiscovered_schemes": [
+                "National Overseas Scholarship",
+                "Free Laptop Scheme Karnataka",
+                "Digital Skill India Allowance"
+            ],
+            "avatar_url": "https://images.unsplash.com/photo-1617742696157-3d806a7af677?crop=entropy&cs=srgb&fm=jpg&q=85"
+        },
+        {
+            "id": "low_income_lakshmi",
+            "name": "Lakshmi Devi",
+            "role": "Household Provider & Weaver",
+            "age": 42,
+            "state": "Andhra Pradesh",
+            "income_bracket": "Below ₹1.2 Lakhs/yr",
+            "known_schemes": [
+                "Ration Card Grain Access"
+            ],
+            "undiscovered_schemes": [
+                "Ayushman Bharat PM-JAY",
+                "PM Awas Yojana (Housing)",
+                "Stand-Up India Micro Enterprise"
+            ],
+            "avatar_url": "https://images.unsplash.com/photo-1741707040258-b772f0c2876d?crop=entropy&cs=srgb&fm=jpg&q=85"
+        },
+        {
+            "id": "healthcare_ramesh",
+            "name": "Ramesh Gowda",
+            "role": "Small Farmer & Healthcare Seeker",
+            "age": 54,
+            "state": "Karnataka",
+            "income_bracket": "Below ₹1.8 Lakhs/yr",
+            "known_schemes": [
+                "PM-KISAN Direct Benefit"
+            ],
+            "undiscovered_schemes": [
+                "Arogya Sanjeevini Critical Health Cover",
+                "PM Kisan Maandhan Pension",
+                "Soil Health Card Equipment Subsidy"
+            ],
+            "avatar_url": "https://images.unsplash.com/photo-1608876537010-ac56d8731614?crop=entropy&cs=srgb&fm=jpg&q=85"
+        }
+    ],
+    "pages_and_components": {
+        "landing_page": {
+            "hero_headline": "You May Be Eligible for Benefits You Never Knew Existed.",
+            "hero_subheadline": "ENTITLE analyzes over 1,200+ central and state schemes with AI clarity to surface life-changing healthcare and welfare benefits tailored to your household.",
+            "primary_cta": "Find My Benefits",
+            "secondary_cta": "Explore Available Schemes",
+            "key_sections": [
+                "Hero with live demo trigger",
+                "How It Works (3-step process)",
+                "Benefit Types & Categories",
+                "Benefits Discovery Simulator (Centerpiece Demo under 2 mins)",
+                "Labeled DEMO Impact Stats (12.4M+ Citizens Reached, ₹420 Cr Savings Unlocked)",
+                "Privacy & Transparency Guarantee",
+                "FAQ Accordion",
+                "Government-inspired Civic Footer"
+            ]
+        },
+        "eligibility_wizard": {
+            "steps": 5,
+            "step_names": [
+                "Personal Profile",
+                "Household & Income",
+                "Healthcare Needs",
+                "Occupation & Education",
+                "Location & Documentation"
+            ],
+            "features": [
+                "Progress bar indicator",
+                "Conditional questions",
+                "Instant validation",
+                "Save draft option"
+            ]
+        },
+        "explainable_results": {
+            "status_categories": [
+                {
+                    "status": "Likely Eligible",
+                    "badge": "bg-emerald-100 text-emerald-800 border-emerald-300",
+                    "description": "Meets 100% of explicit criteria"
+                },
+                {
+                    "status": "Needs Verification",
+                    "badge": "bg-amber-100 text-amber-800 border-amber-300",
+                    "description": "Requires 1 or 2 pending document uploads"
+                },
+                {
+                    "status": "Potentially Eligible",
+                    "badge": "bg-teal-100 text-teal-800 border-teal-300",
+                    "description": "Subject to annual state quota allocation"
+                },
+                {
+                    "status": "Currently Not Eligible",
+                    "badge": "bg-slate-100 text-slate-700 border-slate-300",
+                    "description": "Exceeds income threshold or age limit"
+                }
+            ],
+            "breakdown_structure": "Per-criterion satisfied/failed/missing items with explicit reasons and direct action items."
+        },
+        "scheme_browser": {
+            "filters": [
+                "Category (Healthcare, Education, Agriculture, Housing, Disability, Women)",
+                "State",
+                "Status",
+                "Age Group",
+                "Annual Income"
+            ],
+            "features": [
+                "Keyword search",
+                "Grid/List layout toggle",
+                "Saved schemes counter",
+                "Fast status tags"
+            ]
+        },
+        "smart_document_checklist": {
+            "features": [
+                "Mark prepared checkbox",
+                "Why needed explanation tooltips",
+                "Printable / PDF export format",
+                "Auto-sync with Application Tracker"
+            ]
+        },
+        "application_tracker": {
+            "statuses": [
+                "Draft",
+                "Document Verification",
+                "Submitted",
+                "Under Review",
+                "Action Required",
+                "Approved",
+                "Disbursed",
+                "Rejected"
+            ],
+            "timeline": "Chronological history with reference IDs and official notes"
+        },
+        "simulator_centerpiece": {
+            "name": "Benefits Discovery Simulator",
+            "time_target": "Under 2 minutes",
+            "flow": [
+                "Pick Demo Persona",
+                "Reveal Existing Known Schemes",
+                "Run AI Discovery Engine with visual scan animation",
+                "Reveal Undiscovered Schemes",
+                "Explain Eligibility Logic",
+                "Generate Action Checklist",
+                "One-click Add to Tracker"
+            ]
+        },
+        "ai_assistant_drawer": {
+            "name": "ENTITLE Guide AI",
+            "capabilities": [
+                "Multilingual scheme advice",
+                "Document requirement explanations",
+                "Step-by-step guidance",
+                "Kannada, Hindi, English toggle"
+            ]
+        }
+    },
+    "image_urls": {
+        "farmer_portrait": "https://images.unsplash.com/photo-1608876537010-ac56d8731614?crop=entropy&cs=srgb&fm=jpg&q=85",
+        "household_portrait": "https://images.unsplash.com/photo-1741707040258-b772f0c2876d?crop=entropy&cs=srgb&fm=jpg&q=85",
+        "student_portrait": "https://images.unsplash.com/photo-1617742696157-3d806a7af677?crop=entropy&cs=srgb&fm=jpg&q=85",
+        "healthcare_doctor": "https://images.unsplash.com/photo-1741707039536-113e200f9e0d?crop=entropy&cs=srgb&fm=jpg&q=85",
+        "agriculture_field": "https://images.unsplash.com/photo-1696371269777-88d1ce71642c?crop=entropy&cs=srgb&fm=jpg&q=85"
+    },
+    "instructions_to_main_agent": [
+        "Ensure all interactive components (buttons, search bars, modal triggers, form fields, persona switches) have unambiguous data-testid attributes formatted as kebab-case.",
+        "Do NOT use transparent backgrounds on dropdown menus, modals, or fixed navigation bars. Always specify solid or crisp glass backdrop (e.g., bg-[#0A192F]/95 backdrop-blur-md).",
+        "Strictly follow the user's color selection: Deep navy blue (#0A192F) for header & navigation trust, Teal (#0D9488) / Emerald (#10B981) for positive eligibility, Amber (#F59E0B) for pending tasks, Light Gray/Warm White (#FAFAFA) for background.",
+        "Integrate the language switcher prominently in the header with options: English, Kannada (ಕನ್ನಡ), and Hindi (हिंदी).",
+        "Ensure the Benefits Discovery Simulator runs within 2 minutes with interactive progress triggers, clear breakdown, document checklist export, and immediate state sync."
+    ],
+    "testing_guidelines": {
+        "data_testid_convention": "kebab-case, role-based, e.g. data-testid='find-benefits-hero-cta'",
+        "mandatory_testids": [
+            "data-testid='navbar-logo'",
+            "data-testid='language-selector'",
+            "data-testid='google-signin-button'",
+            "data-testid='demo-persona-student'",
+            "data-testid='demo-persona-household'",
+            "data-testid='demo-persona-healthcare'",
+            "data-testid='find-benefits-hero-cta'",
+            "data-testid='run-simulator-btn'",
+            "data-testid='eligibility-wizard-next-step'",
+            "data-testid='scheme-search-input'",
+            "data-testid='ai-guide-chat-trigger'",
+            "data-testid='delete-account-button'"
+        ]
+    }
+}
