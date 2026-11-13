@@ -11,10 +11,10 @@ import { humanize } from "@/lib/options";
 
 function Stat({ icon: Icon, label, value, to, testId }) {
     return (
-        <Link to={to} data-testid={testId} className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm transition-shadow hover:shadow-md">
-            <Icon className="h-5 w-5 text-[#0d9488]" />
-            <p className="mt-3 font-display text-3xl font-bold text-slate-900">{value}</p>
-            <p className="text-sm text-slate-600">{label}</p>
+        <Link to={to} data-testid={testId} className="rounded-xl border border-[#E8E3D9] bg-white p-5 shadow-sm transition-shadow hover:shadow-md">
+            <Icon className="h-5 w-5 text-[#07966B]" />
+            <p className="mt-3 font-display text-3xl font-bold text-[#101B30]">{value}</p>
+            <p className="text-sm text-[#101B30]/70">{label}</p>
         </Link>
     );
 }
@@ -45,19 +45,19 @@ export default function Dashboard() {
         <Page>
             <div className="mb-10 grid gap-6 lg:grid-cols-[1.4fr_1fr]">
                 <div className="rise">
-                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#0d9488]">Dashboard</p>
-                    <h1 className="mt-2 text-3xl font-bold text-slate-900 sm:text-4xl" data-testid="dashboard-greeting">Namaste, {user.name?.split(" ")[0]}</h1>
-                    <p className="mt-2 text-slate-600">Here is where you stand across {results.length || 21} schemes.</p>
+                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#07966B]">Dashboard</p>
+                    <h1 className="mt-2 text-3xl font-bold text-[#101B30] sm:text-4xl" data-testid="dashboard-greeting">Namaste, {user.name?.split(" ")[0]}</h1>
+                    <p className="mt-2 text-[#101B30]/70">Here is where you stand across {results.length || 21} schemes.</p>
                     <div className="mt-6 max-w-md" data-testid="profile-completion">
-                        <div className="mb-1.5 flex justify-between text-sm"><span className="text-slate-600">Profile completion</span><span className="font-semibold">{profile.completion}%</span></div>
+                        <div className="mb-1.5 flex justify-between text-sm"><span className="text-[#101B30]/70">Profile completion</span><span className="font-semibold">{profile.completion}%</span></div>
                         <Progress value={profile.completion} className="h-2" />
-                        {profile.completion < 100 && <Link to="/assessment" className="mt-2 inline-block text-sm font-semibold text-[#0d9488] hover:underline">Complete profile for better matches</Link>}
+                        {profile.completion < 100 && <Link to="/assessment" className="mt-2 inline-block text-sm font-semibold text-[#07966B] hover:underline">Complete profile for better matches</Link>}
                     </div>
                 </div>
-                <div className="rise rounded-2xl bg-[#0a192f] p-6 text-white" data-testid="recommended-next-action" style={{ animationDelay: "100ms" }}>
-                    <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-teal-300"><Sparkles className="h-4 w-4" />Recommended next action</p>
+                <div className="rise rounded-2xl bg-[#101B30] p-6 text-white" data-testid="recommended-next-action" style={{ animationDelay: "100ms" }}>
+                    <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-emerald-300"><Sparkles className="h-4 w-4" />Recommended next action</p>
                     <p className="mt-3 text-lg leading-snug">{nextAction.text}</p>
-                    <Link to={nextAction.to} className="mt-5 inline-flex items-center gap-1 rounded-full bg-white px-4 py-2 text-sm font-semibold text-[#0a192f]" data-testid="next-action-cta">{nextAction.cta}<ArrowRight className="h-4 w-4" /></Link>
+                    <Link to={nextAction.to} className="mt-5 inline-flex items-center gap-1 rounded-full bg-white px-4 py-2 text-sm font-semibold text-[#101B30]" data-testid="next-action-cta">{nextAction.cta}<ArrowRight className="h-4 w-4" /></Link>
                 </div>
             </div>
 
@@ -70,15 +70,15 @@ export default function Dashboard() {
 
             <div className="mt-10 grid gap-8 lg:grid-cols-[1.5fr_1fr]">
                 <section>
-                    <div className="mb-4 flex items-center justify-between"><h2 className="text-xl font-semibold">Top matches</h2><Link to="/results" className="text-sm font-semibold text-[#0d9488] hover:underline">All results</Link></div>
+                    <div className="mb-4 flex items-center justify-between"><h2 className="text-xl font-semibold">Top matches</h2><Link to="/results" className="text-sm font-semibold text-[#07966B] hover:underline">All results</Link></div>
                     {relevant.length === 0 ? (
                         <EmptyState icon={Compass} testId="dashboard-no-matches" title="No matches yet" text="Run the assessment to see schemes." action={<Link to="/assessment" className={btn.primary}>Start</Link>} />
                     ) : (
-                        <ul className="divide-y divide-slate-100 rounded-xl border border-slate-200 bg-white">
+                        <ul className="divide-y divide-slate-100 rounded-xl border border-[#E8E3D9] bg-white">
                             {relevant.slice(0, 5).map((r) => (
                                 <li key={r.schemeId}>
-                                    <Link to={`/schemes/${r.schemeId}`} className="flex items-center gap-4 p-4 hover:bg-slate-50" data-testid={`dashboard-match-${r.schemeId}`}>
-                                        <div className="min-w-0 flex-1"><p className="truncate font-medium text-slate-900">{r.schemeName}</p><p className="text-xs text-slate-500">{r.estimatedBenefit}</p></div>
+                                    <Link to={`/schemes/${r.schemeId}`} className="flex items-center gap-4 p-4 hover:bg-[#FBF8F1]" data-testid={`dashboard-match-${r.schemeId}`}>
+                                        <div className="min-w-0 flex-1"><p className="truncate font-medium text-[#101B30]">{r.schemeName}</p><p className="text-xs text-[#101B30]/60">{r.estimatedBenefit}</p></div>
                                         <StatusBadge status={r.status} />
                                     </Link>
                                 </li>
@@ -89,30 +89,30 @@ export default function Dashboard() {
                         <div className="mt-8">
                             <h2 className="mb-4 text-xl font-semibold">Saved schemes</h2>
                             <div className="flex flex-wrap gap-2">
-                                {saved.map((s) => <Link key={s.id} to={`/schemes/${s.schemeId}`} className="rounded-full border border-slate-300 bg-white px-3 py-1.5 text-sm hover:border-teal-500" data-testid={`saved-chip-${s.schemeId}`}>{s.scheme.name}</Link>)}
+                                {saved.map((s) => <Link key={s.id} to={`/schemes/${s.schemeId}`} className="rounded-full border border-slate-300 bg-white px-3 py-1.5 text-sm hover:border-[#07966B]" data-testid={`saved-chip-${s.schemeId}`}>{s.scheme.name}</Link>)}
                             </div>
                         </div>
                     )}
                 </section>
                 <aside className="space-y-6">
-                    <div className="rounded-xl border border-slate-200 bg-white p-5" data-testid="tracker-summary">
+                    <div className="rounded-xl border border-[#E8E3D9] bg-white p-5" data-testid="tracker-summary">
                         <h2 className="mb-3 font-semibold">Application tracker</h2>
-                        {apps.length === 0 ? <p className="text-sm text-slate-500">No applications tracked yet. Add one from any scheme page.</p> : (
+                        {apps.length === 0 ? <p className="text-sm text-[#101B30]/60">No applications tracked yet. Add one from any scheme page.</p> : (
                             <ul className="space-y-2 text-sm">
-                                {apps.slice(0, 4).map((a) => <li key={a.id} className="flex justify-between gap-2"><span className="truncate">{a.schemeName}</span><span className="shrink-0 rounded bg-slate-100 px-2 py-0.5 text-xs">{humanize(a.status)}</span></li>)}
+                                {apps.slice(0, 4).map((a) => <li key={a.id} className="flex justify-between gap-2"><span className="truncate">{a.schemeName}</span><span className="shrink-0 rounded bg-[#E8E3D9]/50 px-2 py-0.5 text-xs">{humanize(a.status)}</span></li>)}
                             </ul>
                         )}
-                        <Link to="/applications" className="mt-3 inline-block text-sm font-semibold text-[#0d9488] hover:underline">Open tracker</Link>
+                        <Link to="/applications" className="mt-3 inline-block text-sm font-semibold text-[#07966B] hover:underline">Open tracker</Link>
                     </div>
-                    <div className="rounded-xl border border-slate-200 bg-white p-5" data-testid="upcoming-deadlines">
+                    <div className="rounded-xl border border-[#E8E3D9] bg-white p-5" data-testid="upcoming-deadlines">
                         <h2 className="mb-3 flex items-center gap-2 font-semibold"><CalendarClock className="h-4 w-4 text-amber-500" />Upcoming deadlines</h2>
-                        {deadlines.length === 0 ? <p className="text-sm text-slate-500">Add deadlines to tracked applications to get reminders.</p> :
+                        {deadlines.length === 0 ? <p className="text-sm text-[#101B30]/60">Add deadlines to tracked applications to get reminders.</p> :
                             <ul className="space-y-2 text-sm">{deadlines.map((a) => <li key={a.id} className="flex justify-between"><span className="truncate">{a.schemeName}</span><span className="font-medium text-amber-700">{a.deadline}</span></li>)}</ul>}
                     </div>
-                    <div className="rounded-xl border border-slate-200 bg-white p-5">
-                        <h2 className="mb-3 flex items-center gap-2 font-semibold"><Bell className="h-4 w-4 text-[#0d9488]" />Reminders</h2>
-                        {notes.length === 0 ? <p className="text-sm text-slate-500">You're all caught up.</p> :
-                            <ul className="space-y-2 text-sm text-slate-700">{notes.slice(0, 3).map((n) => <li key={n.id}>• {n.message}</li>)}</ul>}
+                    <div className="rounded-xl border border-[#E8E3D9] bg-white p-5">
+                        <h2 className="mb-3 flex items-center gap-2 font-semibold"><Bell className="h-4 w-4 text-[#07966B]" />Reminders</h2>
+                        {notes.length === 0 ? <p className="text-sm text-[#101B30]/60">You're all caught up.</p> :
+                            <ul className="space-y-2 text-sm text-[#101B30]/80">{notes.slice(0, 3).map((n) => <li key={n.id}>â€¢ {n.message}</li>)}</ul>}
                     </div>
                 </aside>
             </div>

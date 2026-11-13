@@ -8,7 +8,7 @@ import { PageLoader } from "@/components/ProtectedRoute";
 import { toast } from "sonner";
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "@/components/ui/alert-dialog";
 
-const inputCls = "mt-1 w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm focus:border-teal-500 focus:outline-none";
+const inputCls = "mt-1 w-full rounded-lg border border-[#E8E3D9] bg-white px-3 py-2 text-sm focus:border-[#07966B] focus:outline-none";
 const STATUS_TONE = { APPROVED: "bg-emerald-100 text-emerald-800", REJECTED: "bg-red-100 text-red-700", ACTION_REQUIRED: "bg-red-50 text-red-700", SUBMITTED: "bg-sky-100 text-sky-800", UNDER_REVIEW: "bg-sky-50 text-sky-800" };
 
 function AppCard({ a, onChange, onDelete }) {
@@ -26,11 +26,11 @@ function AppCard({ a, onChange, onDelete }) {
     const tid = (x) => `app-${x}-${a.schemeId}`;
 
     return (
-        <article className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6" data-testid={tid("card")}>
+        <article className="rounded-2xl border border-[#E8E3D9] bg-white p-5 shadow-sm sm:p-6" data-testid={tid("card")}>
             <div className="flex flex-wrap items-start justify-between gap-3">
                 <div>
-                    <Link to={`/schemes/${a.schemeId}`} className="font-display text-lg font-semibold text-slate-900 hover:text-[#0d9488]">{a.schemeName}</Link>
-                    <p className="text-xs text-slate-500">{a.category} · updated {new Date(a.updatedAt).toLocaleDateString()}</p>
+                    <Link to={`/schemes/${a.schemeId}`} className="font-display text-lg font-semibold text-slate-900 hover:text-[#07966B]">{a.schemeName}</Link>
+                    <p className="text-xs text-slate-500">{a.category} Â· updated {new Date(a.updatedAt).toLocaleDateString()}</p>
                 </div>
                 <span className={`rounded-full px-3 py-1 text-xs font-semibold ${STATUS_TONE[a.status] || "bg-amber-50 text-amber-800"}`} data-testid={tid("status-badge")}>{humanize(a.status)}</span>
             </div>
@@ -60,8 +60,8 @@ function AppCard({ a, onChange, onDelete }) {
                 </AlertDialog>
             </div>
             {showHistory && (
-                <ol className="mt-4 space-y-2 border-l-2 border-slate-200 pl-4" data-testid={tid("history")}>
-                    {[...a.history].reverse().map((h, i) => <li key={i} className="text-sm"><span className="font-medium">{humanize(h.status)}</span> — {h.note} <span className="text-xs text-slate-400">{new Date(h.at).toLocaleString()}</span></li>)}
+                <ol className="mt-4 space-y-2 border-l-2 border-[#E8E3D9] pl-4" data-testid={tid("history")}>
+                    {[...a.history].reverse().map((h, i) => <li key={i} className="text-sm"><span className="font-medium">{humanize(h.status)}</span> â€” {h.note} <span className="text-xs text-slate-400">{new Date(h.at).toLocaleString()}</span></li>)}
                 </ol>
             )}
         </article>
@@ -78,9 +78,9 @@ export default function Applications() {
     };
     return (
         <Page className="max-w-5xl">
-            <PageHeader eyebrow="Application tracker" title="My applications" sub="You update these statuses yourself. ENTITLE does not have access to government application systems." />
+            <PageHeader eyebrow="Application tracker" title="My applications" sub="You update these statuses yourself. ADIKHAR does not have access to government application systems." />
             {apps.length === 0 ? (
-                <EmptyState icon={ClipboardList} testId="applications-empty" title="No applications tracked yet" text="Open any scheme and choose “Add to My Applications”."
+                <EmptyState icon={ClipboardList} testId="applications-empty" title="No applications tracked yet" text="Open any scheme and choose â€œAdd to My Applicationsâ€."
                     action={<Link to="/results" className={btn.primary}>See my matches</Link>} />
             ) : <div className="space-y-4" data-testid="applications-list">{apps.map((a) => <AppCard key={a.id} a={a} onChange={replace} onDelete={remove} />)}</div>}
         </Page>

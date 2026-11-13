@@ -99,7 +99,7 @@ export default function QuickEligibilityChecker() {
     };
 
     return (
-        <section id="eligibility-checker" className="py-24 bg-slate-50/70 border-t border-slate-200/80">
+        <section id="eligibility-checker" className="py-24 bg-[#FBF8F1] border-t border-[#E8E3D9]">
             <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
                 
                 {/* Scroll-triggered Section Header */}
@@ -110,11 +110,11 @@ export default function QuickEligibilityChecker() {
                     transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
                     className="max-w-2xl mx-auto text-center mb-12"
                 >
-                    <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-50 px-3 py-1 text-xs font-bold uppercase tracking-wider text-emerald-800">
-                        <Compass className="h-3.5 w-3.5 text-emerald-600" /> Instant Eligibility Engine
+                    <span className="inline-flex items-center gap-1.5 rounded-full border border-[#07966B]/30 bg-white px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-[#046C4E] shadow-2xs">
+                        <Compass className="h-3.5 w-3.5 text-[#07966B]" /> Instant Eligibility Engine
                     </span>
-                    <h2 className="mt-3 font-display text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                        Discover What You're Entitled To.
+                    <h2 className="mt-3 font-display text-3xl sm:text-4xl font-black text-[#101B30] tracking-tight">
+                        Discover Your Welfare Rights & Benefits.
                     </h2>
                     <motion.p
                         initial={{ opacity: 0 }}
@@ -495,7 +495,7 @@ export default function QuickEligibilityChecker() {
                                                 <span className={`px-2 py-0.5 rounded-md text-[11px] font-bold uppercase tracking-wider ${
                                                     r.status === "LIKELY_ELIGIBLE" 
                                                         ? "bg-emerald-100 text-emerald-800 border border-emerald-300"
-                                                        : "bg-teal-100 text-teal-800 border border-teal-300"
+                                                        : "bg-amber-50 text-amber-800 border border-amber-300"
                                                 }`}>
                                                     {r.status === "LIKELY_ELIGIBLE" ? "Likely Eligible" : "Needs Verification"}
                                                 </span>

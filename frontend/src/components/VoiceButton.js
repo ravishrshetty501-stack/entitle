@@ -40,7 +40,7 @@ export default function VoiceButton({ onResult, testId }) {
 
     return (
         <button type="button" onClick={toggle} aria-pressed={listening} aria-label={listening ? "Stop listening" : "Answer by voice"} title="Answer by voice" data-testid={testId}
-            className={`relative grid h-8 w-8 place-items-center rounded-full transition-colors ${listening ? "bg-red-500 text-white" : "text-[#0d9488] hover:bg-teal-50"}`}>
+            className={`relative grid h-8 w-8 place-items-center rounded-full transition-colors ${listening ? "bg-red-500 text-white" : "text-[#07966B] hover:bg-[#F0FDF4]"}`}>
             {listening && <span className="absolute inset-0 animate-ping rounded-full bg-red-400/60" aria-hidden />}
             {listening ? <MicOff className="relative h-4 w-4" /> : <Mic className="h-4 w-4" />}
         </button>

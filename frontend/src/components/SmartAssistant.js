@@ -19,6 +19,7 @@ import {
     CheckCircle2,
     Compass
 } from "lucide-react";
+import AssistantLogo from "@/components/AssistantLogo";
 import { useAssistant } from "@/context/AssistantContext";
 import { useAuth } from "@/context/AuthContext";
 import { api } from "@/lib/api";
@@ -40,8 +41,8 @@ import { toast } from "sonner";
 
 const LANGUAGES = [
     { code: "en", label: "English", locale: "en-IN" },
-    { code: "hi", label: "हिन्दी", locale: "hi-IN" },
-    { code: "kn", label: "ಕನ್ನಡ", locale: "kn-IN" }
+    { code: "hi", label: "à¤¹à¤¿à¤¨à¥à¤¦à¥€", locale: "hi-IN" },
+    { code: "kn", label: "à²•à²¨à³à²¨à²¡", locale: "kn-IN" }
 ];
 
 export default function SmartAssistant() {
@@ -112,12 +113,12 @@ export default function SmartAssistant() {
                     setMessages([
                         {
                             role: "assistant",
-                            text: "Hello! I am **ENTITLE Smart Assistant**.\n\nI can answer questions about **107 verified Indian Government welfare schemes**, eligibility rules, required documents, application steps, and general knowledge topics (science, technology, civics, and everyday questions).\n\nHow can I help you today?",
+                            text: "Hello! I am **ADIKHAR Assistant**, your civic intelligence guide for Indian Government welfare schemes, eligibility rules, and citizen services.\n\nI can answer questions about **107 verified schemes** (Central & State), documents, application procedures, and general knowledge in English, à¤¹à¤¿à¤¨à¥à¤¦à¥€, and à²•à²¨à³à²¨à²¡.\n\nHow can I help you today?",
                             suggestions: [
-                                "What is PM-KISAN?",
+                                "What is ADIP Scheme?",
                                 "Gruha Lakshmi Karnataka",
                                 "Ayushman Bharat eligibility",
-                                "Tell me about photosynthesis"
+                                "Who can get PM-KISAN?"
                             ],
                             timestamp: new Date().toISOString()
                         }
@@ -339,7 +340,7 @@ export default function SmartAssistant() {
         // Strip markdown headers / bullets for smoother voice synthesis
         const plainText = text
             .replace(/[#*`_~]/g, "")
-            .replace(/•/g, "")
+            .replace(/â€¢/g, "")
             .replace(/https?:\/\/\S+/g, "the official portal")
             .trim();
 
@@ -356,7 +357,7 @@ export default function SmartAssistant() {
     };
 
     const handleClearHistory = async () => {
-        if (window.confirm("Clear conversation history with ENTITLE Smart Assistant?")) {
+        if (window.confirm("Clear conversation history with ADIKHAR Assistant?")) {
             await clearVoiceHistoryFromDB();
             if (user && navigator.onLine) {
                 await api.guide.clearHistory().catch(() => { });
@@ -366,10 +367,10 @@ export default function SmartAssistant() {
                     role: "assistant",
                     text: "Conversation cleared. How can I help you today?",
                     suggestions: [
-                        "What is PM-KISAN?",
+                        "What is ADIP Scheme?",
                         "Gruha Lakshmi Karnataka",
                         "Ayushman Bharat eligibility",
-                        "Tell me about photosynthesis"
+                        "PM-KISAN status"
                     ],
                     timestamp: new Date().toISOString()
                 }
@@ -387,20 +388,17 @@ export default function SmartAssistant() {
             {!isOpen && (
                 <div className="fixed bottom-5 right-5 z-40 group">
                     {/* Tooltip */}
-                    <div className="pointer-events-none absolute -top-10 right-0 whitespace-nowrap rounded-lg bg-[#0a192f] px-2.5 py-1 text-[11px] font-semibold text-teal-200 opacity-0 shadow-md transition-opacity duration-200 group-hover:opacity-100">
-                        Ask ENTITLE
+                    <div className="pointer-events-none absolute -top-10 right-0 whitespace-nowrap rounded-lg bg-[#101B30] px-3 py-1 text-[11px] font-bold text-white opacity-0 shadow-md transition-opacity duration-200 group-hover:opacity-100 border border-white/10">
+                        Ask ADIKHAR
                     </div>
 
                     <button
                         onClick={() => setIsOpen(true)}
                         data-testid="smart-assistant-floating-launcher"
-                        aria-label="Ask ENTITLE Smart Assistant"
-                        className="relative flex h-14 w-14 items-center justify-center rounded-2xl bg-[#0a192f] text-white shadow-xl ring-2 ring-teal-500/40 transition-all duration-200 hover:scale-105 hover:bg-[#0f2444] active:scale-95"
+                        aria-label="Ask ADIKHAR Assistant"
+                        className="relative flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-[#07966B] via-[#057A55] to-[#101B30] text-white shadow-xl ring-2 ring-[#07966B]/30 transition-all duration-200 hover:scale-105 active:scale-95 border border-white/20"
                     >
-                        <div className="relative">
-                            <Sparkles className="h-6 w-6 text-teal-400 animate-pulse" />
-                            <span className="absolute -top-1 -right-1 h-2 w-2 rounded-full bg-teal-400" />
-                        </div>
+                        <AssistantLogo size="md" className="border-none shadow-none bg-transparent" />
                     </button>
                 </div>
             )}
@@ -409,17 +407,15 @@ export default function SmartAssistant() {
             {isOpen && (
                 <div
                     data-testid="smart-assistant-panel"
-                    className="fixed bottom-3 right-3 sm:bottom-5 sm:right-5 z-50 flex w-[calc(100vw-24px)] sm:w-[420px] h-[85vh] sm:h-[640px] flex-col rounded-3xl border border-slate-200/90 bg-[#fbfaf7] shadow-2xl overflow-hidden animate-in fade-in slide-in-from-bottom-5 duration-200"
+                    className="fixed bottom-3 right-3 sm:bottom-5 sm:right-5 z-50 flex w-[calc(100vw-24px)] sm:w-[420px] h-[85vh] sm:h-[640px] flex-col rounded-3xl border border-[#E8E3D9] bg-[#FBF8F1] shadow-2xl overflow-hidden animate-in fade-in slide-in-from-bottom-5 duration-200"
                 >
                     {/* Header */}
-                    <div className="flex items-center justify-between border-b border-white/10 bg-[#0a192f] px-4 py-3.5 text-white">
+                    <div className="flex items-center justify-between border-b border-white/10 bg-[#101B30] px-4 py-3.5 text-white">
                         <div className="flex items-center gap-2.5 min-w-0">
-                            <div className="grid h-8 w-8 shrink-0 place-items-center rounded-xl bg-teal-500/20 text-teal-300 border border-teal-400/30">
-                                <Sparkles className="h-4 w-4" />
-                            </div>
+                            <AssistantLogo size="sm" />
                             <div className="min-w-0">
                                 <div className="flex items-center gap-1.5">
-                                    <h3 className="text-sm font-extrabold tracking-tight truncate">ENTITLE Smart Assistant</h3>
+                                    <h3 className="text-sm font-extrabold tracking-tight truncate">ADIKHAR Assistant</h3>
                                     <span
                                         className={`inline-flex items-center gap-1 rounded-full px-1.5 py-0.2 text-[9px] font-bold border ${isOnline
                                             ? "border-emerald-400/40 bg-emerald-500/20 text-emerald-300"
@@ -430,7 +426,7 @@ export default function SmartAssistant() {
                                         {isOnline ? "ONLINE" : "OFFLINE"}
                                     </span>
                                 </div>
-                                <p className="text-[10px] text-slate-400 truncate">AI Scheme Specialist & General Guide</p>
+                                <p className="text-[10px] text-slate-300 truncate">National Scheme & Citizen Intelligence</p>
                             </div>
                         </div>
 
@@ -453,7 +449,7 @@ export default function SmartAssistant() {
                             <button
                                 onClick={handleClearHistory}
                                 title="Clear conversation"
-                                className="grid h-7 w-7 place-items-center rounded-lg text-slate-400 hover:bg-white/10 hover:text-rose-400"
+                                className="grid h-7 w-7 place-items-center rounded-lg text-[#101B30]/50 hover:bg-white/10 hover:text-rose-400"
                             >
                                 <Trash2 className="h-3.5 w-3.5" />
                             </button>
@@ -461,7 +457,7 @@ export default function SmartAssistant() {
                             <button
                                 onClick={() => setIsOpen(false)}
                                 title="Minimize assistant"
-                                className="grid h-7 w-7 place-items-center rounded-lg text-slate-400 hover:bg-white/10 hover:text-white"
+                                className="grid h-7 w-7 place-items-center rounded-lg text-[#101B30]/50 hover:bg-white/10 hover:text-white"
                             >
                                 <Minus className="h-4 w-4" />
                             </button>
@@ -472,7 +468,7 @@ export default function SmartAssistant() {
                                     stopSpeaking();
                                 }}
                                 title="Close assistant"
-                                className="grid h-7 w-7 place-items-center rounded-lg text-slate-400 hover:bg-white/10 hover:text-white"
+                                className="grid h-7 w-7 place-items-center rounded-lg text-[#101B30]/50 hover:bg-white/10 hover:text-white"
                             >
                                 <X className="h-4 w-4" />
                             </button>
@@ -481,16 +477,16 @@ export default function SmartAssistant() {
 
                     {/* Active Context Banner (if exploring a specific scheme) */}
                     {activeScheme && (
-                        <div className="flex items-center justify-between gap-2 bg-teal-50 px-3.5 py-1.5 border-b border-teal-200 text-xs">
+                        <div className="flex items-center justify-between gap-2 bg-[#F0FDF4] px-3.5 py-1.5 border-b border-[#BBF7D0] text-xs">
                             <div className="flex items-center gap-1.5 min-w-0">
-                                <FileText className="h-3.5 w-3.5 text-teal-700 shrink-0" />
-                                <span className="text-[11px] text-teal-900 font-semibold truncate">
+                                <FileText className="h-3.5 w-3.5 text-[#046C4E] shrink-0" />
+                                <span className="text-[11px] text-[#065F46] font-semibold truncate">
                                     Context: <strong className="font-bold">{activeScheme.name || activeScheme.title}</strong>
                                 </span>
                             </div>
                             <button
                                 onClick={() => setActiveScheme(null)}
-                                className="text-[10px] font-bold text-teal-700 hover:underline shrink-0"
+                                className="text-[10px] font-bold text-[#046C4E] hover:underline shrink-0"
                             >
                                 Clear
                             </button>
@@ -510,15 +506,15 @@ export default function SmartAssistant() {
                                 >
                                     <div
                                         className={`max-w-[88%] rounded-2xl p-3.5 leading-relaxed shadow-xs ${isUser
-                                            ? "bg-[#0a192f] text-white rounded-br-xs"
-                                            : "bg-white border border-slate-200 text-slate-800 rounded-bl-xs"
+                                            ? "bg-[#101B30] text-white rounded-br-xs"
+                                            : "bg-white border border-[#E8E3D9] text-slate-800 rounded-bl-xs"
                                             }`}
                                     >
                                         <div className="flex items-center justify-between gap-3 mb-1">
-                                            <span className={`text-[10px] font-bold uppercase tracking-wider ${isUser ? "text-teal-300" : "text-teal-700"}`}>
-                                                {isUser ? "You" : "ENTITLE Assistant"}
+                                            <span className={`text-[10px] font-bold uppercase tracking-wider ${isUser ? "text-emerald-300" : "text-[#046C4E]"}`}>
+                                                {isUser ? "You" : "ADIKHAR Assistant"}
                                             </span>
-                                            <span className="text-[9px] text-slate-400">
+                                            <span className="text-[9px] text-[#101B30]/50">
                                                 {m.timestamp ? new Date(m.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : ""}
                                             </span>
                                         </div>
@@ -543,7 +539,7 @@ export default function SmartAssistant() {
                                                     href={m.officialUrl}
                                                     target="_blank"
                                                     rel="noopener noreferrer"
-                                                    className="inline-flex items-center gap-1 font-bold text-teal-700 hover:underline text-xs"
+                                                    className="inline-flex items-center gap-1 font-bold text-[#046C4E] hover:underline text-xs"
                                                 >
                                                     Open Official Portal <ExternalLink className="h-3 w-3" />
                                                 </a>
@@ -563,13 +559,13 @@ export default function SmartAssistant() {
                                                 ) : (
                                                     <button
                                                         onClick={() => handlePlayAloud(m.text, idx)}
-                                                        className="inline-flex items-center gap-1 font-semibold text-teal-700 hover:text-teal-800"
+                                                        className="inline-flex items-center gap-1 font-semibold text-[#046C4E] hover:text-[#046C4E]"
                                                     >
                                                         <Volume2 className="h-3 w-3" /> Listen
                                                     </button>
                                                 )}
 
-                                                <span className="text-[10px] text-slate-400">
+                                                <span className="text-[10px] text-[#101B30]/50">
                                                     {m.source === "offline_database" ? "Offline Storage" : "Verified Guide"}
                                                 </span>
                                             </div>
@@ -583,7 +579,7 @@ export default function SmartAssistant() {
                                                 <button
                                                     key={sIdx}
                                                     onClick={() => handleSendMessage(sug)}
-                                                    className="rounded-full border border-teal-300 bg-white px-2.5 py-1 text-[11px] font-semibold text-teal-800 hover:bg-teal-50 transition-colors shadow-2xs text-left"
+                                                    className="rounded-full border border-[#BBF7D0] bg-white px-2.5 py-1 text-[11px] font-semibold text-[#046C4E] hover:bg-[#F0FDF4] transition-colors shadow-2xs text-left"
                                                 >
                                                     {sug}
                                                 </button>
@@ -596,8 +592,8 @@ export default function SmartAssistant() {
 
                         {/* Loading pulse indicator */}
                         {isLoading && (
-                            <div className="flex items-center gap-2 text-slate-500 bg-white border border-slate-200 rounded-2xl p-3 w-36 shadow-xs">
-                                <div className="h-2 w-2 rounded-full bg-teal-600 animate-ping" />
+                            <div className="flex items-center gap-2 text-[#101B30]/60 bg-white border border-[#E8E3D9] rounded-2xl p-3 w-36 shadow-xs">
+                                <div className="h-2 w-2 rounded-full bg-[#07966B] animate-ping" />
                                 <span className="text-xs font-semibold">Thinking...</span>
                             </div>
                         )}
@@ -606,15 +602,15 @@ export default function SmartAssistant() {
                     </div>
 
                     {/* Unified Input Section: Text Input + Microphone inside container */}
-                    <div className="border-t border-slate-200 bg-white p-3">
+                    <div className="border-t border-[#E8E3D9] bg-white p-3">
                         {/* Audio Waveform / Listening State indicator */}
                         {isListening && (
-                            <div className="mb-2 flex items-center justify-between rounded-xl bg-teal-50 border border-teal-200 px-3 py-1.5 text-xs text-teal-900">
+                            <div className="mb-2 flex items-center justify-between rounded-xl bg-[#F0FDF4] border border-[#BBF7D0] px-3 py-1.5 text-xs text-[#065F46]">
                                 <div className="flex items-center gap-2">
                                     <div className="flex items-center gap-0.5 h-3">
-                                        <div className="h-full w-1 bg-teal-600 animate-pulse" />
-                                        <div className="h-2 w-1 bg-teal-600 animate-pulse delay-75" />
-                                        <div className="h-full w-1 bg-teal-600 animate-pulse delay-150" />
+                                        <div className="h-full w-1 bg-[#07966B] animate-pulse" />
+                                        <div className="h-2 w-1 bg-[#07966B] animate-pulse delay-75" />
+                                        <div className="h-full w-1 bg-[#07966B] animate-pulse delay-150" />
                                     </div>
                                     <span className="font-bold">
                                         Listening in {LANGUAGES.find(l => l.code === selectedLang)?.label}... Speak now.
@@ -634,7 +630,7 @@ export default function SmartAssistant() {
                                 e.preventDefault();
                                 handleSendMessage();
                             }}
-                            className="flex items-center gap-1.5 rounded-2xl border border-slate-200 bg-slate-50/70 p-1.5 focus-within:border-teal-500 focus-within:bg-white transition-all shadow-xs"
+                            className="flex items-center gap-1.5 rounded-2xl border border-[#E8E3D9] bg-slate-50/70 p-1.5 focus-within:border-[#07966B] focus-within:bg-white transition-all shadow-xs"
                         >
                             <input
                                 ref={inputRef}
@@ -642,7 +638,7 @@ export default function SmartAssistant() {
                                 value={inputValue}
                                 onChange={(e) => setInputValue(e.target.value)}
                                 placeholder="Ask anything about government schemes, healthcare, education, or other topics..."
-                                className="flex-1 bg-transparent px-3 py-1.5 text-xs sm:text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none"
+                                className="flex-1 bg-transparent px-3 py-1.5 text-xs sm:text-sm text-slate-900 placeholder:text-[#101B30]/50 focus:outline-none"
                             />
 
                             {/* Integrated Microphone Button */}
@@ -653,7 +649,7 @@ export default function SmartAssistant() {
                                 title={isListening ? "Stop listening" : "Speak your question"}
                                 className={`grid h-8 w-8 place-items-center rounded-xl transition-all ${isListening
                                     ? "bg-rose-600 text-white animate-pulse"
-                                    : "text-slate-500 hover:bg-slate-200 hover:text-slate-800"
+                                    : "text-[#101B30]/60 hover:bg-slate-200 hover:text-slate-800"
                                     }`}
                             >
                                 {isListening ? <MicOff className="h-4 w-4" /> : <Mic className="h-4 w-4" />}
@@ -665,14 +661,14 @@ export default function SmartAssistant() {
                                 disabled={!inputValue.trim() || isLoading}
                                 data-testid="smart-assistant-send-button"
                                 title="Send question"
-                                className="grid h-8 w-8 place-items-center rounded-xl bg-[#0a192f] text-white hover:bg-teal-700 disabled:opacity-40 transition-colors"
+                                className="grid h-8 w-8 place-items-center rounded-xl bg-[#07966B] text-white hover:bg-[#057A55] disabled:opacity-40 transition-colors shadow-xs"
                             >
                                 <Send className="h-3.5 w-3.5" />
                             </button>
                         </form>
 
-                        <div className="mt-1.5 flex items-center justify-between text-[10px] text-slate-400 px-1">
-                            <span>ENTITLE verified schemes & general AI intelligence</span>
+                        <div className="mt-1.5 flex items-center justify-between text-[10px] text-[#101B30]/50 px-1">
+                            <span>ADIKHAR verified schemes & citizen intelligence</span>
                             <span>{selectedLang.toUpperCase()}</span>
                         </div>
                     </div>

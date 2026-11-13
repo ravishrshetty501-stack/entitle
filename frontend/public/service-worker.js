@@ -1,8 +1,8 @@
-// ENTITLE Offline-First Service Worker
+// ADIKHAR Offline-First Service Worker
 // Enables complete offline operation, caching of app shell, assets, and scheme payloads.
 
-const CACHE_NAME = "entitle-cache-v1";
-const SCHEME_CACHE = "entitle-schemes-v1";
+const CACHE_NAME = "adikhar-cache-v1";
+const SCHEME_CACHE = "adikhar-schemes-v1";
 
 const APP_SHELL = [
     "/",
@@ -93,4 +93,3 @@ self.addEventListener("fetch", (event) => {
         })
     );
 });
-

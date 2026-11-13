@@ -1,4 +1,4 @@
-// Local IndexedDB Storage Engine for ENTITLE Offline-First Operations
+// Local IndexedDB Storage Engine for ADIKHAR Offline-First Operations
 // Handles offline scheme browsing, document vault metadata, encrypted files, and voice logs.
 
 const DB_NAME = "EntitleOfflineDB";

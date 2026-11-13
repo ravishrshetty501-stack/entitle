@@ -171,7 +171,7 @@ public class RuleBasedFallbackService {
                 **Coverage:** %s
 
                 **Official Portal:** %s
-                *Verified by ENTITLE against departmental guidelines.*
+                *Verified by ADIKHAR against departmental guidelines.*
                 """, name, desc, dept, level, target, benefit, state, portal);
     }
 
@@ -233,7 +233,7 @@ public class RuleBasedFallbackService {
             sb.append("• **Aadhaar Card**: Identity verification\n• **Income Certificate**: Financial benchmark proof\n• **Bank Passbook**: Direct Benefit Transfer\n• **Ration Card**: Family and residential verification\n");
         }
 
-        sb.append("\n*Tip: You can upload and verify these certificates in your ENTITLE Document Vault before applying!*");
+        sb.append("\n*Tip: You can upload and verify these certificates in your ADIKHAR Document Vault before applying!*");
         return sb.toString();
     }
 
@@ -260,7 +260,7 @@ public class RuleBasedFallbackService {
                 }
             }
         } else {
-            sb.append("1. Gather your required documents in your ENTITLE Vault.\n2. Open the official application portal.\n3. Submit your details and attend the scheduled assessment/verification camp.\n4. Collect your receipt for status tracking.\n");
+            sb.append("1. Gather your required documents in your ADIKHAR Vault.\n2. Open the official application portal.\n3. Submit your details and attend the scheduled assessment/verification camp.\n4. Collect your receipt for status tracking.\n");
         }
 
         if (d.hasNonNull("offlineProcess") && !d.path("offlineProcess").asText().isBlank()) {
@@ -269,7 +269,7 @@ public class RuleBasedFallbackService {
 
         String portal = cleanText(s.getOfficialUrl(), s.getSourceUrl());
         if (portal != null) {
-            sb.append("\n**Official Portal:** ").append(portal).append("\n*Note: ENTITLE provides verified guidance. Applications must be completed on the official portal.*");
+            sb.append("\n**Official Portal:** ").append(portal).append("\n*Note: ADIKHAR provides verified guidance. Applications must be completed on the official portal.*");
         }
 
         return sb.toString();
@@ -328,7 +328,7 @@ public class RuleBasedFallbackService {
         return """
                 ### Verified Government Schemes for Persons with Disabilities (Divyangjan)
 
-                ENTITLE contains several verified Central and State initiatives supporting persons with benchmark disabilities (40%+):
+                ADIKHAR contains several verified Central and State initiatives supporting persons with benchmark disabilities (40%+):
 
                 **1. ADIP Scheme (Assistance to Disabled Persons for Purchase/Fitting of Aids and Appliances)**
                 • **Benefit:** 100% free modern assistive aids: motorized tricycles, wheelchairs, digital hearing aids, smart canes, artificial limbs, and cochlear implants (up to ₹16 Lakh for deaf children under 5).
@@ -599,7 +599,7 @@ public class RuleBasedFallbackService {
         return """
                 ### Citizen Services
 
-                ENTITLE provides guidance for official Indian citizen services:
+                ADIKHAR provides guidance for official Indian citizen services:
                 • **Aadhaar:** myaadhaar.uidai.gov.in
                 • **PAN Card:** incometax.gov.in
                 • **Passport Seva:** passportindia.gov.in
@@ -611,7 +611,7 @@ public class RuleBasedFallbackService {
     private String handleGeneralSchemeDiscovery(String q) {
         List<Scheme> matches = contextService.findRelatedSchemes(q, 4);
         if (matches.isEmpty()) {
-            return "ENTITLE contains 107 verified Central and State Government schemes across 10 categories. You can ask about healthcare, farmer support, pensions, scholarships, or women welfare!";
+            return "ADIKHAR contains 107 verified Central and State Government schemes across 10 categories. You can ask about healthcare, farmer support, pensions, scholarships, or women welfare!";
         }
 
         StringBuilder sb = new StringBuilder();
@@ -631,7 +631,7 @@ public class RuleBasedFallbackService {
     private String formatGreeting(String lang) {
         if ("kn".equalsIgnoreCase(lang)) {
             return """
-                    ನಮಸ್ಕಾರ! ನಾನು **ENTITLE Smart Assistant**.
+                    ನಮಸ್ಕಾರ! ನಾನು **ADIKHAR Smart Assistant**.
 
                     ನಾನು ಭಾರತ ಸರ್ಕಾರದ 107 ಪರಿಶೀಲಿಸಿದ ಕಲ್ಯಾಣ ಯೋಜನೆಗಳು (ಎಡಿಐಪಿ, ಪಿಎಂ-ಕಿಸಾನ್, ಆಯುಷ್ಮಾನ್ ಭಾರತ್, ಗೃಹ ಲಕ್ಷ್ಮಿ), ಅರ್ಹತಾ ನಿಯಮಗಳು, ದಾಖಲೆಗಳು ಹಾಗೂ ಸಾಮಾನ್ಯ ಜ್ಞಾನದ ಪ್ರಶ್ನೆಗಳಿಗೆ ನಿಖರ ಮಾಹಿತಿ ನೀಡಬಲ್ಲೆ.
 
@@ -640,7 +640,7 @@ public class RuleBasedFallbackService {
         }
         if ("hi".equalsIgnoreCase(lang)) {
             return """
-                    नमस्ते! मैं **ENTITLE Smart Assistant** हूँ।
+                    नमस्ते! मैं **ADIKHAR Smart Assistant** हूँ।
 
                     मैं भारत सरकार की 107 सत्यापित कल्याणकारी योजनाओं (जैसे ADIP, PM-KISAN, आयुष्मान भारत, गृह लक्ष्मी), पात्रता शर्तों, दस्तावेजों और सामान्य ज्ञान के प्रश्नों में आपकी सहायता कर सकता हूँ।
 
@@ -648,7 +648,7 @@ public class RuleBasedFallbackService {
                     """;
         }
         return """
-                Hello! I am **ENTITLE Smart Assistant**, your dedicated intelligence guide for Indian Government Welfare Schemes, citizen services, and general knowledge.
+                Hello! I am **ADIKHAR Smart Assistant**, your dedicated intelligence guide for Indian Government Welfare Schemes, citizen services, and general knowledge.
 
                 You can ask me about:
                 • **107 Verified Schemes:** ADIP, PM-KISAN, Ayushman Bharat, Gruha Lakshmi, Mudra Loans

@@ -14,7 +14,7 @@ export function ChecklistItems({ docs, prepared, onToggle, idPrefix = "doc" }) {
             {docs.map((d, i) => {
                 const done = prepared.includes(d.name);
                 return (
-                    <li key={d.name} className={`flex items-start gap-3 rounded-xl border p-4 transition-colors ${done ? "border-emerald-200 bg-emerald-50/50" : "border-slate-200 bg-white"}`}>
+                    <li key={d.name} className={`flex items-start gap-3 rounded-xl border p-4 transition-colors ${done ? "border-emerald-200 bg-emerald-50/50" : "border-[#E8E3D9] bg-white"}`}>
                         <Checkbox id={`${idPrefix}-${i}`} checked={done} onCheckedChange={() => onToggle(d.name)} className="mt-0.5 h-5 w-5" data-testid={`${idPrefix}-checkbox-${i}`} />
                         <label htmlFor={`${idPrefix}-${i}`} className="flex-1 cursor-pointer">
                             <span className={`block font-medium ${done ? "text-emerald-900" : "text-slate-900"}`}>{d.name}{d.conditional === "true" && <span className="ml-2 text-xs font-normal text-slate-500">(if applicable)</span>}</span>
@@ -44,11 +44,11 @@ export default function Checklist() {
 
     return (
         <Page className="max-w-3xl">
-            <Link to={`/schemes/${schemeId}`} className="no-print text-sm text-slate-500 hover:text-slate-800">← Back to scheme</Link>
-            <div className="print-area mt-4 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8" data-testid="document-checklist">
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#0d9488]">Smart document checklist</p>
+            <Link to={`/schemes/${schemeId}`} className="no-print text-sm text-slate-500 hover:text-slate-800">â† Back to scheme</Link>
+            <div className="print-area mt-4 rounded-2xl border border-[#E8E3D9] bg-white p-6 shadow-sm sm:p-8" data-testid="document-checklist">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#07966B]">Smart document checklist</p>
                 <h1 className="mt-2 text-2xl font-bold text-slate-900 sm:text-3xl">{c.schemeName}</h1>
-                <p className="mt-2 text-sm text-slate-600">Personalised from the scheme's requirements and your profile. ENTITLE does not store your documents — just tick what you've prepared.</p>
+                <p className="mt-2 text-sm text-slate-600">Personalised from the scheme's requirements and your profile. ADIKHAR does not store your documents â€” just tick what you've prepared.</p>
                 <div className="my-6">
                     <div className="mb-1.5 flex justify-between text-sm"><span data-testid="checklist-progress-text">{done} of {c.documents.length} prepared</span>
                         {missing > 0 ? <span className="font-semibold text-amber-700" data-testid="checklist-missing-count">{missing} missing</span> : <span className="flex items-center gap-1 font-semibold text-emerald-700"><CheckCircle2 className="h-4 w-4" />Ready</span>}</div>

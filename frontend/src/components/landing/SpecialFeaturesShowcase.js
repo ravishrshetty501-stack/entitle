@@ -18,7 +18,7 @@ export default function SpecialFeaturesShowcase() {
     const { openAssistant } = useAssistant();
 
     return (
-        <section id="features" className="py-24 bg-white border-t border-slate-200/80">
+        <section id="features" className="py-24 bg-[#FBF8F1] border-t border-[#E8E3D9]">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 
                 {/* Header */}
@@ -51,11 +51,11 @@ export default function SpecialFeaturesShowcase() {
                             viewport={{ once: true, amount: 0.2 }}
                             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
                         >
-                            <span className="text-xs font-mono font-bold text-emerald-600 uppercase tracking-wider">
+                            <span className="text-xs font-mono font-bold text-[#07966B] uppercase tracking-wider">
                                 01 / Conversational Intelligence
                             </span>
-                            <h3 className="font-display text-2xl sm:text-3xl font-black text-slate-900">
-                                ENTITLE Smart AI Assistant
+                            <h3 className="font-display text-2xl sm:text-3xl font-black text-[#101B30]">
+                                ADIKHAR Smart Assistant
                             </h3>
                             <p className="text-sm text-slate-600 leading-relaxed">
                                 Get instant, verified answers to complex scheme guidelines, eligibility rules, and required certificates through speech or text in your regional language.
@@ -108,8 +108,8 @@ export default function SpecialFeaturesShowcase() {
                         >
                             <div className="flex items-center justify-between border-b border-slate-200/80 pb-3">
                                 <div className="flex items-center gap-2">
-                                    <Bot className="h-4 w-4 text-emerald-600" />
-                                    <span className="text-xs font-bold text-slate-900">ENTITLE Smart Assistant</span>
+                                    <Bot className="h-4 w-4 text-[#07966B]" />
+                                    <span className="text-xs font-bold text-[#101B30]">ADIKHAR Assistant</span>
                                 </div>
                                 <span className="text-[10px] font-mono font-semibold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">
                                     English / हिंदी / ಕನ್ನಡ
@@ -375,7 +375,7 @@ export default function SpecialFeaturesShowcase() {
                                 Offline Access & Local Cache
                             </h3>
                             <p className="text-sm text-slate-600 leading-relaxed">
-                                Many rural and remote areas in India face intermittent 2G/3G connectivity. ENTITLE caches verified scheme details directly inside your browser storage for zero-data access.
+                                Many rural and remote areas in India face intermittent 2G/3G connectivity. ADIKHAR caches verified scheme details directly inside your browser storage for zero-data access.
                             </p>
 
                             <ul className="space-y-3 pt-2">

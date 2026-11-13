@@ -22,11 +22,11 @@ export default function SchemeCard({ s, status }) {
     return (
         <article
             data-testid={`scheme-card-${s.id}`}
-            className="group flex flex-col rounded-2xl border border-slate-200/90 bg-white p-5 shadow-xs transition-all duration-200 hover:-translate-y-1 hover:border-teal-400 hover:shadow-lg"
+            className="group flex flex-col rounded-2xl border border-[#E8E3D9] bg-white p-5 shadow-xs transition-all duration-200 hover:-translate-y-1 hover:border-[#07966B]/50 hover:shadow-lg"
         >
             {/* Top badges */}
             <div className="mb-3 flex flex-wrap items-center gap-1.5">
-                <span className="inline-flex items-center rounded-full bg-teal-50 px-2.5 py-1 text-xs font-semibold text-teal-800 border border-teal-200/60">
+                <span className="inline-flex items-center rounded-full bg-[#F0FDF4] px-2.5 py-1 text-xs font-semibold text-[#046C4E] border border-[#BBF7D0]">
                     {s.category || "General Welfare"}
                 </span>
 
@@ -36,7 +36,7 @@ export default function SchemeCard({ s, status }) {
                     </span>
                 ) : isState ? (
                     <span className="inline-flex items-center gap-1 rounded-full bg-amber-50 px-2.5 py-1 text-xs font-medium text-amber-800 border border-amber-200/60">
-                        <MapPin className="h-3 w-3 text-amber-600" />
+                        <MapPin className="h-3 w-3 text-[#F28C28]" />
                         {s.state}
                     </span>
                 ) : (
@@ -47,7 +47,7 @@ export default function SchemeCard({ s, status }) {
                 )}
 
                 {s.sdg && (
-                    <span className="rounded-full bg-emerald-50 px-2 py-0.5 text-[10px] font-bold text-emerald-800 border border-emerald-200">
+                    <span className="rounded-full bg-[#ECFDF5] px-2 py-0.5 text-[10px] font-bold text-[#046C4E] border border-[#A7F3D0]">
                         {s.sdg.split(":")[0]}
                     </span>
                 )}
@@ -58,7 +58,7 @@ export default function SchemeCard({ s, status }) {
             {/* Title */}
             <Link
                 to={`/schemes/${s.id}`}
-                className="font-display text-lg font-bold leading-snug text-slate-900 group-hover:text-teal-700 transition-colors"
+                className="font-display text-lg font-bold leading-snug text-[#101B30] group-hover:text-[#07966B] transition-colors"
                 data-testid={`scheme-card-link-${s.id}`}
             >
                 {s.name || s.title}
@@ -71,33 +71,33 @@ export default function SchemeCard({ s, status }) {
             </p>
 
             {/* Description */}
-            <p className="mt-2.5 line-clamp-2 text-xs sm:text-sm leading-relaxed text-slate-600">
+            <p className="mt-2.5 line-clamp-2 text-xs sm:text-sm leading-relaxed text-[#101B30]/75">
                 {s.description}
             </p>
 
             {/* Highlighted Benefit Box */}
-            <div className="mt-4 rounded-xl border border-teal-100 bg-gradient-to-r from-teal-50/80 to-emerald-50/50 p-3 text-xs sm:text-sm font-semibold text-teal-950 flex items-center gap-2">
-                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-teal-600 text-white text-[11px] font-bold">₹</span>
+            <div className="mt-4 rounded-xl border border-[#BBF7D0] bg-[#F0FDF4] p-3 text-xs sm:text-sm font-semibold text-[#046C4E] flex items-center gap-2">
+                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#07966B] text-white text-[11px] font-bold">₹</span>
                 <span className="line-clamp-2">{s.financialBenefit || s.estimatedBenefit || s.benefits || "Government welfare benefit"}</span>
             </div>
 
             {/* Quick Eligibility pills */}
-            <div className="mt-3 grid grid-cols-2 gap-2 border-t border-slate-100 pt-3 text-xs text-slate-600">
+            <div className="mt-3 grid grid-cols-2 gap-2 border-t border-[#F0EBE1] pt-3 text-xs text-slate-600">
                 <div className="flex items-center gap-1.5 truncate">
                     <User className="h-3.5 w-3.5 text-slate-400 shrink-0" />
-                    <span className="font-medium text-slate-800">Age:</span> {ageText}
+                    <span className="font-medium text-[#101B30]">Age:</span> {ageText}
                 </div>
                 <div className="flex items-center gap-1.5 truncate">
                     <IndianRupee className="h-3.5 w-3.5 text-slate-400 shrink-0" />
-                    <span className="font-medium text-slate-800">Income:</span> {incomeText}
+                    <span className="font-medium text-[#101B30]">Income:</span> {incomeText}
                 </div>
             </div>
 
             {/* Action buttons footer */}
-            <div className="mt-auto border-t border-slate-100 pt-4 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2">
+            <div className="mt-auto border-t border-[#F0EBE1] pt-4 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2">
                 <Link
                     to={`/schemes/${s.id}`}
-                    className="inline-flex items-center justify-center gap-1 rounded-xl border border-slate-200 bg-white px-3.5 py-2 text-xs font-semibold text-slate-700 hover:border-slate-400 hover:bg-slate-50 transition-colors"
+                    className="inline-flex items-center justify-center gap-1 rounded-xl border border-[#E8E3D9] bg-white px-3.5 py-2 text-xs font-semibold text-[#101B30] hover:border-[#07966B] hover:bg-[#FBF8F1] transition-colors"
                 >
                     <Info className="h-3.5 w-3.5 text-slate-500" />
                     View Details
@@ -109,10 +109,10 @@ export default function SchemeCard({ s, status }) {
                         target="_blank"
                         rel="noopener noreferrer"
                         data-testid={`scheme-card-official-${s.id}`}
-                        className="inline-flex items-center justify-center gap-1.5 rounded-xl bg-[#0a192f] px-3.5 py-2 text-xs font-semibold text-white shadow hover:bg-teal-700 transition-colors"
+                        className="inline-flex items-center justify-center gap-1.5 rounded-xl bg-[#07966B] px-3.5 py-2 text-xs font-bold text-white shadow-xs hover:bg-[#057A55] transition-colors"
                         title="Click to apply directly on the official government website"
                     >
-                        Apply on Portal <ArrowUpRight className="h-3.5 w-3.5 text-teal-300" />
+                        Apply on Portal <ArrowUpRight className="h-3.5 w-3.5 text-white" />
                     </a>
                 ) : (
                     <span className="text-[11px] text-amber-700 font-medium text-center">

@@ -137,7 +137,7 @@ export default function ImpactSection() {
                                 United Nations Sustainable Development Goals
                             </span>
                             <h3 className="mt-1 font-display text-2xl font-bold text-white">
-                                How ENTITLE Supports National SDG Targets
+                                How ADIKHAR Supports National SDG Targets
                             </h3>
                         </div>
                         <Link
@@ -198,7 +198,7 @@ export default function ImpactSection() {
                             transition={{ duration: 0.5, delay: 0.3 }}
                         >
                             <div className="flex items-center gap-2.5">
-                                <Sun className="h-5 w-5 text-teal-400" />
+                                <Sun className="h-5 w-5 text-[#10B981]" />
                                 <h4 className="font-bold text-white text-sm">SDG 13 — Climate Action</h4>
                             </div>
                             <p className="text-xs text-slate-300 leading-relaxed font-normal">
@@ -212,7 +212,7 @@ export default function ImpactSection() {
 
                     <div className="mt-8 pt-6 border-t border-white/10">
                         <p className="text-[11px] text-slate-400 italic">
-                            Notice: ENTITLE is an open prototype catalogue. Figures represent indexed public schemes in our database; we do not claim real-world application outcomes or government disbursement endorsements.
+                            Notice: ADIKHAR is an open public-welfare catalogue. Figures represent indexed public schemes in our database; we do not claim real-world application outcomes or government disbursement endorsements.
                         </p>
                     </div>
                 </motion.div>

@@ -124,13 +124,13 @@ export default function DownloadCenter() {
     return (
         <Page className="max-w-5xl py-8">
             {/* Header */}
-            <div className="mb-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4 border-b border-slate-200 pb-5">
+            <div className="mb-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4 border-b border-[#E8E3D9] pb-5">
                 <div>
-                    <div className="inline-flex items-center gap-1.5 rounded-full border border-teal-200 bg-teal-50 px-3 py-1 text-xs font-bold text-teal-800">
-                        <DownloadCloud className="h-3.5 w-3.5 text-teal-600" />
-                        ENTITLE Offline Data Hub
+                    <div className="inline-flex items-center gap-1.5 rounded-full border border-[#BBF7D0] bg-[#F0FDF4] px-3 py-1 text-xs font-bold text-[#065F46]">
+                        <DownloadCloud className="h-3.5 w-3.5 text-[#07966B]" />
+                        ADIKHAR Offline Data Hub
                     </div>
-                    <h1 className="mt-2 text-2xl sm:text-3xl font-extrabold text-[#0a192f] tracking-tight">
+                    <h1 className="mt-2 text-2xl sm:text-3xl font-extrabold text-[#101B30] tracking-tight">
                         Offline Download Center
                     </h1>
                     <p className="mt-1 text-xs sm:text-sm text-slate-600">
@@ -145,14 +145,14 @@ export default function DownloadCenter() {
                         : "bg-amber-50 text-amber-800 border-amber-200"
                         }`}>
                         {isOnline ? <Wifi className="h-4 w-4 text-emerald-600" /> : <WifiOff className="h-4 w-4 text-amber-600" />}
-                        {isOnline ? "Online • Ready to Sync" : "Offline Mode"}
+                        {isOnline ? "Online â€¢ Ready to Sync" : "Offline Mode"}
                     </div>
 
                     <button
                         onClick={handleSyncAllSchemes}
                         disabled={isSyncing || !isOnline}
                         data-testid="sync-now-button"
-                        className="inline-flex items-center gap-2 rounded-xl bg-[#0a192f] px-4 py-2 text-xs sm:text-sm font-bold text-white hover:bg-teal-700 transition-colors disabled:opacity-40 shadow-xs"
+                        className="inline-flex items-center gap-2 rounded-xl bg-[#101B30] px-4 py-2 text-xs sm:text-sm font-bold text-white hover:bg-[#046C4E] transition-colors disabled:opacity-40 shadow-xs"
                     >
                         <RefreshCw className={`h-4 w-4 ${isSyncing ? "animate-spin" : ""}`} />
                         {isSyncing ? "Syncing..." : "Sync Now"}
@@ -162,30 +162,30 @@ export default function DownloadCenter() {
 
             {/* Storage & Sync Overview Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
-                <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-xs">
+                <div className="rounded-2xl border border-[#E8E3D9] bg-white p-5 shadow-xs">
                     <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider block">Schemes Stored Offline</span>
                     <div className="mt-2 flex items-baseline gap-2">
-                        <span className="text-3xl font-extrabold text-[#0a192f]">{schemesCount}</span>
+                        <span className="text-3xl font-extrabold text-[#101B30]">{schemesCount}</span>
                         <span className="text-xs text-slate-400">of 107 verified</span>
                     </div>
                     <p className="mt-1 text-xs text-slate-500">Includes complete eligibility & document rules</p>
                 </div>
 
-                <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-xs">
+                <div className="rounded-2xl border border-[#E8E3D9] bg-white p-5 shadow-xs">
                     <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider block">Last Synchronized</span>
                     <div className="mt-2 text-sm font-bold text-slate-800">
                         {lastSync ? new Date(lastSync).toLocaleString([], { dateStyle: "medium", timeStyle: "short" }) : "Not yet synced"}
                     </div>
-                    <p className="mt-1 text-xs text-teal-700 font-medium">Catalog Release: 2026.1 (107 Schemes)</p>
+                    <p className="mt-1 text-xs text-[#046C4E] font-medium">Catalog Release: 2026.1 (107 Schemes)</p>
                 </div>
 
-                <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-xs">
+                <div className="rounded-2xl border border-[#E8E3D9] bg-white p-5 shadow-xs">
                     <div className="flex items-center justify-between">
                         <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider block">Device Storage</span>
                         <span className="text-xs font-bold text-slate-700">{storage.usageMB} MB / {storage.quotaMB} MB</span>
                     </div>
                     <div className="mt-2 h-2 w-full rounded-full bg-slate-100 overflow-hidden">
-                        <div className="h-full bg-teal-600 rounded-full" style={{ width: `${Math.max(5, storage.percent)}%` }} />
+                        <div className="h-full bg-[#07966B] rounded-full" style={{ width: `${Math.max(5, storage.percent)}%` }} />
                     </div>
                     <p className="mt-1 text-xs text-slate-400">{storage.percent}% of browser quota</p>
                 </div>
@@ -193,21 +193,21 @@ export default function DownloadCenter() {
 
             {/* Downloadable Offline Data Packs */}
             <h2 className="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">
-                <Layers className="h-5 w-5 text-teal-600" />
+                <Layers className="h-5 w-5 text-[#07966B]" />
                 Available Offline Intelligence Packs
             </h2>
 
             <div className="space-y-3 mb-8">
                 {/* Pack 1: Complete 107 Scheme Directory */}
-                <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div className="rounded-2xl border border-[#E8E3D9] bg-white p-5 shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                     <div className="flex items-start gap-3">
-                        <div className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-teal-50 text-teal-700">
+                        <div className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-[#F0FDF4] text-[#046C4E]">
                             <Layers className="h-5 w-5" />
                         </div>
                         <div>
                             <div className="flex items-center gap-2">
                                 <h3 className="font-bold text-slate-900 text-sm sm:text-base">All-India Scheme Catalog</h3>
-                                <span className="rounded-full bg-teal-50 px-2 py-0.5 text-[10px] font-bold text-teal-800 border border-teal-200">107 Schemes</span>
+                                <span className="rounded-full bg-[#F0FDF4] px-2 py-0.5 text-[10px] font-bold text-[#065F46] border border-[#BBF7D0]">107 Schemes</span>
                             </div>
                             <p className="text-xs text-slate-600 mt-1 max-w-xl">
                                 Full Central and State schemes across all 10 categories: SDG 2/3, Agriculture, Women, Education, Housing, Social Welfare. Approx 2.4 MB.
@@ -224,7 +224,7 @@ export default function DownloadCenter() {
                             <button
                                 onClick={handleSyncAllSchemes}
                                 disabled={!isOnline}
-                                className="rounded-xl bg-teal-600 px-4 py-2 text-xs font-bold text-white hover:bg-teal-700 disabled:opacity-40"
+                                className="rounded-xl bg-[#07966B] px-4 py-2 text-xs font-bold text-white hover:bg-[#046C4E] disabled:opacity-40"
                             >
                                 Download Pack
                             </button>
@@ -233,7 +233,7 @@ export default function DownloadCenter() {
                 </div>
 
                 {/* Pack 2: Karnataka Flagship Welfare Pack */}
-                <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div className="rounded-2xl border border-[#E8E3D9] bg-white p-5 shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                     <div className="flex items-start gap-3">
                         <div className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-amber-50 text-amber-700">
                             <FileCheck className="h-5 w-5" />
@@ -244,7 +244,7 @@ export default function DownloadCenter() {
                                 <span className="rounded-full bg-amber-50 px-2 py-0.5 text-[10px] font-bold text-amber-800 border border-amber-200">State Priority</span>
                             </div>
                             <p className="text-xs text-slate-600 mt-1 max-w-xl">
-                                Gruha Lakshmi (₹2,000/mo), Yuva Nidhi, Shakti Scheme (Free bus travel), Anna Bhagya (10 kg grain/cash), and Gruha Jyothi (200 units free power).
+                                Gruha Lakshmi (â‚¹2,000/mo), Yuva Nidhi, Shakti Scheme (Free bus travel), Anna Bhagya (10 kg grain/cash), and Gruha Jyothi (200 units free power).
                             </p>
                         </div>
                     </div>
@@ -257,7 +257,7 @@ export default function DownloadCenter() {
                 </div>
 
                 {/* Pack 3: Regional Voice Models */}
-                <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div className="rounded-2xl border border-[#E8E3D9] bg-white p-5 shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                     <div className="flex items-start gap-3">
                         <div className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-indigo-50 text-indigo-700">
                             <Mic className="h-5 w-5" />
@@ -281,7 +281,7 @@ export default function DownloadCenter() {
                 </div>
 
                 {/* Pack 4: Offline Document OCR Engine */}
-                <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div className="rounded-2xl border border-[#E8E3D9] bg-white p-5 shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                     <div className="flex items-start gap-3">
                         <div className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-purple-50 text-purple-700">
                             <Shield className="h-5 w-5" />
@@ -306,14 +306,14 @@ export default function DownloadCenter() {
             </div>
 
             {/* Cache Reset / Purge Option */}
-            <div className="rounded-2xl border border-slate-200 bg-slate-50/60 p-5 flex items-center justify-between">
+            <div className="rounded-2xl border border-[#E8E3D9] bg-slate-50/60 p-5 flex items-center justify-between">
                 <div>
                     <h3 className="text-sm font-bold text-slate-900">Purge Offline Catalog Cache</h3>
                     <p className="text-xs text-slate-500 mt-0.5">Clears cached scheme records to force a fresh redownload.</p>
                 </div>
                 <button
                     onClick={handleClearOfflineCache}
-                    className="inline-flex items-center gap-1.5 rounded-xl border border-slate-300 bg-white px-3.5 py-2 text-xs font-bold text-rose-700 hover:bg-rose-50"
+                    className="inline-flex items-center gap-1.5 rounded-xl border border-[#E8E3D9] bg-white px-3.5 py-2 text-xs font-bold text-rose-700 hover:bg-rose-50"
                 >
                     <Trash2 className="h-3.5 w-3.5" /> Clear Offline Cache
                 </button>

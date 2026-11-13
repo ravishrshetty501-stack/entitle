@@ -24,7 +24,7 @@ export default function Profile() {
         const v = p[k];
         if (v === true) return t("common.yes");
         if (v === false) return t("common.no");
-        if (v == null || v === "") return "—";
+        if (v == null || v === "") return "â€”";
         return OPTIONS[k] ? t(`opt.${k}.${v}`) : v;
     };
     const del = async () => {
@@ -33,15 +33,15 @@ export default function Profile() {
 
     return (
         <Page className="max-w-4xl">
-            <PageHeader eyebrow="My profile" title={user.name} sub={`${user.email}${user.demo ? " · shared demo account" : ""}`}>
+            <PageHeader eyebrow="My profile" title={user.name} sub={`${user.email}${user.demo ? " Â· shared demo account" : ""}`}>
                 <Link to="/assessment" className={btn.primary} data-testid="edit-profile-button"><Pencil className="h-4 w-4" />Edit answers</Link>
             </PageHeader>
-            <section className="rounded-2xl border border-slate-200 bg-white p-6" data-testid="profile-summary">
+            <section className="rounded-2xl border border-[#E8E3D9] bg-white p-6" data-testid="profile-summary">
                 <div className="mb-4 flex justify-between"><h2 className="font-semibold">Eligibility profile</h2><span className="text-sm text-slate-500">{data.completion}% complete</span></div>
                 <dl className="grid gap-x-8 gap-y-2 text-sm sm:grid-cols-2">
                     {FIELDS.map((k) => <div key={k} className="flex justify-between gap-3 border-b border-dashed border-slate-100 py-1.5"><dt className="text-slate-500">{t(`q.${k}`).replace(/\?$/, "")}</dt><dd className="text-right font-medium">{show(k)}</dd></div>)}
                 </dl>
-                <p className="mt-4 text-xs text-slate-500">Why we ask: each answer maps to a specific scheme rule (for example, income range is compared with scholarship income limits). Unanswered questions show as “missing information”, never as a rejection.</p>
+                <p className="mt-4 text-xs text-slate-500">Why we ask: each answer maps to a specific scheme rule (for example, income range is compared with scholarship income limits). Unanswered questions show as â€œmissing informationâ€, never as a rejection.</p>
             </section>
             <section className="mt-6 rounded-2xl border border-red-200 bg-red-50/40 p-6" data-testid="danger-zone">
                 <h2 className="font-semibold text-red-800">Delete account</h2>

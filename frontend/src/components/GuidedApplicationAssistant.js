@@ -67,16 +67,16 @@ export default function GuidedApplicationAssistant({ isOpen, onClose, scheme }) 
 
     return (
         <Dialog open={isOpen} onOpenChange={(open) => !open && onClose()}>
-            <DialogContent className="max-w-3xl max-h-[90vh] overflow-y-auto p-0 rounded-2xl bg-white border border-slate-200 shadow-2xl">
+            <DialogContent className="max-w-3xl max-h-[90vh] overflow-y-auto p-0 rounded-2xl bg-white border border-[#E8E3D9] shadow-2xl">
                 {/* Header */}
-                <div className="bg-[#0a192f] text-white p-6 rounded-t-2xl sticky top-0 z-10">
+                <div className="bg-[#101B30] text-white p-6 rounded-t-2xl sticky top-0 z-10">
                     <div className="flex items-center justify-between">
                         <div className="flex items-center gap-2">
-                            <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-teal-500 text-[#0a192f] font-extrabold shadow">
+                            <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-[#07966B] text-[#101B30] font-extrabold shadow">
                                 <Compass className="h-5 w-5" />
                             </span>
                             <div>
-                                <span className="text-[11px] font-bold uppercase tracking-wider text-teal-400">
+                                <span className="text-[11px] font-bold uppercase tracking-wider text-[#10B981]">
                                     Step-by-Step Application Guide
                                 </span>
                                 <DialogTitle className="text-lg font-bold text-white">
@@ -100,7 +100,7 @@ export default function GuidedApplicationAssistant({ isOpen, onClose, scheme }) 
                                 key={s.num}
                                 onClick={() => setCurrentStep(s.num)}
                                 className={`text-left rounded-lg p-2 transition-all ${currentStep === s.num
-                                        ? "bg-teal-500/20 border border-teal-400 text-teal-300"
+                                        ? "bg-[#07966B]/20 border border-teal-400 text-[#34D399]"
                                         : currentStep > s.num
                                             ? "bg-white/10 text-emerald-400 border border-transparent"
                                             : "bg-white/5 text-slate-400 border border-transparent hover:bg-white/10"
@@ -120,10 +120,10 @@ export default function GuidedApplicationAssistant({ isOpen, onClose, scheme }) 
                 {/* Body Content */}
                 <div className="p-6 space-y-6">
                     {/* Important Official Portal Disclaimer */}
-                    <div className="rounded-xl border border-teal-200 bg-teal-50/60 p-4 text-xs text-teal-950 flex items-start gap-2.5">
-                        <AlertCircle className="h-4 w-4 shrink-0 text-teal-700 mt-0.5" />
+                    <div className="rounded-xl border border-[#BBF7D0] bg-[#F0FDF4]/60 p-4 text-xs text-[#064E3B] flex items-start gap-2.5">
+                        <AlertCircle className="h-4 w-4 shrink-0 text-[#046C4E] mt-0.5" />
                         <p className="leading-relaxed">
-                            <strong>Notice:</strong> Entitle provides this interactive guide to help you prepare and navigate government portals with ease. <strong>Entitle does not submit applications on your behalf.</strong> Your actual application must be submitted directly through the authorized government portal or designated government office.
+                            <strong>Notice:</strong> ADIKHAR provides this interactive guide to help you prepare and navigate government portals with ease. <strong>ADIKHAR does not submit applications on your behalf.</strong> Your actual application must be submitted directly through the authorized government portal or designated government office.
                         </p>
                     </div>
 
@@ -131,7 +131,7 @@ export default function GuidedApplicationAssistant({ isOpen, onClose, scheme }) 
                     {currentStep === 1 && (
                         <div className="space-y-4">
                             <h3 className="text-base font-bold text-slate-900 flex items-center gap-2">
-                                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#0a192f] text-white text-xs font-bold">1</span>
+                                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#101B30] text-white text-xs font-bold">1</span>
                                 Confirm That You Meet the Requirements
                             </h3>
                             <p className="text-sm text-slate-600 leading-relaxed">
@@ -157,25 +157,25 @@ export default function GuidedApplicationAssistant({ isOpen, onClose, scheme }) 
 
                             {/* Eligibility Summary Cards */}
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
-                                <div className="rounded-xl border border-slate-200 bg-slate-50 p-3">
+                                <div className="rounded-xl border border-[#E8E3D9] bg-slate-50 p-3">
                                     <span className="font-semibold text-slate-500 block">Age Requirement</span>
                                     <span className="font-bold text-slate-900 text-sm mt-0.5 block">
                                         {scheme.detailedEligibility?.ageRequirement || (scheme.minAge ? `${scheme.minAge}+ years` : "No specific age limit")}
                                     </span>
                                 </div>
-                                <div className="rounded-xl border border-slate-200 bg-slate-50 p-3">
+                                <div className="rounded-xl border border-[#E8E3D9] bg-slate-50 p-3">
                                     <span className="font-semibold text-slate-500 block">Income Benchmark</span>
                                     <span className="font-bold text-slate-900 text-sm mt-0.5 block">
-                                        {scheme.detailedEligibility?.incomeLimit || (scheme.incomeMax ? `Up to ₹${scheme.incomeMax.toLocaleString()}/yr` : "No income ceiling")}
+                                        {scheme.detailedEligibility?.incomeLimit || (scheme.incomeMax ? `Up to â‚¹${scheme.incomeMax.toLocaleString()}/yr` : "No income ceiling")}
                                     </span>
                                 </div>
-                                <div className="rounded-xl border border-slate-200 bg-slate-50 p-3">
+                                <div className="rounded-xl border border-[#E8E3D9] bg-slate-50 p-3">
                                     <span className="font-semibold text-slate-500 block">Geographical Coverage</span>
                                     <span className="font-bold text-slate-900 text-sm mt-0.5 block">
                                         {scheme.stateCoverage || (scheme.level === "Central" ? "All India (Nationwide)" : scheme.state)}
                                     </span>
                                 </div>
-                                <div className="rounded-xl border border-slate-200 bg-slate-50 p-3">
+                                <div className="rounded-xl border border-[#E8E3D9] bg-slate-50 p-3">
                                     <span className="font-semibold text-slate-500 block">Category / Target Group</span>
                                     <span className="font-bold text-slate-900 text-sm mt-0.5 block">
                                         {scheme.detailedEligibility?.casteCategoryRequirement || scheme.category}
@@ -189,7 +189,7 @@ export default function GuidedApplicationAssistant({ isOpen, onClose, scheme }) 
                     {currentStep === 2 && (
                         <div className="space-y-4">
                             <h3 className="text-base font-bold text-slate-900 flex items-center gap-2">
-                                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#0a192f] text-white text-xs font-bold">2</span>
+                                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#101B30] text-white text-xs font-bold">2</span>
                                 Prepare Your Document Kit
                             </h3>
                             <p className="text-sm text-slate-600 leading-relaxed">
@@ -198,8 +198,8 @@ export default function GuidedApplicationAssistant({ isOpen, onClose, scheme }) 
 
                             <div className="space-y-3">
                                 {scheme.documents?.map((doc, i) => (
-                                    <div key={i} className="rounded-xl border border-slate-200 p-3.5 bg-slate-50/60 flex items-start gap-3">
-                                        <FileText className="h-5 w-5 text-teal-600 shrink-0 mt-0.5" />
+                                    <div key={i} className="rounded-xl border border-[#E8E3D9] p-3.5 bg-slate-50/60 flex items-start gap-3">
+                                        <FileText className="h-5 w-5 text-[#07966B] shrink-0 mt-0.5" />
                                         <div className="flex-1 text-xs">
                                             <div className="flex items-center justify-between">
                                                 <span className="font-bold text-slate-900 text-sm">{doc.name}</span>
@@ -210,7 +210,7 @@ export default function GuidedApplicationAssistant({ isOpen, onClose, scheme }) 
                                             <p className="text-slate-600 mt-1 leading-relaxed">{doc.why}</p>
                                             <div className="mt-1.5 flex flex-wrap gap-2 text-[11px] text-slate-500 font-medium">
                                                 <span><strong>Authority:</strong> {doc.issuingAuthority || "Competent Govt Authority"}</span>
-                                                <span>•</span>
+                                                <span>â€¢</span>
                                                 <span><strong>Format:</strong> {doc.format || "Original / Scanned PDF"}</span>
                                             </div>
                                         </div>
@@ -224,7 +224,7 @@ export default function GuidedApplicationAssistant({ isOpen, onClose, scheme }) 
                     {currentStep === 3 && (
                         <div className="space-y-4">
                             <h3 className="text-base font-bold text-slate-900 flex items-center gap-2">
-                                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#0a192f] text-white text-xs font-bold">3</span>
+                                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#101B30] text-white text-xs font-bold">3</span>
                                 How to Apply Step-by-Step
                             </h3>
                             <p className="text-sm text-slate-600 leading-relaxed">
@@ -233,15 +233,15 @@ export default function GuidedApplicationAssistant({ isOpen, onClose, scheme }) 
 
                             {/* Mode badge */}
                             <div className="flex items-center gap-2 text-xs font-semibold text-slate-700 bg-slate-100 p-3 rounded-xl">
-                                <Building2 className="h-4 w-4 text-teal-600" />
+                                <Building2 className="h-4 w-4 text-[#07966B]" />
                                 <span>Application Mode: <strong>{scheme.applicationMode || "Online & Offline"}</strong></span>
                             </div>
 
                             {/* Sequential numbered steps */}
                             <div className="space-y-3">
                                 {scheme.process?.map((stepText, idx) => (
-                                    <div key={idx} className="flex items-start gap-3 rounded-xl border border-slate-200 p-3 bg-white">
-                                        <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-[#0a192f] text-white font-bold text-xs">
+                                    <div key={idx} className="flex items-start gap-3 rounded-xl border border-[#E8E3D9] p-3 bg-white">
+                                        <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-[#101B30] text-white font-bold text-xs">
                                             {idx + 1}
                                         </div>
                                         <div className="flex-1 pt-0.5 text-xs sm:text-sm text-slate-800 leading-relaxed">
@@ -253,9 +253,9 @@ export default function GuidedApplicationAssistant({ isOpen, onClose, scheme }) 
 
                             {/* Offline Office Procedure if available */}
                             {scheme.offlineProcess && (
-                                <div className="mt-4 rounded-xl border border-teal-200 bg-teal-50/50 p-4">
-                                    <h4 className="text-xs font-bold uppercase tracking-wider text-teal-950 flex items-center gap-1.5">
-                                        <Building2 className="h-4 w-4 text-teal-700" />
+                                <div className="mt-4 rounded-xl border border-[#BBF7D0] bg-[#F0FDF4]/50 p-4">
+                                    <h4 className="text-xs font-bold uppercase tracking-wider text-[#064E3B] flex items-center gap-1.5">
+                                        <Building2 className="h-4 w-4 text-[#046C4E]" />
                                         In-Person / Offline Office Submission Procedure
                                     </h4>
                                     <p className="mt-2 text-xs sm:text-sm text-slate-700 leading-relaxed">
@@ -320,15 +320,15 @@ export default function GuidedApplicationAssistant({ isOpen, onClose, scheme }) 
                             </p>
 
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
-                                <div className="rounded-xl border border-slate-200 bg-slate-50 p-3.5">
+                                <div className="rounded-xl border border-[#E8E3D9] bg-slate-50 p-3.5">
                                     <span className="font-bold text-slate-900 flex items-center gap-1.5 text-sm">
-                                        <Clock className="h-4 w-4 text-teal-600" /> Processing Timeline
+                                        <Clock className="h-4 w-4 text-[#07966B]" /> Processing Timeline
                                     </span>
                                     <p className="mt-1 text-slate-700 leading-relaxed">
                                         {scheme.processingTime || "Standard processing takes 15 to 45 business days upon successful document verification."}
                                     </p>
                                 </div>
-                                <div className="rounded-xl border border-slate-200 bg-slate-50 p-3.5">
+                                <div className="rounded-xl border border-[#E8E3D9] bg-slate-50 p-3.5">
                                     <span className="font-bold text-slate-900 flex items-center gap-1.5 text-sm">
                                         <CheckCircle2 className="h-4 w-4 text-emerald-600" /> Benefit Delivery
                                     </span>
@@ -340,7 +340,7 @@ export default function GuidedApplicationAssistant({ isOpen, onClose, scheme }) 
 
                             {/* Tracking instructions */}
                             {scheme.trackingProcedure && (
-                                <div className="rounded-xl border border-slate-200 bg-white p-4 text-xs sm:text-sm">
+                                <div className="rounded-xl border border-[#E8E3D9] bg-white p-4 text-xs sm:text-sm">
                                     <span className="font-bold text-slate-900 block">How to Track Application Status:</span>
                                     <p className="mt-1 text-slate-700 leading-relaxed">{scheme.trackingProcedure}</p>
                                 </div>
@@ -348,7 +348,7 @@ export default function GuidedApplicationAssistant({ isOpen, onClose, scheme }) 
 
                             {/* Correction procedure */}
                             {scheme.correctionProcedure && (
-                                <div className="rounded-xl border border-slate-200 bg-white p-4 text-xs sm:text-sm">
+                                <div className="rounded-xl border border-[#E8E3D9] bg-white p-4 text-xs sm:text-sm">
                                     <span className="font-bold text-slate-900 block">How to Correct Errors / Edit Details:</span>
                                     <p className="mt-1 text-slate-700 leading-relaxed">{scheme.correctionProcedure}</p>
                                 </div>
@@ -356,7 +356,7 @@ export default function GuidedApplicationAssistant({ isOpen, onClose, scheme }) 
 
                             {/* Official Portal Big CTA */}
                             {targetUrl && (
-                                <div className="rounded-2xl border-2 border-teal-500 bg-teal-50/60 p-5 text-center space-y-3">
+                                <div className="rounded-2xl border-2 border-[#07966B] bg-[#F0FDF4]/60 p-5 text-center space-y-3">
                                     <p className="font-bold text-slate-900 text-sm">
                                         Ready to Apply on the Government Portal?
                                     </p>
@@ -364,9 +364,9 @@ export default function GuidedApplicationAssistant({ isOpen, onClose, scheme }) 
                                         href={targetUrl}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="inline-flex items-center gap-2 rounded-xl bg-[#0a192f] hover:bg-teal-700 px-6 py-3 text-sm font-bold text-white shadow-lg transition-colors"
+                                        className="inline-flex items-center gap-2 rounded-xl bg-[#101B30] hover:bg-[#046C4E] px-6 py-3 text-sm font-bold text-white shadow-lg transition-colors"
                                     >
-                                        Go to Official Application Portal <ExternalLink className="h-4 w-4 text-teal-300" />
+                                        Go to Official Application Portal <ExternalLink className="h-4 w-4 text-[#34D399]" />
                                     </a>
                                     <p className="text-[11px] text-slate-500">
                                         Official URL: {targetUrl}
@@ -378,14 +378,14 @@ export default function GuidedApplicationAssistant({ isOpen, onClose, scheme }) 
                 </div>
 
                 {/* Footer Controls */}
-                <div className="bg-slate-50 border-t border-slate-200 px-6 py-4 flex items-center justify-between">
+                <div className="bg-slate-50 border-t border-[#E8E3D9] px-6 py-4 flex items-center justify-between">
                     <button
                         type="button"
                         onClick={handlePrev}
                         disabled={currentStep === 1}
                         className={`inline-flex items-center gap-1.5 rounded-lg px-4 py-2 text-xs font-bold transition-colors ${currentStep === 1
                                 ? "text-slate-300 cursor-not-allowed"
-                                : "text-slate-700 hover:bg-slate-200 bg-white border border-slate-200"
+                                : "text-slate-700 hover:bg-slate-200 bg-white border border-[#E8E3D9]"
                             }`}
                     >
                         <ArrowLeft className="h-4 w-4" /> Previous
@@ -399,7 +399,7 @@ export default function GuidedApplicationAssistant({ isOpen, onClose, scheme }) 
                         <button
                             type="button"
                             onClick={handleNext}
-                            className="inline-flex items-center gap-1.5 rounded-lg bg-[#0a192f] hover:bg-teal-700 px-4 py-2 text-xs font-bold text-white shadow transition-colors"
+                            className="inline-flex items-center gap-1.5 rounded-lg bg-[#101B30] hover:bg-[#046C4E] px-4 py-2 text-xs font-bold text-white shadow transition-colors"
                         >
                             Next Step <ArrowRight className="h-4 w-4" />
                         </button>

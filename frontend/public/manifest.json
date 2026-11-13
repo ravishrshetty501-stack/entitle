@@ -1,7 +1,7 @@
 {
-  "short_name": "ENTITLE",
-  "name": "ENTITLE — Offline-First Indian Welfare & Scheme Intelligence",
-  "description": "Discover Central and State Government schemes, eligibility criteria, and manage your welfare documents with offline intelligence.",
+  "short_name": "ADIKHAR",
+  "name": "ADIKHAR — National Citizen Welfare Gateway",
+  "description": "Discover Central and State Government schemes, healthcare assistance, and scholarships with explainable eligibility, document vault, and offline intelligence.",
   "icons": [
     {
       "src": "/favicon.ico",
@@ -12,6 +12,6 @@
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait-primary",
-  "theme_color": "#0a192f",
-  "background_color": "#0a192f"
+  "theme_color": "#07966B",
+  "background_color": "#FBF8F1"
 }

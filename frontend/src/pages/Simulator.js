@@ -69,17 +69,17 @@ export default function Simulator() {
         <Page className="max-w-5xl">
             <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
                 <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#0d9488]">Live demonstration</p>
-                    <h1 className="mt-2 text-3xl font-bold text-slate-900 sm:text-4xl">Benefits Discovery Simulator</h1>
-                    <p className="mt-2 max-w-2xl text-slate-600">Watch the explainable engine find benefits a real-life citizen didn't know about — in under two minutes. Personas are fictional; scheme data is real.</p>
+                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#07966B]">Live demonstration</p>
+                    <h1 className="mt-2 text-3xl font-bold text-[#101B30] sm:text-4xl">Benefits Discovery Simulator</h1>
+                    <p className="mt-2 max-w-2xl text-[#101B30]/70">Watch the explainable engine find benefits a real-life citizen didn't know about â€” in under two minutes. Personas are fictional; scheme data is real.</p>
                 </div>
-                {step > 0 && <div className="flex items-center gap-3"><span className="flex items-center gap-1.5 rounded-full bg-white px-3 py-1.5 text-sm font-semibold text-slate-700 shadow-sm" data-testid="sim-timer"><Timer className="h-4 w-4 text-[#0d9488]" />{elapsed}s</span>
+                {step > 0 && <div className="flex items-center gap-3"><span className="flex items-center gap-1.5 rounded-full bg-white px-3 py-1.5 text-sm font-semibold text-[#101B30] shadow-sm" data-testid="sim-timer"><Timer className="h-4 w-4 text-[#07966B]" />{elapsed}s</span>
                     <button onClick={reset} className={btn.ghost} data-testid="sim-reset"><RotateCcw className="h-4 w-4" />Restart</button></div>}
             </div>
 
             <ol className="mb-8 grid grid-cols-4 gap-2 sm:grid-cols-8" data-testid="sim-progress">
                 {STEPS.map((s, i) => (
-                    <li key={s}><div className={`h-1.5 rounded-full ${i <= step ? "bg-[#0d9488]" : "bg-slate-200"}`} /><p className={`mt-1.5 text-[11px] ${i === step ? "font-semibold text-slate-900" : "text-slate-500"}`}>{s}</p></li>
+                    <li key={s}><div className={`h-1.5 rounded-full ${i <= step ? "bg-[#07966B]" : "bg-[#E8E3D9]"}`} /><p className={`mt-1.5 text-[11px] ${i === step ? "font-semibold text-[#101B30]" : "text-[#101B30]/50"}`}>{s}</p></li>
                 ))}
             </ol>
 
@@ -89,12 +89,12 @@ export default function Simulator() {
                         const Icon = ICONS[p.id];
                         return (
                             <button key={p.id} onClick={() => pick(p)} data-testid={`sim-persona-${p.id}`} style={{ animationDelay: `${i * 80}ms` }}
-                                className="rise flex flex-col rounded-2xl border border-slate-200 bg-white p-6 text-left shadow-sm transition-[box-shadow,transform] hover:-translate-y-0.5 hover:shadow-md">
-                                <span className="grid h-11 w-11 place-items-center rounded-xl bg-[#0a192f] text-white"><Icon className="h-5 w-5" /></span>
+                                className="rise flex flex-col rounded-2xl border border-[#E8E3D9] bg-white p-6 text-left shadow-sm transition-[box-shadow,transform] hover:-translate-y-0.5 hover:shadow-md">
+                                <span className="grid h-11 w-11 place-items-center rounded-xl bg-[#101B30] text-white"><Icon className="h-5 w-5" /></span>
                                 <span className="mt-4 font-display text-lg font-semibold">{p.name}</span>
-                                <span className="text-sm text-slate-500">{p.role}</span>
-                                <span className="mt-3 text-sm text-slate-600">{p.story}</span>
-                                <span className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-[#0d9488]">Start with {p.name.split(" ")[0]}<ArrowRight className="h-4 w-4" /></span>
+                                <span className="text-sm text-[#101B30]/60">{p.role}</span>
+                                <span className="mt-3 text-sm text-[#101B30]/70">{p.story}</span>
+                                <span className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-[#07966B]">Start with {p.name.split(" ")[0]}<ArrowRight className="h-4 w-4" /></span>
                             </button>
                         );
                     })}
@@ -103,48 +103,48 @@ export default function Simulator() {
 
             {step === 1 && persona && (
                 <div className="rise grid gap-6 md:grid-cols-2">
-                    <div className="rounded-2xl border border-slate-200 bg-white p-6">
+                    <div className="rounded-2xl border border-[#E8E3D9] bg-white p-6">
                         <h2 className="font-semibold">{persona.name}'s profile</h2>
                         <dl className="mt-4 grid grid-cols-2 gap-3 text-sm">
                             {["age", "state", "district", "area", "occupation", "education", "incomeRange", "householdCategory"].map((k) => (
-                                <div key={k}><dt className="text-xs uppercase tracking-wider text-slate-400">{humanize(k.replace(/([A-Z])/g, " $1"))}</dt><dd className="font-medium">{humanize(String(persona.profile[k]))}</dd></div>
+                                <div key={k}><dt className="text-xs uppercase tracking-wider text-[#101B30]/50">{humanize(k.replace(/([A-Z])/g, " $1"))}</dt><dd className="font-medium">{humanize(String(persona.profile[k]))}</dd></div>
                             ))}
                         </dl>
                     </div>
-                    <div className="rounded-2xl bg-[#0a192f] p-6 text-white">
-                        <h2 className="flex items-center gap-2 font-semibold"><Eye className="h-5 w-5 text-teal-300" />What {persona.name.split(" ")[0]} already knows</h2>
+                    <div className="rounded-2xl bg-[#101B30] p-6 text-white">
+                        <h2 className="flex items-center gap-2 font-semibold"><Eye className="h-5 w-5 text-emerald-300" />What {persona.name.split(" ")[0]} already knows</h2>
                         <ul className="mt-4 space-y-2" data-testid="sim-known-schemes">
                             {persona.knownSchemeNames.map((n) => <li key={n} className="rounded-lg bg-white/10 px-3 py-2 text-sm">{n}</li>)}
                         </ul>
-                        <p className="mt-4 text-sm text-slate-300">That's it — {known.length} scheme. Let's see what else may apply.</p>
-                        <button onClick={run} className="mt-6 inline-flex items-center gap-2 rounded-full bg-teal-400 px-5 py-2.5 text-sm font-bold text-[#0a192f]" data-testid="run-simulator-btn"><Play className="h-4 w-4" />Run ENTITLE engine</button>
+                        <p className="mt-4 text-sm text-white/70">That's it â€” {known.length} scheme. Let's see what else may apply.</p>
+                        <button onClick={run} className="mt-6 inline-flex items-center gap-2 rounded-full bg-[#07966B] hover:bg-[#057A55] px-6 py-2.5 text-sm font-bold text-white shadow-md transition-all hover:scale-102" data-testid="run-simulator-btn"><Play className="h-4 w-4" />Run ADIKHAR Engine</button>
                     </div>
                 </div>
             )}
 
             {step === 2 && (
-                <div className="rounded-2xl border border-slate-200 bg-white p-10 text-center" data-testid="sim-scanning">
-                    <Loader2 className="mx-auto h-8 w-8 animate-spin text-[#0d9488]" />
+                <div className="rounded-2xl border border-[#E8E3D9] bg-white p-10 text-center" data-testid="sim-scanning">
+                    <Loader2 className="mx-auto h-8 w-8 animate-spin text-[#07966B]" />
                     <p className="mt-4 font-display text-2xl font-bold">Checking {scanIdx} schemes</p>
-                    <p className="text-sm text-slate-500">Evaluating each rule deterministically against the profile…</p>
-                    <div className="scan-bar relative mx-auto mt-6 h-2 max-w-md overflow-hidden rounded-full bg-slate-100"><div className="h-full bg-[#0d9488] transition-[width]" style={{ width: `${Math.min(100, (scanIdx / 63) * 100)}%` }} /></div>
+                    <p className="text-sm text-[#101B30]/60">Evaluating each rule deterministically against the profileâ€¦</p>
+                    <div className="scan-bar relative mx-auto mt-6 h-2 max-w-md overflow-hidden rounded-full bg-[#E8E3D9]/50"><div className="h-full bg-[#07966B] transition-[width]" style={{ width: `${Math.min(100, (scanIdx / 63) * 100)}%` }} /></div>
                 </div>
             )}
 
             {step === 3 && (
                 <div className="rise">
-                    <div className="mb-6 rounded-2xl bg-[#0a192f] p-6 text-white" data-testid="sim-discovery-summary">
-                        <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-teal-300"><Sparkles className="h-4 w-4" />Discovery</p>
+                    <div className="mb-6 rounded-2xl bg-[#101B30] p-6 text-white" data-testid="sim-discovery-summary">
+                        <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-emerald-300"><Sparkles className="h-4 w-4" />Discovery</p>
                         <p className="mt-2 font-display text-3xl font-bold">{discovered.length} previously undiscovered schemes may be relevant</p>
-                        <p className="mt-1 text-slate-300">out of {results.length} checked · {relevant.length} relevant in total, {known.length} already known</p>
+                        <p className="mt-1 text-white/70">out of {results.length} checked Â· {relevant.length} relevant in total, {known.length} already known</p>
                     </div>
-                    <p className="mb-3 text-sm text-slate-600">Pick one to see exactly why it matched:</p>
+                    <p className="mb-3 text-sm text-[#101B30]/70">Pick one to see exactly why it matched:</p>
                     <div className="grid gap-3 sm:grid-cols-2">
                         {relevant.map((r) => (
                             <button key={r.schemeId} onClick={() => explain(r)} data-testid={`sim-discovered-${r.schemeId}`}
-                                className="flex items-start justify-between gap-3 rounded-xl border border-slate-200 bg-white p-4 text-left transition-shadow hover:shadow-md">
-                                <span><span className="block font-medium">{r.schemeName}</span><span className="text-xs text-slate-500">{r.estimatedBenefit}</span></span>
-                                <span className="flex shrink-0 flex-col items-end gap-1"><StatusBadge status={r.status} />{!known.includes(r.schemeId) && <span className="text-[10px] font-bold uppercase text-[#0d9488]">New</span>}</span>
+                                className="flex items-start justify-between gap-3 rounded-xl border border-[#E8E3D9] bg-white p-4 text-left transition-shadow hover:shadow-md">
+                                <span><span className="block font-medium">{r.schemeName}</span><span className="text-xs text-[#101B30]/60">{r.estimatedBenefit}</span></span>
+                                <span className="flex shrink-0 flex-col items-end gap-1"><StatusBadge status={r.status} />{!known.includes(r.schemeId) && <span className="text-[10px] font-bold uppercase text-[#07966B]">New</span>}</span>
                             </button>
                         ))}
                     </div>
@@ -160,7 +160,7 @@ export default function Simulator() {
             )}
 
             {step === 5 && (
-                <div className="rise rounded-2xl border border-slate-200 bg-white p-6">
+                <div className="rise rounded-2xl border border-[#E8E3D9] bg-white p-6">
                     <h2 className="mb-4 text-xl font-semibold">Checklist for {focus.schemeName}</h2>
                     {!scheme ? <Loader2 className="h-5 w-5 animate-spin" /> : <ChecklistItems docs={docs} prepared={prepared} idPrefix="sim-doc" onToggle={(n) => setPrepared(prepared.includes(n) ? prepared.filter((x) => x !== n) : [...prepared, n])} />}
                     <button onClick={() => setStep(6)} className={`${btn.primary} mt-6`} data-testid="sim-to-track">Continue<ArrowRight className="h-4 w-4" /></button>
@@ -168,23 +168,23 @@ export default function Simulator() {
             )}
 
             {step === 6 && (
-                <div className="rise rounded-2xl border border-slate-200 bg-white p-8 text-center">
-                    <ListPlus className="mx-auto h-8 w-8 text-[#0d9488]" />
+                <div className="rise rounded-2xl border border-[#E8E3D9] bg-white p-8 text-center">
+                    <ListPlus className="mx-auto h-8 w-8 text-[#07966B]" />
                     <h2 className="mt-3 text-xl font-semibold">Add {focus.schemeName} to {persona.name.split(" ")[0]}'s tracker</h2>
-                    <p className="mt-1 text-sm text-slate-500">This saves the application and checklist progress to {persona.name.split(" ")[0]}'s shared demo account.</p>
+                    <p className="mt-1 text-sm text-[#101B30]/60">This saves the application and checklist progress to {persona.name.split(" ")[0]}'s shared demo account.</p>
                     {user && user.demoPersona !== persona.id && <p className="mx-auto mt-3 max-w-md rounded-lg bg-amber-50 p-3 text-sm text-amber-900" data-testid="sim-session-warning">You're signed in as {user.name}. Continuing will sign you out and switch to the demo persona.</p>}
                     <button onClick={track} disabled={busy} className={`${btn.teal} mt-6`} data-testid="sim-add-tracker">{busy ? <Loader2 className="h-4 w-4 animate-spin" /> : <Check className="h-4 w-4" />}Add to application tracker</button>
                 </div>
             )}
 
             {step === 7 && (
-                <div className="rise rounded-2xl bg-[#0a192f] p-8 text-white" data-testid="sim-complete">
-                    <p className="text-xs font-semibold uppercase tracking-widest text-teal-300">Done in {elapsed} seconds</p>
+                <div className="rise rounded-2xl bg-[#101B30] p-8 text-white" data-testid="sim-complete">
+                    <p className="text-xs font-semibold uppercase tracking-widest text-emerald-300">Done in {elapsed} seconds</p>
                     <h2 className="mt-2 font-display text-3xl font-bold">Recommended next action</h2>
                     <p className="mt-3 max-w-2xl text-lg text-slate-200" data-testid="sim-next-action">{focus.nextAction}</p>
-                    <p className="mt-2 text-sm text-slate-400">{docs.length - prepared.length} document(s) still to prepare.</p>
+                    <p className="mt-2 text-sm text-[#101B30]/50">{docs.length - prepared.length} document(s) still to prepare.</p>
                     <div className="mt-6 flex flex-wrap gap-2">
-                        <Link to="/applications" className="inline-flex items-center gap-1 rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-[#0a192f]" data-testid="sim-open-tracker">Open tracker<ArrowRight className="h-4 w-4" /></Link>
+                        <Link to="/applications" className="inline-flex items-center gap-1 rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-[#101B30]" data-testid="sim-open-tracker">Open tracker<ArrowRight className="h-4 w-4" /></Link>
                         <Link to="/dashboard" className="inline-flex items-center gap-1 rounded-full border border-white/30 px-5 py-2.5 text-sm font-semibold">View dashboard</Link>
                         {focus.officialUrl && <a href={focus.officialUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 rounded-full border border-white/30 px-5 py-2.5 text-sm font-semibold">Official site</a>}
                     </div>

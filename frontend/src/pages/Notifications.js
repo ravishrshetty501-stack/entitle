@@ -27,7 +27,7 @@ export default function Notifications() {
 
     return (
         <Page className="max-w-5xl">
-            <PageHeader eyebrow="In-app only" title="Notifications" sub="Reminders are shown here only. ENTITLE never sends SMS or email without an integration and your consent.">
+            <PageHeader eyebrow="In-app only" title="Notifications" sub="Reminders are shown here only. ADIKHAR never sends SMS or email without an integration and your consent.">
                 {list.some((n) => !n.readStatus) && <button onClick={readAll} className={btn.ghost} data-testid="mark-all-read"><CheckCheck className="h-4 w-4" />Mark all read</button>}
             </PageHeader>
             <div className="grid gap-8 lg:grid-cols-[1.6fr_1fr]">
@@ -37,12 +37,12 @@ export default function Notifications() {
                             {list.map((n) => {
                                 const Icon = ICON[n.notificationType] || ListTodo;
                                 return (
-                                    <li key={n.id} className={`flex items-start gap-3 rounded-xl border p-4 ${n.readStatus ? "border-slate-200 bg-white" : "border-teal-200 bg-teal-50/40"}`} data-testid={`notification-${n.id}`}>
+                                    <li key={n.id} className={`flex items-start gap-3 rounded-xl border p-4 ${n.readStatus ? "border-[#E8E3D9] bg-white" : "border-[#BBF7D0] bg-[#F0FDF4]/40"}`} data-testid={`notification-${n.id}`}>
                                         <Icon className={`mt-0.5 h-5 w-5 shrink-0 ${n.notificationType === "DEADLINE" ? "text-red-500" : "text-amber-500"}`} />
                                         <div className="flex-1">
                                             <p className="text-sm text-slate-800">{n.message}</p>
                                             <div className="mt-2 flex gap-4 text-xs">
-                                                {n.link && <Link to={n.link} onClick={() => read(n)} className="font-semibold text-[#0d9488] hover:underline" data-testid={`notification-open-${n.id}`}>Open</Link>}
+                                                {n.link && <Link to={n.link} onClick={() => read(n)} className="font-semibold text-[#07966B] hover:underline" data-testid={`notification-open-${n.id}`}>Open</Link>}
                                                 {!n.readStatus && <button onClick={() => read(n)} className="text-slate-500 hover:text-slate-800" data-testid={`notification-read-${n.id}`}>Mark read</button>}
                                             </div>
                                         </div>
@@ -53,7 +53,7 @@ export default function Notifications() {
                         </ul>
                     )}
                 </div>
-                <aside className="h-fit rounded-xl border border-slate-200 bg-white p-5" data-testid="notification-preferences">
+                <aside className="h-fit rounded-xl border border-[#E8E3D9] bg-white p-5" data-testid="notification-preferences">
                     <h2 className="mb-4 font-semibold">Notification preferences</h2>
                     {prefs && PREFS.map(([k, l]) => (
                         <label key={k} className="flex items-center justify-between gap-4 border-b border-slate-100 py-3 text-sm last:border-0">

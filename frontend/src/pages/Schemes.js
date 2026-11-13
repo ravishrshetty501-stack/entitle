@@ -125,21 +125,21 @@ export default function Schemes() {
     return (
         <Page className="max-w-7xl">
             {/* Informational Organizer Notice */}
-            <div className="mb-6 rounded-2xl border border-teal-200/80 bg-gradient-to-r from-teal-50 via-cyan-50/40 to-slate-50 p-4 sm:p-5 shadow-xs">
+            <div className="mb-6 rounded-2xl border border-[#BBF7D0] bg-gradient-to-r from-[#F0FDF4] via-white to-[#FFF7ED] p-4 sm:p-5 shadow-xs">
                 <div className="flex items-start gap-3.5">
-                    <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-teal-600 text-white shadow">
+                    <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#07966B] text-white shadow-xs">
                         <Info className="h-5 w-5" />
                     </div>
                     <div>
                         <div className="flex flex-wrap items-center gap-2">
-                            <span className="font-bold text-teal-950 text-base">National Government Scheme Discovery Platform</span>
-                            <span className="rounded-full bg-teal-600/10 px-2.5 py-0.5 text-xs font-bold uppercase tracking-wider text-teal-800">
+                            <span className="font-bold text-[#046C4E] text-base">National Government Scheme Discovery Platform</span>
+                            <span className="rounded-full bg-[#07966B]/10 px-2.5 py-0.5 text-xs font-bold uppercase tracking-wider text-[#046C4E]">
                                 Open Public Access · No Login Required
                             </span>
                         </div>
-                        <p className="mt-1 text-xs sm:text-sm leading-relaxed text-slate-700">
-                            Because government schemes often lack public awareness, Entitle organizes and indexes genuine Central and State government welfare schemes in one clean place. 
-                            <strong> Applications cannot be filed on Entitle</strong> — click on any scheme to view requirements, test eligibility, check off documents, and jump straight to the official government portal to apply.
+                        <p className="mt-1 text-xs sm:text-sm leading-relaxed text-[#101B30]/80">
+                            Because government schemes often lack public awareness, ADIKHAR organizes and indexes genuine Central and State government welfare schemes in one clean place. 
+                            <strong> Applications cannot be filed on ADIKHAR</strong> — click on any scheme to view requirements, test eligibility, check off documents, and jump straight to the official government portal to apply.
                         </p>
                     </div>
                 </div>
@@ -169,8 +169,8 @@ export default function Schemes() {
                         onClick={() => setF("category", "")}
                         className={`whitespace-nowrap rounded-xl px-3.5 py-2 text-xs font-bold transition-all shrink-0 ${
                             !f.category
-                                ? "bg-[#0a192f] text-white shadow-md shadow-slate-900/10"
-                                : "border border-slate-200 bg-white text-slate-700 hover:border-teal-400 hover:bg-slate-50"
+                                ? "bg-[#101B30] text-white shadow-md shadow-[#101B30]/10"
+                                : "border border-[#E8E3D9] bg-white text-[#101B30]/80 hover:border-[#07966B]/50 hover:bg-[#FBF8F1]"
                         }`}
                     >
                         All Categories ({stats ? stats.totalSchemes : "107"})
@@ -184,13 +184,13 @@ export default function Schemes() {
                                 onClick={() => setF("category", cat)}
                                 className={`whitespace-nowrap rounded-xl px-3.5 py-2 text-xs font-bold transition-all shrink-0 flex items-center gap-1.5 ${
                                     isSelected
-                                        ? "bg-[#0a192f] text-white shadow-md shadow-slate-900/10"
-                                        : "border border-slate-200 bg-white text-slate-700 hover:border-teal-400 hover:bg-slate-50"
+                                        ? "bg-[#101B30] text-white shadow-md shadow-[#101B30]/10"
+                                        : "border border-[#E8E3D9] bg-white text-[#101B30]/80 hover:border-[#07966B]/50 hover:bg-[#FBF8F1]"
                                 }`}
                             >
                                 <span>{cat}</span>
                                 {count > 0 && (
-                                    <span className={`rounded-full px-1.5 py-0.2 text-[10px] font-extrabold ${isSelected ? "bg-teal-400 text-[#0a192f]" : "bg-slate-100 text-slate-600"}`}>
+                                    <span className={`rounded-full px-1.5 py-0.2 text-[10px] font-extrabold ${isSelected ? "bg-[#07966B] text-white" : "bg-[#F0FDF4] text-[#046C4E]"}`}>
                                         {count}
                                     </span>
                                 )}
@@ -201,7 +201,7 @@ export default function Schemes() {
             </div>
 
             {/* Advanced Discovery & Filter Engine */}
-            <div className="mb-8 rounded-2xl border border-slate-200 bg-white p-5 shadow-xs">
+            <div className="mb-8 rounded-2xl border border-[#E8E3D9] bg-white p-5 shadow-xs">
                 {/* Search Bar */}
                 <div className="relative">
                     <Search className="absolute left-4 top-3.5 h-5 w-5 text-slate-400" />
@@ -209,7 +209,7 @@ export default function Schemes() {
                         value={f.q}
                         onChange={(e) => setF("q", e.target.value)}
                         placeholder="Search schemes by name, keyword, ministry, or beneficiary (e.g., student loan, PM Mudra, farmer subsidy, Karnataka Gruha Lakshmi)..."
-                        className="w-full rounded-xl border border-slate-300 py-3 pl-12 pr-10 text-sm sm:text-base placeholder:text-slate-400 focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-500/20"
+                        className="w-full rounded-xl border border-slate-300 py-3 pl-12 pr-10 text-sm sm:text-base placeholder:text-slate-400 focus:border-[#07966B] focus:outline-none focus:ring-2 focus:ring-[#07966B]/20"
                         data-testid="scheme-search-input"
                     />
                     {f.q && (
@@ -231,7 +231,7 @@ export default function Schemes() {
                             aria-label="Level"
                             value={f.level}
                             onChange={(e) => setF("level", e.target.value)}
-                            className="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-xs sm:text-sm focus:border-teal-500 focus:outline-none"
+                            className="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-xs sm:text-sm focus:border-[#07966B] focus:outline-none"
                             data-testid="filter-level"
                         >
                             <option value="">Central + State</option>
@@ -247,7 +247,7 @@ export default function Schemes() {
                             aria-label="State"
                             value={f.state}
                             onChange={(e) => setF("state", e.target.value)}
-                            className="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-xs sm:text-sm focus:border-teal-500 focus:outline-none"
+                            className="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-xs sm:text-sm focus:border-[#07966B] focus:outline-none"
                             data-testid="filter-state"
                         >
                             <option value="">All States & Central</option>
@@ -264,7 +264,7 @@ export default function Schemes() {
                             aria-label="SDG"
                             value={f.sdg}
                             onChange={(e) => setF("sdg", e.target.value)}
-                            className="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-xs sm:text-sm focus:border-teal-500 focus:outline-none"
+                            className="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-xs sm:text-sm focus:border-[#07966B] focus:outline-none"
                             data-testid="filter-sdg"
                         >
                             {SDGS.map((sdg) => (
@@ -280,7 +280,7 @@ export default function Schemes() {
                             aria-label="Beneficiary"
                             value={f.beneficiaryType}
                             onChange={(e) => setF("beneficiaryType", e.target.value)}
-                            className="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-xs sm:text-sm focus:border-teal-500 focus:outline-none"
+                            className="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-xs sm:text-sm focus:border-[#07966B] focus:outline-none"
                             data-testid="filter-beneficiary"
                         >
                             {BENEFICIARIES.map((b) => (
@@ -296,7 +296,7 @@ export default function Schemes() {
                             aria-label="Annual Income"
                             value={f.income}
                             onChange={(e) => setF("income", e.target.value)}
-                            className="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-xs sm:text-sm focus:border-teal-500 focus:outline-none"
+                            className="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-xs sm:text-sm focus:border-[#07966B] focus:outline-none"
                             data-testid="filter-income"
                         >
                             {INCOME_OPTIONS.map((opt) => (
@@ -312,7 +312,7 @@ export default function Schemes() {
                             aria-label="Age Preset"
                             value={f.age}
                             onChange={(e) => setF("age", e.target.value)}
-                            className="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-xs sm:text-sm focus:border-teal-500 focus:outline-none"
+                            className="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-xs sm:text-sm focus:border-[#07966B] focus:outline-none"
                             data-testid="filter-age"
                         >
                             {AGE_PRESETS.map((a) => (
@@ -333,7 +333,7 @@ export default function Schemes() {
                             </span>
                         )}
                         {f.category && (
-                            <span className="inline-flex items-center gap-1 rounded-full bg-teal-50 px-2.5 py-0.5 text-xs text-teal-800 border border-teal-200">
+                            <span className="inline-flex items-center gap-1 rounded-full bg-[#F0FDF4] px-2.5 py-0.5 text-xs text-[#046C4E] border border-[#BBF7D0]">
                                 Category: {f.category}
                                 <button onClick={() => setF("category", "")}><X className="h-3 w-3 hover:text-red-500" /></button>
                             </span>
@@ -370,7 +370,7 @@ export default function Schemes() {
                         )}
                         <button
                             onClick={clearAll}
-                            className="ml-auto text-xs font-bold text-teal-700 hover:text-teal-900 underline"
+                            className="ml-auto text-xs font-bold text-[#046C4E] hover:text-[#07966B] underline"
                             data-testid="filter-clear"
                         >
                             Reset All Filters
@@ -402,7 +402,7 @@ export default function Schemes() {
                     action={
                         <button
                             onClick={clearAll}
-                            className="inline-flex items-center gap-1.5 rounded-full bg-[#0a192f] px-5 py-2.5 text-sm font-semibold text-white hover:bg-teal-700 transition-colors"
+                            className="inline-flex items-center gap-1.5 rounded-full bg-[#101B30] px-5 py-2.5 text-sm font-semibold text-white hover:bg-[#07966B] transition-colors"
                         >
                             Reset All Filters
                         </button>
@@ -449,7 +449,7 @@ export default function Schemes() {
                                                 onClick={() => setPage(pageNum)}
                                                 className={`h-9 w-9 rounded-xl text-xs font-bold transition-all ${
                                                     page === pageNum
-                                                        ? "bg-[#0a192f] text-white shadow-xs"
+                                                        ? "bg-[#101B30] text-white shadow-xs"
                                                         : "bg-white border border-slate-200 text-slate-700 hover:bg-slate-100"
                                                 }`}
                                             >

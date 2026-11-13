@@ -1,4 +1,4 @@
-// Local Client-Side AES-GCM 256-bit Encryption for ENTITLE Document Vault
+// Local Client-Side AES-GCM 256-bit Encryption for ADIKHAR Document Vault
 // Complies with strict offline-first zero-knowledge data privacy requirements.
 
 const KEY_STORAGE_NAME = "entitle_vault_key_v1";

@@ -209,16 +209,16 @@ export default function DocumentVault() {
     return (
         <Page className="max-w-6xl py-8">
             {/* Header */}
-            <div className="mb-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4 border-b border-slate-200 pb-5">
+            <div className="mb-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4 border-b border-[#E8E3D9] pb-5">
                 <div>
-                    <div className="inline-flex items-center gap-1.5 rounded-full border border-teal-200 bg-teal-50 px-3 py-1 text-xs font-bold text-teal-800">
-                        <Lock className="h-3.5 w-3.5 text-teal-600" />
-                        Client-Side AES-256 Encrypted • Zero Server Exposure
+                    <div className="inline-flex items-center gap-1.5 rounded-full border border-[#BBF7D0] bg-[#F0FDF4] px-3.5 py-1 text-xs font-bold text-[#046C4E] shadow-2xs">
+                        <Lock className="h-3.5 w-3.5 text-[#07966B]" />
+                        ADIKHAR Zero-Knowledge Vault â€¢ Client-Side AES-256 Encrypted
                     </div>
-                    <h1 className="mt-2 text-2xl sm:text-3xl font-extrabold text-[#0a192f] tracking-tight">
-                        Document Intelligence Vault
+                    <h1 className="mt-2 text-2xl sm:text-3xl font-extrabold text-[#101B30] tracking-tight">
+                        One-Time Document Vault
                     </h1>
-                    <p className="mt-1 text-xs sm:text-sm text-slate-600">
+                    <p className="mt-1 text-xs sm:text-sm text-[#101B30]/70">
                         Upload your welfare certificates once. Text is recognized offline and matched with schemes automatically.
                     </p>
                 </div>
@@ -228,16 +228,16 @@ export default function DocumentVault() {
                     <button
                         onClick={() => fileInputRef.current?.click()}
                         data-testid="vault-upload-button"
-                        className="inline-flex items-center gap-2 rounded-xl bg-[#0a192f] px-4 py-2.5 text-xs sm:text-sm font-bold text-white hover:bg-teal-700 transition-colors shadow-xs"
+                        className="inline-flex items-center gap-2 rounded-xl bg-[#07966B] px-4 py-2.5 text-xs sm:text-sm font-bold text-white hover:bg-[#057A55] transition-colors shadow-xs"
                     >
                         <UploadCloud className="h-4 w-4" /> Upload Document
                     </button>
                     <button
                         onClick={() => cameraInputRef.current?.click()}
                         data-testid="vault-camera-button"
-                        className="inline-flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-3.5 py-2.5 text-xs sm:text-sm font-bold text-slate-800 hover:bg-slate-50 transition-colors shadow-xs"
+                        className="inline-flex items-center gap-2 rounded-xl border border-[#E8E3D9] bg-white px-3.5 py-2.5 text-xs sm:text-sm font-bold text-slate-800 hover:bg-slate-50 transition-colors shadow-xs"
                     >
-                        <Camera className="h-4 w-4 text-teal-600" /> Scan / Camera
+                        <Camera className="h-4 w-4 text-[#07966B]" /> Scan / Camera
                     </button>
 
                     <input
@@ -260,11 +260,11 @@ export default function DocumentVault() {
 
             {/* Dashboard Metric Cards */}
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-8">
-                <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-xs">
-                    <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider block">Total Documents</span>
+                <div className="rounded-2xl border border-[#E8E3D9] bg-white p-4 shadow-xs">
+                    <span className="text-xs font-semibold text-[#101B30]/60 uppercase tracking-wider block">Total Documents</span>
                     <div className="mt-2 flex items-baseline gap-2">
-                        <span className="text-2xl sm:text-3xl font-extrabold text-[#0a192f]">{totalDocs}</span>
-                        <span className="text-xs text-slate-400">stored locally</span>
+                        <span className="text-2xl sm:text-3xl font-extrabold text-[#101B30]">{totalDocs}</span>
+                        <span className="text-xs text-[#101B30]/50">stored locally</span>
                     </div>
                 </div>
 
@@ -284,37 +284,37 @@ export default function DocumentVault() {
                     </div>
                 </div>
 
-                <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-xs">
-                    <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider block">Local Storage Used</span>
+                <div className="rounded-2xl border border-[#E8E3D9] bg-white p-4 shadow-xs">
+                    <span className="text-xs font-semibold text-[#101B30]/60 uppercase tracking-wider block">Local Storage Used</span>
                     <div className="mt-2 flex items-baseline gap-1">
-                        <span className="text-2xl sm:text-3xl font-extrabold text-[#0a192f]">{storageInfo.usageMB}</span>
-                        <span className="text-xs text-slate-500">MB</span>
+                        <span className="text-2xl sm:text-3xl font-extrabold text-[#101B30]">{storageInfo.usageMB}</span>
+                        <span className="text-xs text-[#101B30]/60">MB</span>
                     </div>
                     <div className="mt-2 h-1.5 w-full rounded-full bg-slate-100 overflow-hidden">
-                        <div className="h-full bg-teal-600 rounded-full" style={{ width: `${Math.max(5, storageInfo.percent)}%` }} />
+                        <div className="h-full bg-[#07966B] rounded-full" style={{ width: `${Math.max(5, storageInfo.percent)}%` }} />
                     </div>
                 </div>
             </div>
 
             {/* OCR Processing Overlay / Bar */}
             {isOcrProcessing && (
-                <div className="mb-6 rounded-2xl border border-teal-200 bg-teal-50 p-5 shadow-xs">
+                <div className="mb-6 rounded-2xl border border-[#BBF7D0] bg-[#F0FDF4] p-5 shadow-xs">
                     <div className="flex items-center justify-between mb-2">
                         <div className="flex items-center gap-2">
-                            <RefreshCw className="h-4 w-4 animate-spin text-teal-700" />
-                            <span className="text-sm font-bold text-teal-900">
+                            <RefreshCw className="h-4 w-4 animate-spin text-[#046C4E]" />
+                            <span className="text-sm font-bold text-[#065F46]">
                                 Running Local Tesseract OCR & Document Intelligence...
                             </span>
                         </div>
-                        <span className="text-xs font-bold text-teal-700">{ocrProgress || 0}%</span>
+                        <span className="text-xs font-bold text-[#046C4E]">{ocrProgress || 0}%</span>
                     </div>
-                    <div className="h-2 w-full rounded-full bg-teal-200 overflow-hidden">
+                    <div className="h-2 w-full rounded-full bg-[#BBF7D0] overflow-hidden">
                         <div
-                            className="h-full bg-teal-600 transition-all duration-300 rounded-full"
+                            className="h-full bg-[#07966B] transition-all duration-300 rounded-full"
                             style={{ width: `${ocrProgress || 10}%` }}
                         />
                     </div>
-                    <p className="mt-2 text-xs text-teal-800">
+                    <p className="mt-2 text-xs text-[#046C4E]">
                         Analyzing certificates, extracting RD/Aadhaar numbers, issuing department, and income values. No data leaves your computer.
                     </p>
                 </div>
@@ -328,8 +328,8 @@ export default function DocumentVault() {
                             key={cat.id}
                             onClick={() => setSelectedCategory(cat.id)}
                             className={`whitespace-nowrap rounded-xl px-3.5 py-1.5 text-xs font-bold transition-all ${selectedCategory === cat.id
-                                ? "bg-[#0a192f] text-white shadow-xs"
-                                : "bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 hover:text-slate-900"
+                                ? "bg-[#101B30] text-white shadow-xs"
+                                : "bg-white border border-[#E8E3D9] text-[#101B30]/70 hover:bg-slate-50 hover:text-[#101B30]"
                                 }`}
                         >
                             {cat.label}
@@ -338,28 +338,28 @@ export default function DocumentVault() {
                 </div>
 
                 <div className="relative w-full sm:w-64">
-                    <Search className="absolute left-3 top-2.5 h-4 w-4 text-slate-400" />
+                    <Search className="absolute left-3 top-2.5 h-4 w-4 text-[#101B30]/50" />
                     <input
                         type="text"
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
                         placeholder="Search certificate or authority..."
-                        className="w-full rounded-xl border border-slate-200 bg-white pl-9 pr-3 py-1.5 text-xs text-slate-900 focus:outline-none focus:border-teal-500"
+                        className="w-full rounded-xl border border-[#E8E3D9] bg-white pl-9 pr-3 py-1.5 text-xs text-[#101B30] focus:outline-none focus:border-[#07966B]"
                     />
                 </div>
             </div>
 
             {/* Document Cards Grid */}
             {filteredDocs.length === 0 ? (
-                <div className="rounded-3xl border border-dashed border-slate-300 bg-white p-12 text-center">
+                <div className="rounded-3xl border border-dashed border-[#E8E3D9] bg-white p-12 text-center">
                     <UploadCloud className="h-10 w-10 text-slate-300 mx-auto mb-3" />
-                    <h3 className="text-base font-bold text-slate-900">No documents in this category</h3>
-                    <p className="mt-1 text-xs text-slate-500 max-w-sm mx-auto">
+                    <h3 className="text-base font-bold text-[#101B30]">No documents in this category</h3>
+                    <p className="mt-1 text-xs text-[#101B30]/60 max-w-sm mx-auto">
                         Upload your Aadhaar, Income Certificate, Ration Card, or Caste Certificate to enable one-click scheme readiness checking.
                     </p>
                     <button
                         onClick={() => fileInputRef.current?.click()}
-                        className="mt-4 inline-flex items-center gap-2 rounded-xl bg-teal-600 px-4 py-2 text-xs font-bold text-white hover:bg-teal-700"
+                        className="mt-4 inline-flex items-center gap-2 rounded-xl bg-[#07966B] px-4 py-2 text-xs font-bold text-white hover:bg-[#046C4E]"
                     >
                         <Plus className="h-4 w-4" /> Add First Document
                     </button>
@@ -369,19 +369,19 @@ export default function DocumentVault() {
                     {filteredDocs.map((doc) => (
                         <div
                             key={doc.id}
-                            className="rounded-2xl border border-slate-200 bg-white p-5 shadow-xs hover:shadow-md transition-shadow flex flex-col justify-between"
+                            className="rounded-2xl border border-[#E8E3D9] bg-white p-5 shadow-xs hover:shadow-md transition-shadow flex flex-col justify-between"
                         >
                             <div>
                                 <div className="flex items-start justify-between gap-2 mb-3">
                                     <div className="flex items-center gap-2">
-                                        <div className="grid h-9 w-9 place-items-center rounded-xl bg-teal-50 text-teal-700 font-bold">
+                                        <div className="grid h-9 w-9 place-items-center rounded-xl bg-[#F0FDF4] text-[#046C4E] font-bold">
                                             <FileText className="h-5 w-5" />
                                         </div>
                                         <div>
-                                            <span className="text-[10px] font-bold uppercase tracking-wider text-teal-700 block">
+                                            <span className="text-[10px] font-bold uppercase tracking-wider text-[#046C4E] block">
                                                 {doc.category}
                                             </span>
-                                            <h3 className="font-bold text-slate-900 text-sm leading-snug truncate max-w-[160px] sm:max-w-[200px]">
+                                            <h3 className="font-bold text-[#101B30] text-sm leading-snug truncate max-w-[160px] sm:max-w-[200px]">
                                                 {doc.name}
                                             </h3>
                                         </div>
@@ -401,17 +401,17 @@ export default function DocumentVault() {
                                 {/* Extracted Details */}
                                 <div className="space-y-1.5 rounded-xl bg-slate-50/70 p-3 text-xs mb-4">
                                     {doc.extractedFields?.certificateNumber && (
-                                        <div className="flex items-center justify-between text-slate-700">
-                                            <span className="text-slate-500 font-medium">Cert / ID No:</span>
-                                            <span className="font-mono font-bold text-slate-900 truncate max-w-[140px]">
+                                        <div className="flex items-center justify-between text-[#101B30]/80">
+                                            <span className="text-[#101B30]/60 font-medium">Cert / ID No:</span>
+                                            <span className="font-mono font-bold text-[#101B30] truncate max-w-[140px]">
                                                 {doc.extractedFields.certificateNumber}
                                             </span>
                                         </div>
                                     )}
 
                                     {doc.extractedFields?.issuingAuthority && (
-                                        <div className="flex items-center justify-between text-slate-700">
-                                            <span className="text-slate-500 font-medium">Authority:</span>
+                                        <div className="flex items-center justify-between text-[#101B30]/80">
+                                            <span className="text-[#101B30]/60 font-medium">Authority:</span>
                                             <span className="font-semibold text-slate-800 truncate max-w-[140px]">
                                                 {doc.extractedFields.issuingAuthority}
                                             </span>
@@ -419,8 +419,8 @@ export default function DocumentVault() {
                                     )}
 
                                     {doc.extractedFields?.incomeAmount && (
-                                        <div className="flex items-center justify-between text-slate-700">
-                                            <span className="text-slate-500 font-medium">Income Stated:</span>
+                                        <div className="flex items-center justify-between text-[#101B30]/80">
+                                            <span className="text-[#101B30]/60 font-medium">Income Stated:</span>
                                             <span className="font-bold text-emerald-700">
                                                 {doc.extractedFields.incomeAmount}
                                             </span>
@@ -428,8 +428,8 @@ export default function DocumentVault() {
                                     )}
 
                                     {doc.extractedFields?.issueDate && (
-                                        <div className="flex items-center justify-between text-slate-700">
-                                            <span className="text-slate-500 font-medium">Date of Issue:</span>
+                                        <div className="flex items-center justify-between text-[#101B30]/80">
+                                            <span className="text-[#101B30]/60 font-medium">Date of Issue:</span>
                                             <span>{doc.extractedFields.issueDate}</span>
                                         </div>
                                     )}
@@ -445,15 +445,15 @@ export default function DocumentVault() {
 
                             {/* Actions */}
                             <div className="flex items-center justify-between pt-3 border-t border-slate-100 text-xs">
-                                <span className="text-[11px] text-slate-400">
-                                    {(doc.size / 1024).toFixed(0)} KB • Encrypted
+                                <span className="text-[11px] text-[#101B30]/50">
+                                    {(doc.size / 1024).toFixed(0)} KB â€¢ Encrypted
                                 </span>
 
                                 <div className="flex items-center gap-1.5">
                                     <button
                                         onClick={() => handleViewDocument(doc)}
                                         data-testid={`vault-view-${doc.id}`}
-                                        className="inline-flex items-center gap-1 rounded-lg border border-slate-200 bg-white px-2.5 py-1 font-semibold text-slate-700 hover:bg-slate-50"
+                                        className="inline-flex items-center gap-1 rounded-lg border border-[#E8E3D9] bg-white px-2.5 py-1 font-semibold text-[#101B30]/80 hover:bg-slate-50"
                                     >
                                         <Eye className="h-3.5 w-3.5" /> View
                                     </button>
@@ -461,7 +461,7 @@ export default function DocumentVault() {
                                     <button
                                         onClick={() => handleDeleteDocument(doc.id, doc.name)}
                                         data-testid={`vault-delete-${doc.id}`}
-                                        className="grid h-7 w-7 place-items-center rounded-lg text-slate-400 hover:text-rose-600 hover:bg-rose-50"
+                                        className="grid h-7 w-7 place-items-center rounded-lg text-[#101B30]/50 hover:text-rose-600 hover:bg-rose-50"
                                         aria-label="Delete"
                                     >
                                         <Trash2 className="h-3.5 w-3.5" />
@@ -479,12 +479,12 @@ export default function DocumentVault() {
                     <div className="w-full max-w-lg rounded-3xl bg-white p-6 shadow-2xl animate-in fade-in zoom-in-95">
                         <div className="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
                             <div className="flex items-center gap-2">
-                                <Shield className="h-5 w-5 text-teal-600" />
-                                <h3 className="font-bold text-slate-900 text-base">Verify Extracted Certificate Details</h3>
+                                <Shield className="h-5 w-5 text-[#07966B]" />
+                                <h3 className="font-bold text-[#101B30] text-base">Verify Extracted Certificate Details</h3>
                             </div>
                             <button
                                 onClick={() => setPendingDoc(null)}
-                                className="grid h-8 w-8 place-items-center rounded-full text-slate-400 hover:bg-slate-100"
+                                className="grid h-8 w-8 place-items-center rounded-full text-[#101B30]/50 hover:bg-slate-100"
                             >
                                 <X className="h-4 w-4" />
                             </button>
@@ -502,22 +502,22 @@ export default function DocumentVault() {
 
                         <div className="space-y-3.5 text-xs">
                             <div>
-                                <label className="font-bold text-slate-700 block mb-1">Document Display Name</label>
+                                <label className="font-bold text-[#101B30]/80 block mb-1">Document Display Name</label>
                                 <input
                                     type="text"
                                     value={pendingDoc.name}
                                     onChange={(e) => setPendingDoc({ ...pendingDoc, name: e.target.value })}
-                                    className="w-full rounded-xl border border-slate-200 p-2.5 text-slate-900 focus:outline-none focus:border-teal-500"
+                                    className="w-full rounded-xl border border-[#E8E3D9] p-2.5 text-[#101B30] focus:outline-none focus:border-[#07966B]"
                                 />
                             </div>
 
                             <div className="grid grid-cols-2 gap-3">
                                 <div>
-                                    <label className="font-bold text-slate-700 block mb-1">Document Category</label>
+                                    <label className="font-bold text-[#101B30]/80 block mb-1">Document Category</label>
                                     <select
                                         value={pendingDoc.category}
                                         onChange={(e) => setPendingDoc({ ...pendingDoc, category: e.target.value })}
-                                        className="w-full rounded-xl border border-slate-200 p-2.5 text-slate-900 focus:outline-none focus:border-teal-500"
+                                        className="w-full rounded-xl border border-[#E8E3D9] p-2.5 text-[#101B30] focus:outline-none focus:border-[#07966B]"
                                     >
                                         {CATEGORIES.filter(c => c.id !== "All").map(c => (
                                             <option key={c.id} value={c.id}>{c.label}</option>
@@ -526,7 +526,7 @@ export default function DocumentVault() {
                                 </div>
 
                                 <div>
-                                    <label className="font-bold text-slate-700 block mb-1">Certificate / ID Number</label>
+                                    <label className="font-bold text-[#101B30]/80 block mb-1">Certificate / ID Number</label>
                                     <input
                                         type="text"
                                         value={pendingDoc.extractedFields?.certificateNumber || ""}
@@ -535,14 +535,14 @@ export default function DocumentVault() {
                                             ...pendingDoc,
                                             extractedFields: { ...pendingDoc.extractedFields, certificateNumber: e.target.value }
                                         })}
-                                        className="w-full rounded-xl border border-slate-200 p-2.5 text-slate-900 focus:outline-none focus:border-teal-500 font-mono"
+                                        className="w-full rounded-xl border border-[#E8E3D9] p-2.5 text-[#101B30] focus:outline-none focus:border-[#07966B] font-mono"
                                     />
                                 </div>
                             </div>
 
                             <div className="grid grid-cols-2 gap-3">
                                 <div>
-                                    <label className="font-bold text-slate-700 block mb-1">Issuing Authority</label>
+                                    <label className="font-bold text-[#101B30]/80 block mb-1">Issuing Authority</label>
                                     <input
                                         type="text"
                                         value={pendingDoc.extractedFields?.issuingAuthority || ""}
@@ -551,12 +551,12 @@ export default function DocumentVault() {
                                             ...pendingDoc,
                                             extractedFields: { ...pendingDoc.extractedFields, issuingAuthority: e.target.value }
                                         })}
-                                        className="w-full rounded-xl border border-slate-200 p-2.5 text-slate-900 focus:outline-none focus:border-teal-500"
+                                        className="w-full rounded-xl border border-[#E8E3D9] p-2.5 text-[#101B30] focus:outline-none focus:border-[#07966B]"
                                     />
                                 </div>
 
                                 <div>
-                                    <label className="font-bold text-slate-700 block mb-1">Date of Issue</label>
+                                    <label className="font-bold text-[#101B30]/80 block mb-1">Date of Issue</label>
                                     <input
                                         type="date"
                                         value={pendingDoc.extractedFields?.issueDate || ""}
@@ -564,34 +564,34 @@ export default function DocumentVault() {
                                             ...pendingDoc,
                                             extractedFields: { ...pendingDoc.extractedFields, issueDate: e.target.value }
                                         })}
-                                        className="w-full rounded-xl border border-slate-200 p-2.5 text-slate-900 focus:outline-none focus:border-teal-500"
+                                        className="w-full rounded-xl border border-[#E8E3D9] p-2.5 text-[#101B30] focus:outline-none focus:border-[#07966B]"
                                     />
                                 </div>
                             </div>
 
                             {pendingDoc.category === "Income" && (
                                 <div>
-                                    <label className="font-bold text-slate-700 block mb-1">Certified Annual Income</label>
+                                    <label className="font-bold text-[#101B30]/80 block mb-1">Certified Annual Income</label>
                                     <input
                                         type="text"
                                         value={pendingDoc.extractedFields?.incomeAmount || ""}
-                                        placeholder="e.g. ₹60,000"
+                                        placeholder="e.g. â‚¹60,000"
                                         onChange={(e) => setPendingDoc({
                                             ...pendingDoc,
                                             extractedFields: { ...pendingDoc.extractedFields, incomeAmount: e.target.value }
                                         })}
-                                        className="w-full rounded-xl border border-slate-200 p-2.5 text-slate-900 focus:outline-none focus:border-teal-500"
+                                        className="w-full rounded-xl border border-[#E8E3D9] p-2.5 text-[#101B30] focus:outline-none focus:border-[#07966B]"
                                     />
                                 </div>
                             )}
 
                             <div>
-                                <label className="font-bold text-slate-700 block mb-1">Expiry Date (if applicable)</label>
+                                <label className="font-bold text-[#101B30]/80 block mb-1">Expiry Date (if applicable)</label>
                                 <input
                                     type="date"
                                     value={pendingDoc.expiryDate || ""}
                                     onChange={(e) => setPendingDoc({ ...pendingDoc, expiryDate: e.target.value })}
-                                    className="w-full rounded-xl border border-slate-200 p-2.5 text-slate-900 focus:outline-none focus:border-teal-500"
+                                    className="w-full rounded-xl border border-[#E8E3D9] p-2.5 text-[#101B30] focus:outline-none focus:border-[#07966B]"
                                 />
                             </div>
 
@@ -600,7 +600,7 @@ export default function DocumentVault() {
                                     type="checkbox"
                                     checked={pendingDoc.verified}
                                     onChange={(e) => setPendingDoc({ ...pendingDoc, verified: e.target.checked })}
-                                    className="h-4 w-4 rounded border-slate-300 text-teal-600 focus:ring-teal-500"
+                                    className="h-4 w-4 rounded border-[#E8E3D9] text-[#07966B] focus:ring-[#07966B]"
                                 />
                                 <span className="font-bold text-slate-800">
                                     I confirm these details match my physical document.
@@ -611,14 +611,14 @@ export default function DocumentVault() {
                         <div className="mt-6 flex items-center justify-end gap-2 border-t border-slate-100 pt-4">
                             <button
                                 onClick={() => setPendingDoc(null)}
-                                className="rounded-xl px-4 py-2 text-xs font-semibold text-slate-600 hover:bg-slate-100"
+                                className="rounded-xl px-4 py-2 text-xs font-semibold text-[#101B30]/70 hover:bg-slate-100"
                             >
                                 Cancel
                             </button>
                             <button
                                 onClick={handleConfirmPendingDoc}
                                 data-testid="vault-confirm-save-button"
-                                className="rounded-xl bg-[#0a192f] px-5 py-2 text-xs font-bold text-white hover:bg-teal-700 transition-colors shadow-xs"
+                                className="rounded-xl bg-[#101B30] px-5 py-2 text-xs font-bold text-white hover:bg-[#046C4E] transition-colors shadow-xs"
                             >
                                 Encrypt & Save to Vault
                             </button>
@@ -633,8 +633,8 @@ export default function DocumentVault() {
                     <div className="w-full max-w-2xl rounded-3xl bg-white p-6 shadow-2xl flex flex-col max-h-[90vh]">
                         <div className="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
                             <div>
-                                <h3 className="font-bold text-slate-900 text-base">{isViewingDoc.name}</h3>
-                                <p className="text-xs text-slate-500">Decrypted client-side from local IndexedDB</p>
+                                <h3 className="font-bold text-[#101B30] text-base">{isViewingDoc.name}</h3>
+                                <p className="text-xs text-[#101B30]/60">Decrypted client-side from local IndexedDB</p>
                             </div>
                             <button
                                 onClick={() => {
@@ -642,7 +642,7 @@ export default function DocumentVault() {
                                     if (decryptedViewUrl) URL.revokeObjectURL(decryptedViewUrl);
                                     setDecryptedViewUrl(null);
                                 }}
-                                className="grid h-8 w-8 place-items-center rounded-full text-slate-400 hover:bg-slate-100"
+                                className="grid h-8 w-8 place-items-center rounded-full text-[#101B30]/50 hover:bg-slate-100"
                             >
                                 <X className="h-4 w-4" />
                             </button>
@@ -664,12 +664,12 @@ export default function DocumentVault() {
                             )}
                         </div>
 
-                        <div className="mt-4 flex items-center justify-between text-xs text-slate-500 border-t border-slate-100 pt-3">
+                        <div className="mt-4 flex items-center justify-between text-xs text-[#101B30]/60 border-t border-slate-100 pt-3">
                             <span>ID: {isViewingDoc.extractedFields?.certificateNumber || "N/A"}</span>
                             <a
                                 href={decryptedViewUrl}
                                 download={isViewingDoc.originalName}
-                                className="inline-flex items-center gap-1 font-bold text-teal-700 hover:underline"
+                                className="inline-flex items-center gap-1 font-bold text-[#046C4E] hover:underline"
                             >
                                 <Download className="h-3.5 w-3.5" /> Download Decrypted Copy
                             </a>

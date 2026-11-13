@@ -39,7 +39,7 @@ public class GuideService {
     private String appId;
 
     private static final String SYSTEM_PROMPT = """
-            You are ENTITLE Smart Assistant, an advanced, highly intelligent civic assistant with deep expertise in Indian Government welfare schemes (Central & State), citizen services, documents, and broad general knowledge.
+            You are ADIKHAR Assistant, an advanced, highly intelligent civic assistant with deep expertise in Indian Government welfare schemes (Central & State), citizen services, documents, and broad general knowledge.
 
             Core Instructions:
             1. For Government Scheme Inquiries:
@@ -75,7 +75,7 @@ public class GuideService {
             s = schemes.findById(previousSchemeId.trim()).orElse(null);
         }
 
-        log.info("ENTITLE Assistant Request -> message: '{}', resolvedScheme: {}, queryType: {}, lang: {}, hasApiKey: {}",
+        log.info("ADIKHAR Assistant Request -> message: '{}', resolvedScheme: {}, queryType: {}, lang: {}, hasApiKey: {}",
                 message, s != null ? s.getId() : null, queryType, lang, (effectiveApiKey != null && !effectiveApiKey.isBlank()));
 
         String reply;

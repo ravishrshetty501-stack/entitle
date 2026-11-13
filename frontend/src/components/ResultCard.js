@@ -37,7 +37,7 @@ export function Explanation({ r }) {
 export default function ResultCard({ r, defaultOpen = false, isNew = false }) {
     const [open, setOpen] = useState(defaultOpen);
     return (
-        <article data-testid={`result-card-${r.schemeId}`} className="rounded-xl border border-slate-200/80 bg-white shadow-sm transition-shadow hover:shadow-md">
+        <article data-testid={`result-card-${r.schemeId}`} className="rounded-xl border border-[#E8E3D9]/80 bg-white shadow-sm transition-shadow hover:shadow-md">
             <button
                 type="button"
                 onClick={() => setOpen(!open)}
@@ -49,7 +49,7 @@ export default function ResultCard({ r, defaultOpen = false, isNew = false }) {
                     <div className="mb-2 flex flex-wrap items-center gap-2">
                         <StatusBadge status={r.status} testId={`result-status-${r.schemeId}`} />
                         <span className="text-xs text-slate-500">{r.category}</span>
-                        {isNew && <span className="rounded-full bg-[#0a192f] px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-white">Newly discovered</span>}
+                        {isNew && <span className="rounded-full bg-[#101B30] px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-white">Newly discovered</span>}
                     </div>
                     <h3 className="text-base font-semibold text-slate-900 sm:text-lg">{r.schemeName}</h3>
                     {r.estimatedBenefit && <p className="mt-1 text-sm text-slate-600">{r.estimatedBenefit}</p>}
@@ -58,12 +58,12 @@ export default function ResultCard({ r, defaultOpen = false, isNew = false }) {
                     <Tooltip>
                         <TooltipTrigger asChild>
                             <span className="text-right">
-                                <span className="block font-display text-xl font-bold text-[#0a192f]">{r.matchScore}%</span>
+                                <span className="block font-display text-xl font-bold text-[#101B30]">{r.matchScore}%</span>
                                 <span className="text-[10px] uppercase tracking-wider text-slate-500">criteria matched</span>
                             </span>
                         </TooltipTrigger>
                         <TooltipContent className="max-w-xs">
-                            Share of this scheme's criteria your answers satisfy (including ones still needing proof). It shows how complete the match is — not the chance of receiving the benefit.
+                            Share of this scheme's criteria your answers satisfy (including ones still needing proof). It shows how complete the match is â€” not the chance of receiving the benefit.
                         </TooltipContent>
                     </Tooltip>
                     <ChevronDown className={`h-5 w-5 text-slate-400 transition-transform ${open ? "rotate-180" : ""}`} aria-hidden />
@@ -78,12 +78,12 @@ export default function ResultCard({ r, defaultOpen = false, isNew = false }) {
                             {r.documents.join(", ")}
                         </p>
                     )}
-                    <div className="mt-4 flex flex-col gap-3 rounded-lg bg-[#0a192f]/[0.03] p-4 sm:flex-row sm:items-center sm:justify-between">
+                    <div className="mt-4 flex flex-col gap-3 rounded-lg bg-[#101B30]/[0.03] p-4 sm:flex-row sm:items-center sm:justify-between">
                         <p className="flex gap-2 text-sm text-slate-800" data-testid={`next-action-${r.schemeId}`}>
                             <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-amber-500" aria-hidden />
                             <span><span className="font-semibold">Next step: </span>{r.nextAction}</span>
                         </p>
-                        <Link to={`/schemes/${r.schemeId}`} data-testid={`result-view-${r.schemeId}`} className="inline-flex shrink-0 items-center gap-1 text-sm font-semibold text-[#0d9488] hover:underline">
+                        <Link to={`/schemes/${r.schemeId}`} data-testid={`result-view-${r.schemeId}`} className="inline-flex shrink-0 items-center gap-1 text-sm font-semibold text-[#07966B] hover:underline">
                             View scheme <ArrowRight className="h-4 w-4" />
                         </Link>
                     </div>

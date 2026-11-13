@@ -126,7 +126,7 @@ export default function SchemeCategoriesGrid() {
     }, []);
 
     return (
-        <section className="py-24 bg-white border-t border-slate-200/80">
+        <section className="py-24 bg-white border-t border-[#E8E3D9]">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 
                 {/* Asymmetrical Layout: Left Summary Sticky + Right Structured Rows */}
@@ -141,32 +141,32 @@ export default function SchemeCategoriesGrid() {
                             viewport={{ once: true, amount: 0.2 }}
                             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
                         >
-                            <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-50 px-3 py-1 text-xs font-bold uppercase tracking-wider text-emerald-800">
-                                <Sparkles className="h-3.5 w-3.5 text-emerald-600" /> National Welfare Taxonomy
+                            <span className="inline-flex items-center gap-1.5 rounded-full border border-[#07966B]/30 bg-[#F0FDF4] px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-[#046C4E]">
+                                <Sparkles className="h-3.5 w-3.5 text-[#07966B]" /> National Welfare Taxonomy
                             </span>
-                            <h2 className="mt-3 font-display text-3xl sm:text-4xl font-black text-slate-900 tracking-tight leading-[1.12]">
+                            <h2 className="mt-3 font-display text-3xl sm:text-4xl font-black text-[#101B30] tracking-tight leading-[1.12]">
                                 Explore India's Welfare Ecosystem.
                             </h2>
-                            <p className="mt-4 text-sm text-slate-600 leading-relaxed font-normal">
+                            <p className="mt-4 text-sm text-[#101B30]/75 leading-relaxed font-normal">
                                 India’s welfare initiatives span central ministries, autonomous statutory bodies, and state departments. We catalog them into 10 structured domains aligned with the United Nations Sustainable Development Goals.
                             </p>
 
-                            <div className="mt-8 pt-6 border-t border-slate-100 space-y-3">
+                            <div className="mt-8 pt-6 border-t border-[#E8E3D9] space-y-3">
                                 <div className="flex items-center justify-between text-xs">
                                     <span className="text-slate-500">Verified Schemes in Catalogue</span>
-                                    <span className="font-bold text-slate-900">
+                                    <span className="font-bold text-[#101B30]">
                                         <AnimatedCounter value={107} /> Schemes
                                     </span>
                                 </div>
                                 <div className="flex items-center justify-between text-xs">
                                     <span className="text-slate-500">Central Ministries Indexed</span>
-                                    <span className="font-bold text-slate-900">
+                                    <span className="font-bold text-[#101B30]">
                                         <AnimatedCounter value={24} /> Ministries
                                     </span>
                                 </div>
                                 <div className="flex items-center justify-between text-xs">
                                     <span className="text-slate-500">States & UTs Covered</span>
-                                    <span className="font-bold text-slate-900">
+                                    <span className="font-bold text-[#101B30]">
                                         <AnimatedCounter value={36} /> Regions
                                     </span>
                                 </div>
@@ -175,7 +175,7 @@ export default function SchemeCategoriesGrid() {
                             <div className="mt-8">
                                 <Link
                                     to="/schemes"
-                                    className="inline-flex items-center gap-2 rounded-full bg-slate-900 hover:bg-emerald-700 text-white px-6 py-3 text-xs font-bold transition-all shadow-xs"
+                                    className="inline-flex items-center gap-2 rounded-full bg-[#101B30] hover:bg-[#07966B] text-white px-6 py-3 text-xs font-bold transition-all shadow-xs"
                                 >
                                     Browse Complete Directory <ArrowRight className="h-3.5 w-3.5" />
                                 </Link>
@@ -184,7 +184,7 @@ export default function SchemeCategoriesGrid() {
                     </div>
 
                     {/* RIGHT COLUMN: Minimalist Directory Rows */}
-                    <div className="lg:col-span-8 divide-y divide-slate-100">
+                    <div className="lg:col-span-8 divide-y divide-[#E8E3D9]">
                         {CATEGORIES.map((cat, idx) => {
                             const count = counts[cat.query] || cat.defaultCount;
 
@@ -202,23 +202,23 @@ export default function SchemeCategoriesGrid() {
                                 >
                                     <Link
                                         to={`/schemes?category=${encodeURIComponent(cat.query)}`}
-                                        className="group py-5 block transition-colors hover:bg-slate-50/80 px-4 -mx-4 rounded-xl"
+                                        className="group py-5 block transition-colors hover:bg-[#FBF8F1] px-4 -mx-4 rounded-2xl"
                                     >
                                         <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2">
                                             <div className="flex items-baseline gap-3">
-                                                <span className="text-xs font-mono font-bold text-emerald-600 group-hover:text-emerald-700 transition-colors">
+                                                <span className="text-xs font-mono font-bold text-[#07966B] group-hover:text-[#046C4E] transition-colors">
                                                     {String(idx + 1).padStart(2, "0")}
                                                 </span>
-                                                <h3 className="font-display text-lg font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">
+                                                <h3 className="font-display text-lg font-bold text-[#101B30] group-hover:text-[#07966B] transition-colors">
                                                     {cat.label}
                                                 </h3>
                                             </div>
 
                                             <div className="flex items-center gap-3 shrink-0">
-                                                <span className="text-xs font-bold text-emerald-800 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">
+                                                <span className="text-xs font-bold text-[#046C4E] bg-[#F0FDF4] px-2.5 py-0.5 rounded-full border border-[#BBF7D0]">
                                                     <AnimatedCounter value={count} /> Verified
                                                 </span>
-                                                <ArrowUpRight className="h-4 w-4 text-slate-400 group-hover:text-emerald-600 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                                                <ArrowUpRight className="h-4 w-4 text-slate-400 group-hover:text-[#07966B] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                                             </div>
                                         </div>
 

@@ -1,4 +1,4 @@
-// ENTITLE Voice Processing, Speech Recognition, and Offline Synthesis Engine
+// ADIKHAR Voice Processing, Speech Recognition, and Offline Synthesis Engine
 import { DICTS } from "@/lib/i18n";
 
 export const SpeechRecognition = typeof window !== "undefined" ? window.SpeechRecognition || window.webkitSpeechRecognition : null;

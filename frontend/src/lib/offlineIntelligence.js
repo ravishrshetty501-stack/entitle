@@ -1,4 +1,4 @@
-// Local Offline Scheme Intelligence & NLP Engine for ENTITLE Smart Assistant
+// Local Offline Scheme Intelligence & NLP Engine for ADIKHAR Assistant
 // Evaluates queries client-side using downloaded IndexedDB scheme data.
 // Supports English (en-IN), Hindi (hi-IN), and Kannada (kn-IN).
 
@@ -210,12 +210,12 @@ function buildSchemeResponse(scheme, intent, lang) {
         const docs = Array.isArray(scheme.documents)
             ? scheme.documents.slice(0, 5).map(d => typeof d === 'string' ? d : `**${d.name}** (${d.why || 'Verification'})`).join("\n• ")
             : "**Aadhaar Card**, **Income Certificate**, **Bank Passbook**, **Ration Card**";
-        return `### ${title} — Required Documents\n\n• ${docs}\n\n*Tip: Check the Document Readiness Tracker in ENTITLE to verify your certificates before applying.*`;
+        return `### ${title} — Required Documents\n\n• ${docs}\n\n*Tip: Check the Document Readiness Tracker in ADIKHAR to verify your certificates before applying.*`;
     }
 
     // 4. Specific Intent: How to Apply
     if (intent === INTENT_TYPES.HOW_TO_APPLY) {
-        return `### How to Apply for ${title}\n\n1. Ensure your Aadhaar number is actively linked to your bank account.\n2. Keep your identity and income certificates ready in ENTITLE Document Vault.\n3. Open the official government application portal: ${portal}\n4. Complete the online registration and retain the application tracking acknowledgement.\n\n*Applications must be submitted on the official government portal.*`;
+        return `### How to Apply for ${title}\n\n1. Ensure your Aadhaar number is actively linked to your bank account.\n2. Keep your identity and income certificates ready in ADIKHAR Document Vault.\n3. Open the official government application portal: ${portal}\n4. Complete the online registration and retain the application tracking acknowledgement.\n\n*Applications must be submitted on the official government portal.*`;
     }
 
     // 5. Default Comprehensive 9-Point Structured Scheme Guide
@@ -256,7 +256,7 @@ ${scheme.targetBeneficiary || scheme.whoCanApply || scheme.beneficiaryType || "E
 ${scheme.helpline ? `• Helpline: ${scheme.helpline}` : ""}
 
 **9. Last verified date**
-Verified by ENTITLE on **${verified}** against official departmental gazettes.`;
+Verified by ADIKHAR on **${verified}** against official departmental gazettes.`;
 }
 
 export async function processOfflineVoiceQuery({ query, lang = "en", activeSchemeId = null, allSchemes = [] }) {
@@ -272,7 +272,7 @@ export async function processOfflineVoiceQuery({ query, lang = "en", activeSchem
     // 1. General Knowledge query while offline: explain offline limitation gracefully
     if (intent === INTENT_TYPES.GENERAL_KNOWLEDGE) {
         return {
-            text: `You are currently in **Offline Mode**. Detailed answers for broad general knowledge (such as "${query.trim()}") require an active internet connection to query online AI models.\n\nOffline, ENTITLE Smart Assistant is ready to help you with **107 verified Indian Government welfare schemes**, eligibility criteria, and required documents. Try asking: *"What is PM-KISAN?"* or *"Who is eligible for Gruha Lakshmi?"*`,
+            text: `You are currently in **Offline Mode**. Detailed answers for broad general knowledge (such as "${query.trim()}") require an active internet connection to query online AI models.\n\nOffline, ADIKHAR Assistant is ready to help you with **107 verified Indian Government welfare schemes**, eligibility criteria, and required documents. Try asking: *"What is PM-KISAN?"* or *"Who is eligible for Gruha Lakshmi?"*`,
             matchedSchemes: [],
             intent: INTENT_TYPES.GENERAL_KNOWLEDGE,
             isOfflineNotice: true
@@ -315,7 +315,7 @@ export async function processOfflineVoiceQuery({ query, lang = "en", activeSchem
 
     // 4. Default fallback
     return {
-        text: `ENTITLE Smart Assistant contains **107 verified Central and State Government schemes** across India.\n\nYou can ask about:\n• Healthcare schemes (Ayushman Bharat)\n• Farmer welfare (PM-KISAN, Kisan Credit Card)\n• Karnataka state initiatives (Gruha Lakshmi, Yuva Nidhi, Shakti)\n• Student scholarships (Post-Matric, National Scholarship Portal)\n• Business & MSME loans (PM Mudra, PM SVANidhi)\n\nWhat would you like to know?`,
+        text: `ADIKHAR Assistant contains **107 verified Central and State Government schemes** across India.\n\nYou can ask about:\n• Healthcare schemes (Ayushman Bharat)\n• Farmer welfare (PM-KISAN, Kisan Credit Card)\n• Karnataka state initiatives (Gruha Lakshmi, Yuva Nidhi, Shakti)\n• Student scholarships (Post-Matric, National Scholarship Portal)\n• Business & MSME loans (PM Mudra, PM SVANidhi)\n\nWhat would you like to know?`,
         matchedSchemes: allSchemes.slice(0, 3),
         intent: INTENT_TYPES.GENERAL_OVERVIEW,
         detectedLanguage: lang

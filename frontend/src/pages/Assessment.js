@@ -10,7 +10,7 @@ import { toast } from "sonner";
 import VoiceButton, { SpeakButton } from "@/components/VoiceButton";
 import { SpeechRecognition, matchOption, parseNumber, parseYesNo } from "@/lib/voice";
 
-const inputCls = "mt-2 w-full rounded-lg border border-slate-300 bg-white px-3.5 py-3 text-base focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-500/20";
+const inputCls = "mt-2 w-full rounded-lg border border-[#E8E3D9] bg-white px-3.5 py-3 text-base focus:border-[#07966B] focus:outline-none focus:ring-2 focus:ring-[#07966B]/20";
 
 function Field({ name, label, required, error, voice, children }) {
     const { t } = useLang();
@@ -18,7 +18,7 @@ function Field({ name, label, required, error, voice, children }) {
         <div data-testid={`field-${name}`}>
             <div className="flex items-center justify-between gap-2">
                 <label htmlFor={name} className="text-sm font-medium text-slate-800">
-                    {label} <span className="font-normal text-slate-400">· {required ? t("common.required") : t("common.optional")}</span>
+                    {label} <span className="font-normal text-slate-400">Â· {required ? t("common.required") : t("common.optional")}</span>
                 </label>
                 <span className="flex shrink-0 items-center">
                     <SpeakButton text={label} testId={`speak-${name}`} />
@@ -39,7 +39,7 @@ function Choice({ name, value, onChange, options, labelOf }) {
                 return (
                     <button type="button" key={String(o.value)} role="radio" aria-checked={active} onClick={() => onChange(o.value)}
                         data-testid={`choice-${name}-${String(o.value)}`}
-                        className={`rounded-full border px-4 py-2 text-sm transition-colors ${active ? "border-[#0a192f] bg-[#0a192f] text-white" : "border-slate-300 bg-white text-slate-700 hover:border-slate-400"}`}>
+                        className={`rounded-full border px-4 py-2 text-sm transition-colors ${active ? "border-[#101B30] bg-[#101B30] text-white" : "border-[#E8E3D9] bg-white text-slate-700 hover:border-slate-400"}`}>
                         {labelOf ? labelOf(o) : o.label}
                     </button>
                 );
@@ -63,8 +63,8 @@ export default function Assessment() {
 
     const set = (k, v) => { setP((prev) => ({ ...prev, [k]: v })); setErrors((e) => ({ ...e, [k]: undefined })); };
     const heard = (k, v, raw) => {
-        if (v === undefined) toast.error(`Didn't catch “${raw[0] || ""}”. Try again or choose manually.`);
-        else { set(k, v); toast.success(`Heard: “${raw[0]}”`); }
+        if (v === undefined) toast.error(`Didn't catch â€œ${raw[0] || ""}â€. Try again or choose manually.`);
+        else { set(k, v); toast.success(`Heard: â€œ${raw[0]}â€`); }
     };
     const vNum = (k) => (tr) => heard(k, parseNumber(tr) ?? undefined, tr);
     const vYN = (k) => (tr) => { const r = parseYesNo(tr); heard(k, r === undefined ? undefined : r.value, tr); };
@@ -91,7 +91,7 @@ export default function Assessment() {
             if (!p.education) e.education = "Choose your education level.";
         }
         if (step === 1) {
-            if (!p.incomeRange) e.incomeRange = "Choose an income range — an estimate is fine.";
+            if (!p.incomeRange) e.incomeRange = "Choose an income range â€” an estimate is fine.";
             if (!p.familySize || p.familySize < 1 || p.familySize > 30) e.familySize = "Enter a number between 1 and 30.";
         }
         setErrors(e);
@@ -144,28 +144,28 @@ export default function Assessment() {
         const v = p[k];
         if (v === true) return t("common.yes");
         if (v === false) return t("common.no");
-        if (v == null || v === "") return <span className="text-slate-400">—</span>;
+        if (v == null || v === "") return <span className="text-slate-400">â€”</span>;
         return OPTIONS[k] ? t(`opt.${k}.${v}`) : String(v);
     };
 
     return (
         <Page className="max-w-3xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#0d9488]">{t("wiz.title")}</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#07966B]">{t("wiz.title")}</p>
             <ol className="mt-4 flex gap-2" aria-label="Progress" data-testid="wizard-progress">
                 {[...steps, t("wiz.s5")].map((s, i) => (
                     <li key={s} className="flex-1">
-                        <div className={`h-1.5 rounded-full transition-colors ${i <= step ? "bg-[#0d9488]" : "bg-slate-200"}`} />
+                        <div className={`h-1.5 rounded-full transition-colors ${i <= step ? "bg-[#07966B]" : "bg-slate-200"}`} />
                         <p className={`mt-2 hidden text-xs sm:block ${i === step ? "font-semibold text-slate-900" : "text-slate-500"}`}>{i + 1}. {s}</p>
                     </li>
                 ))}
             </ol>
-            <p className="mt-6 flex items-start gap-2 rounded-lg bg-teal-50 p-3 text-sm text-teal-900"><Lock className="mt-0.5 h-4 w-4 shrink-0" />{t("wiz.why")}</p>
-            <p className="mt-3 flex items-start gap-2 rounded-lg border border-slate-200 bg-white p-3 text-sm text-slate-700" data-testid="voice-hint">
-                <Mic className="mt-0.5 h-4 w-4 shrink-0 text-[#0d9488]" />
+            <p className="mt-6 flex items-start gap-2 rounded-lg bg-[#F0FDF4] p-3 text-sm text-[#064E3B]"><Lock className="mt-0.5 h-4 w-4 shrink-0" />{t("wiz.why")}</p>
+            <p className="mt-3 flex items-start gap-2 rounded-lg border border-[#E8E3D9] bg-white p-3 text-sm text-slate-700" data-testid="voice-hint">
+                <Mic className="mt-0.5 h-4 w-4 shrink-0 text-[#07966B]" />
                 {SpeechRecognition ? t("voice.hint") : t("voice.unsupported")}
             </p>
 
-            <section className="mt-8 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8" data-testid={`wizard-step-${step + 1}`}>
+            <section className="mt-8 rounded-2xl border border-[#E8E3D9] bg-white p-6 shadow-sm sm:p-8" data-testid={`wizard-step-${step + 1}`}>
                 <h1 className="mb-6 text-2xl font-bold text-slate-900">{steps[step]}</h1>
                 <div className="space-y-6">
                     {step === 0 && <>
@@ -209,10 +209,10 @@ export default function Assessment() {
                         {p.age >= 60 && <p className="rounded-lg bg-slate-50 p-3 text-sm text-slate-600" data-testid="senior-note">As you are {p.age}, senior-citizen schemes will be included automatically.</p>}
                     </>}
                     {step === 3 && reviewRows.map(([s, keys]) => (
-                        <div key={s} className="rounded-xl border border-slate-200 p-4" data-testid={`review-section-${s + 1}`}>
+                        <div key={s} className="rounded-xl border border-[#E8E3D9] p-4" data-testid={`review-section-${s + 1}`}>
                             <div className="mb-3 flex items-center justify-between">
                                 <h2 className="font-semibold text-slate-900">{steps[s]}</h2>
-                                <button onClick={() => setStep(s)} className="inline-flex items-center gap-1 text-sm font-semibold text-[#0d9488] hover:underline" data-testid={`review-edit-${s + 1}`}><Pencil className="h-3.5 w-3.5" />{t("common.edit")}</button>
+                                <button onClick={() => setStep(s)} className="inline-flex items-center gap-1 text-sm font-semibold text-[#07966B] hover:underline" data-testid={`review-edit-${s + 1}`}><Pencil className="h-3.5 w-3.5" />{t("common.edit")}</button>
                             </div>
                             <dl className="grid gap-x-6 gap-y-2 text-sm sm:grid-cols-2">
                                 {keys.map((k) => <div key={k} className="flex justify-between gap-3 border-b border-dashed border-slate-100 py-1"><dt className="text-slate-500">{t(`q.${k}`).replace(/\?$/, "")}</dt><dd className="text-right font-medium text-slate-800">{display(k)}</dd></div>)}

@@ -1,29 +1,29 @@
-@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
     :root {
-        --background: 0 0% 100%;
-        --foreground: 222 47% 11%;
+        --background: 44 48% 97%; /* #FBF8F1 Warm Ivory */
+        --foreground: 220 50% 13%; /* #101B30 Deep Navy */
         --card: 0 0% 100%;
-        --card-foreground: 222 47% 11%;
+        --card-foreground: 220 50% 13%;
         --popover: 0 0% 100%;
-        --popover-foreground: 222 47% 11%;
-        --primary: 160 84% 39%;
+        --popover-foreground: 220 50% 13%;
+        --primary: 162 90% 31%; /* #07966B Emerald */
         --primary-foreground: 0 0% 100%;
-        --secondary: 210 40% 96.1%;
-        --secondary-foreground: 222 47% 11%;
-        --muted: 210 40% 96.1%;
-        --muted-foreground: 215.4 16.3% 46.9%;
-        --accent: 160 84% 39%;
+        --secondary: 40 40% 94%;
+        --secondary-foreground: 220 50% 13%;
+        --muted: 40 30% 95%;
+        --muted-foreground: 215 16% 47%;
+        --accent: 28 89% 55%; /* #F28C28 Saffron */
         --accent-foreground: 0 0% 100%;
         --destructive: 0 84.2% 60.2%;
         --destructive-foreground: 0 0% 100%;
-        --border: 214.3 31.8% 91.4%;
-        --input: 214.3 31.8% 91.4%;
-        --ring: 160 84% 39%;
+        --border: 38 25% 88%; /* #E8E3D9 Warm Grey */
+        --input: 38 25% 88%;
+        --ring: 162 90% 31%;
         --radius: 0.75rem;
     }
 }
@@ -34,9 +34,12 @@
     }
 
     body {
-        @apply bg-white text-slate-900 antialiased;
-        font-family: "Inter", "Noto Sans Kannada", "Noto Sans Devanagari", system-ui, sans-serif;
+        background-color: #FBF8F1;
+        color: #101B30;
+        font-family: "Inter", "Noto Sans Kannada", "Noto Sans Devanagari", system-ui, -apple-system, sans-serif;
         font-size: 16px;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
     }
 
     h1,
@@ -49,35 +52,31 @@
     }
 
     ::selection {
-        background: #A7F3D0;
-        color: #064E3B;
+        background: #DCFCE7;
+        color: #014737;
     }
 
     :focus-visible {
-        outline: 2px solid #059669;
+        outline: 2px solid #07966B;
         outline-offset: 2px;
         border-radius: 6px;
     }
 }
 
-html[lang="kn"] *,
-html[lang="hi"] * {
-    letter-spacing: 0 !important;
+/* Custom Indian Tricolor Accent Line */
+.tricolor-bar {
+    height: 3px;
+    background: linear-gradient(90deg, #F28C28 0%, #F28C28 33.3%, #FFFFFF 33.3%, #FFFFFF 66.6%, #07966B 66.6%, #07966B 100%);
 }
 
-@media print {
-    header,
-    footer,
-    .no-print {
-        display: none !important;
-    }
+/* Custom dotted curved path for flowchart */
+.flowchart-dash-animation {
+    stroke-dasharray: 6 6;
+    animation: dash-move 20s linear infinite;
+}
 
-    body {
-        background: white;
-    }
-
-    .print-area {
-        box-shadow: none !important;
-        border: none !important;
+@keyframes dash-move {
+    to {
+        stroke-dashoffset: -120;
     }
 }
