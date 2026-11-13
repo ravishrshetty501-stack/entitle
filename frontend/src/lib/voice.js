@@ -1,3 +1,4 @@
+// ENTITLE Voice Processing, Speech Recognition, and Offline Synthesis Engine
 import { DICTS } from "@/lib/i18n";
 
 export const SpeechRecognition = typeof window !== "undefined" ? window.SpeechRecognition || window.webkitSpeechRecognition : null;
@@ -28,7 +29,6 @@ export function parseYesNo(transcripts) {
     return undefined;
 }
 
-// Matches speech against option labels in all three languages plus the raw value.
 export function matchOption(transcripts, values, labelKey) {
     const candidates = values.map((v) => ({
         v,
@@ -42,11 +42,49 @@ export function matchOption(transcripts, values, labelKey) {
     return undefined;
 }
 
-export function speak(text, lang) {
-    if (!window.speechSynthesis) return;
+/**
+ * Enhanced Text-to-Speech synthesis with voice discovery and callback
+ */
+export function speak(text, lang = "en", onEnd = null) {
+    if (typeof window === "undefined" || !window.speechSynthesis) return;
     window.speechSynthesis.cancel();
-    const u = new SpeechSynthesisUtterance(text);
-    u.lang = LOCALE[lang] || "en-IN";
-    u.rate = 0.95;
-    window.speechSynthesis.speak(u);
+
+    const targetLocale = LOCALE[lang] || "en-IN";
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = targetLocale;
+    utterance.rate = 0.95;
+    utterance.pitch = 1.0;
+
+    // Pick best matching installed voice for regional accent
+    const voices = window.speechSynthesis.getVoices();
+    const matchedVoice = voices.find(v => v.lang === targetLocale || v.lang.replace("_", "-") === targetLocale)
+        || voices.find(v => v.lang.startsWith(lang));
+    if (matchedVoice) {
+        utterance.voice = matchedVoice;
+    }
+
+    if (onEnd) {
+        utterance.onend = onEnd;
+        utterance.onerror = onEnd;
+    }
+
+    window.speechSynthesis.speak(utterance);
+}
+
+export function stopSpeaking() {
+    if (typeof window !== "undefined" && window.speechSynthesis) {
+        window.speechSynthesis.cancel();
+    }
+}
+
+export function isSpeaking() {
+    return typeof window !== "undefined" && window.speechSynthesis && window.speechSynthesis.speaking;
+}
+
+/**
+ * Checks available offline voice capabilities in browser/OS
+ */
+export function getAvailableVoices() {
+    if (typeof window === "undefined" || !window.speechSynthesis) return [];
+    return window.speechSynthesis.getVoices();
 }

@@ -87,8 +87,9 @@ public class MiscController {
             throw ApiException.bad("Message cannot be empty");
         }
         String schemeId = body.get("schemeId");
+        String previousSchemeId = body.get("previousSchemeId");
         String language = body.getOrDefault("language", "en");
-        return ResponseEntity.ok(guideService.chat(user, message, schemeId, language));
+        return ResponseEntity.ok(guideService.chat(user, message, schemeId, language, previousSchemeId));
     }
 
     @GetMapping("/api/guide/history")
@@ -98,5 +99,12 @@ public class MiscController {
         }
         return ResponseEntity.ok(guideService.history(user.getId()));
     }
-}
 
+    @DeleteMapping("/api/guide/history")
+    public ResponseEntity<Map<String, String>> clearHistory(@AuthenticationPrincipal User user) {
+        if (user != null) {
+            guideService.clearHistory(user.getId());
+        }
+        return ResponseEntity.ok(Map.of("status", "cleared"));
+    }
+}

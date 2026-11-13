@@ -7,15 +7,23 @@ import lombok.Data;
 @Entity
 @Table(name = "schemes", indexes = {
         @Index(name = "idx_schemes_category", columnList = "category"),
-        @Index(name = "idx_schemes_state", columnList = "state") })
+        @Index(name = "idx_schemes_state", columnList = "state"),
+        @Index(name = "idx_schemes_sdg", columnList = "sdg") })
 public class Scheme {
     @Id
     @Column(length = 80)
     private String id;
     @Column(nullable = false)
     private String name;
-    @Column(length = 60)
+    @Column(length = 100)
     private String category;
+    @Column(length = 100)
+    private String subcategory;
+    @Column(length = 80)
+    private String sdg;
+    @Column(length = 80)
+    private String beneficiaryType;
+    @Column(length = 255)
     private String department;
     @Column(length = 20)
     private String level;
@@ -32,6 +40,6 @@ public class Scheme {
     private String sourceUrl;
     @Column(length = 20)
     private String lastVerified;
-    @Column(columnDefinition = "TEXT")
+    @Column(columnDefinition = "LONGTEXT")
     private String data;
 }

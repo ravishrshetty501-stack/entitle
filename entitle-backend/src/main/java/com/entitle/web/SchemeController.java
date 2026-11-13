@@ -23,11 +23,27 @@ public class SchemeController {
     public ResponseEntity<List<JsonNode>> search(
             @RequestParam(required = false) String q,
             @RequestParam(required = false) String category,
+            @RequestParam(required = false) String subcategory,
             @RequestParam(required = false) String state,
+            @RequestParam(required = false) String level,
+            @RequestParam(required = false) String sdg,
+            @RequestParam(required = false) String beneficiaryType,
             @RequestParam(required = false) Integer age,
+            @RequestParam(required = false) Long income,
             @RequestParam(required = false) String incomeRange,
-            @RequestParam(required = false) String provider) {
-        return ResponseEntity.ok(schemeService.search(q, category, state, age, incomeRange, provider));
+            @RequestParam(required = false) String provider,
+            @RequestParam(required = false) String status) {
+        return ResponseEntity.ok(schemeService.search(q, category, subcategory, state, level, sdg, beneficiaryType, age, income, incomeRange, provider, status));
+    }
+
+    @GetMapping("/api/schemes/stats")
+    public ResponseEntity<Map<String, Object>> getStats() {
+        return ResponseEntity.ok(schemeService.getCategoryStats());
+    }
+
+    @GetMapping("/api/schemes/categories")
+    public ResponseEntity<Map<String, Object>> getCategories() {
+        return ResponseEntity.ok(schemeService.getCategoryStats());
     }
 
     @GetMapping("/api/schemes/{id}")
@@ -95,4 +111,3 @@ public class SchemeController {
                 .orElseThrow(() -> ApiException.notFound("Assessment for " + schemeId));
     }
 }
-

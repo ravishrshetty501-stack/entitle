@@ -27,6 +27,7 @@ function makeDevServerV5Compatible(devServerConfig) {
             : https
                 ? "https"
                 : "http";
+    compatibleConfig.historyApiFallback = true;
     compatibleConfig.headers = {
         ...compatibleConfig.headers,
         "Cross-Origin-Resource-Policy": "same-origin",
@@ -227,3 +228,4 @@ webpackConfig.devServer = (devServerConfig) =>
     makeDevServerV5Compatible(configureDevServer(devServerConfig));
 
 module.exports = webpackConfig;
+

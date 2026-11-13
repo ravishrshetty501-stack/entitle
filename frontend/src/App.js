@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import { AuthProvider } from "@/context/AuthContext";
 import { LangProvider } from "@/context/LangContext";
-import { GuideProvider } from "@/context/GuideContext";
+import { AssistantProvider } from "@/context/AssistantContext";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster } from "@/components/ui/sonner";
 import AppShell from "@/components/AppShell";
@@ -23,6 +23,8 @@ import Impact from "@/pages/Impact";
 import Privacy from "@/pages/Privacy";
 import Profile from "@/pages/Profile";
 import ResultsPrint from "@/pages/ResultsPrint";
+import DocumentVault from "@/pages/DocumentVault";
+import DownloadCenter from "@/pages/DownloadCenter";
 
 const guard = (el) => <ProtectedRoute>{el}</ProtectedRoute>;
 
@@ -38,6 +40,9 @@ function AppRouter() {
                 <Route path="/simulator" element={<Simulator />} />
                 <Route path="/schemes" element={<Schemes />} />
                 <Route path="/schemes/:id" element={<SchemeDetail />} />
+                <Route path="/vault" element={<DocumentVault />} />
+                <Route path="/documents" element={<DocumentVault />} />
+                <Route path="/offline-download" element={<DownloadCenter />} />
                 <Route path="/impact" element={<Impact />} />
                 <Route path="/privacy" element={<Privacy />} />
                 <Route path="/assessment" element={guard(<Assessment />)} />
@@ -58,14 +63,14 @@ export default function App() {
     return (
         <LangProvider>
             <AuthProvider>
-                <GuideProvider>
+                <AssistantProvider>
                     <TooltipProvider delayDuration={150}>
                         <BrowserRouter>
                             <AppRouter />
                         </BrowserRouter>
                         <Toaster position="top-center" richColors />
                     </TooltipProvider>
-                </GuideProvider>
+                </AssistantProvider>
             </AuthProvider>
         </LangProvider>
     );

@@ -1,4 +1,9 @@
 import axios from "axios";
+import {
+    saveSchemesToOfflineDB,
+    getAllOfflineSchemes,
+    getOfflineSchemeById
+} from "@/lib/offlineDb";
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 
@@ -8,6 +13,33 @@ const d = (p) => p.then((r) => r.data);
 
 export const errorMessage = (e) =>
     e?.response?.data?.details || e?.response?.data?.error || e?.message || "Something went wrong";
+
+// Offline filter helper for schemes
+function filterOfflineSchemes(schemes, params = {}) {
+    let result = [...schemes];
+    if (params.category) {
+        result = result.filter(s => s.category?.toLowerCase() === params.category.toLowerCase());
+    }
+    if (params.state) {
+        result = result.filter(s => s.state?.toLowerCase() === params.state.toLowerCase() || s.state === "All India");
+    }
+    if (params.level) {
+        result = result.filter(s => s.level?.toLowerCase() === params.level.toLowerCase());
+    }
+    if (params.sdg) {
+        result = result.filter(s => s.sdg === params.sdg);
+    }
+    if (params.search) {
+        const q = params.search.toLowerCase();
+        result = result.filter(s =>
+            s.title?.toLowerCase().includes(q) ||
+            s.description?.toLowerCase().includes(q) ||
+            s.category?.toLowerCase().includes(q) ||
+            s.state?.toLowerCase().includes(q)
+        );
+    }
+    return result;
+}
 
 export const api = {
     auth: {
@@ -23,8 +55,62 @@ export const api = {
         deleteAccount: () => d(http.delete("/profile/account")),
     },
     schemes: {
-        list: (params) => d(http.get("/schemes", { params })),
-        get: (id) => d(http.get(`/schemes/${id}`)),
+        list: async (params) => {
+            if (navigator.onLine) {
+                try {
+                    const data = await d(http.get("/schemes", { params }));
+                    if (Array.isArray(data) && data.length > 0) {
+                        saveSchemesToOfflineDB(data).catch(() => { });
+                    }
+                    return data;
+                } catch (e) {
+                    console.warn("Network fetch failed, falling back to offline DB", e);
+                }
+            }
+            // Offline fallback
+            const offlineData = await getAllOfflineSchemes();
+            return filterOfflineSchemes(offlineData, params);
+        },
+        stats: async () => {
+            if (navigator.onLine) {
+                try {
+                    return await d(http.get("/schemes/stats"));
+                } catch (e) {
+                    console.warn("Stats fetch failed, calculating offline stats", e);
+                }
+            }
+            const all = await getAllOfflineSchemes();
+            return {
+                totalSchemes: all.length,
+                centralCount: all.filter(s => s.level === "Central").length,
+                stateCount: all.filter(s => s.level === "State").length,
+                sdg2Count: all.filter(s => s.sdg === "SDG 2").length,
+                sdg3Count: all.filter(s => s.sdg === "SDG 3").length,
+                karnatakaCount: all.filter(s => s.state === "Karnataka").length
+            };
+        },
+        categories: async () => {
+            if (navigator.onLine) {
+                try {
+                    return await d(http.get("/schemes/categories"));
+                } catch (e) { }
+            }
+            const all = await getAllOfflineSchemes();
+            return Array.from(new Set(all.map(s => s.category).filter(Boolean)));
+        },
+        get: async (id) => {
+            if (navigator.onLine) {
+                try {
+                    const data = await d(http.get(`/schemes/${id}`));
+                    return data;
+                } catch (e) {
+                    console.warn("Network scheme get failed, trying offline DB", e);
+                }
+            }
+            const offline = await getOfflineSchemeById(id);
+            if (offline) return offline;
+            throw new Error("Scheme not found in offline database");
+        },
         recommended: () => d(http.get("/schemes/recommended")),
     },
     eligibility: {
@@ -58,8 +144,10 @@ export const api = {
         updatePrefs: (p) => d(http.put("/notifications/preferences", p)),
     },
     guide: {
-        chat: (message, schemeId, language) => d(http.post("/guide/chat", { message, schemeId, language })),
+        chat: ({ message, schemeId, language, previousSchemeId }) =>
+            d(http.post("/guide/chat", { message, schemeId, language, previousSchemeId })),
         history: () => d(http.get("/guide/history")),
+        clearHistory: () => d(http.delete("/guide/history")),
     },
     demo: { personas: () => d(http.get("/demo/personas")) },
     analytics: { impact: () => d(http.get("/analytics/impact")) },

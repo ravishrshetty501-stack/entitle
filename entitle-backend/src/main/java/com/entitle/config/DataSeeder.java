@@ -31,8 +31,11 @@ public class DataSeeder implements CommandLineRunner {
                 for (JsonNode n : json.mapper().readTree(in)) {
                     Scheme s = new Scheme();
                     s.setId(n.path("id").asText());
-                    s.setName(n.path("name").asText());
+                    s.setName(n.hasNonNull("title") ? n.get("title").asText() : n.path("name").asText());
                     s.setCategory(n.path("category").asText());
+                    s.setSubcategory(n.hasNonNull("subcategory") ? n.get("subcategory").asText() : null);
+                    s.setSdg(n.hasNonNull("sdg") ? n.get("sdg").asText() : null);
+                    s.setBeneficiaryType(n.hasNonNull("beneficiaryType") ? n.get("beneficiaryType").asText() : null);
                     s.setDepartment(n.path("department").asText());
                     s.setLevel(n.path("level").asText());
                     s.setState(n.path("state").isNull() ? null : n.path("state").asText(null));
